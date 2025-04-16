@@ -1,0 +1,43 @@
+
+header {
+    height: fit-content;
+    background-color: green;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    font-size:larger;
+      
+  } 
+  
+  .logo-menu{
+      left: 0;
+      position: absolute;
+      margin-left: 2rem;
+  }
+  
+  .menu > ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+  }
+  
+  .logo-menu {
+    display: flex;
+  }
+  
+  .icons > ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    
+  
+  }
+  
+  .icons {
+    right: 0;
+    position: absolute;
+    margin-right: 2rem;
+  }

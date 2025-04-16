@@ -1,0 +1,46 @@
+.footer {
+  background-color: #e6cd6a;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 4rem;
+}
+
+#strong {
+  color: #166940;
+}
+
+.all-links{
+    display: flex;
+    gap: 2rem;
+}
+
+.links {
+    font-weight: bold;
+}
+
+.links > ul, .links2 > ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-bottom {
+    margin-top: 4rem;
+}
+
+.footer-bottom > ul{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+#underlined {
+    text-decoration: underline;
+}
+
+#meal-link{
+    text-decoration: none;
+    color: black;
+}
