@@ -55,6 +55,9 @@ function createRecipeCard(recipe) {
     card.className = 'recipe-card';
     
     card.innerHTML = `
+        <button class="heart-button" data-recipe-id="${recipe.id}">
+            <i class="fa-regular fa-heart"></i>
+        </button>
         <img src="${recipe.image}" alt="${recipe.title}" class="recipe-image">
         <h3>${recipe.title}</h3>
         <p>${recipe.description}</p>
@@ -66,6 +69,26 @@ function createRecipeCard(recipe) {
             <span class="fa fa-star checked"></span> ${recipe.rating}
         </div>
     `;
+    
+    // Add click event for the heart button
+    const heartButton = card.querySelector('.heart-button');
+    heartButton.addEventListener('click', function() {
+        this.classList.toggle('liked');
+        const icon = this.querySelector('i');
+        if (this.classList.contains('liked')) {
+            icon.classList.remove('fa-regular');
+            icon.classList.add('fa-solid');
+            // save to local storage or database
+            //const likedRecipes = JSON.parse(localStorage.getItem('likedRecipes')) || [];
+            console.log(`Liked recipe ${recipe.id}`);
+        } else {
+            icon.classList.remove('fa-solid');
+            icon.classList.add('fa-regular');
+            // remove from local storage or database
+            //const likedRecipes = JSON.parse(localStorage.getItem('likedRecipes')) || [];
+            console.log(`Unliked recipe ${recipe.id}`);
+        }
+    });
     
     return card;
 }
