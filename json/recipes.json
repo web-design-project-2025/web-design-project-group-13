@@ -1,0 +1,93 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Chicken Taco",
+      "description": "Chicken tacos are a delicious and easy-to-make dish",
+      "rating": 4.7,
+      "image": "images/Tacos.jpeg",
+      "time": {"total": 30},
+      "category": "mexican"
+    },
+
+    {
+      "id": 2,
+      "title": "Blueberry Smoothie",
+      "description": "Classic French beef stew",
+      "rating": 4.8,
+      "image": "images/BlueberrySmoothie.jpeg",
+      "time": {"total": 180},
+      "category": "french"
+    },
+
+    {
+      "id": 3,
+      "title": "Potato Fritters",
+      "description": "Classic French beef stew",
+      "rating": 4.8,
+      "image": "images/Fritters.jpeg",
+      "time": {"total": 180},
+      "category": "french"
+    },
+
+    {
+      "id": 4,
+      "title": "Tomato Pasta",
+      "description": "Classic French beef stew",
+      "rating": 4.8,
+      "image": "images/TomatoPasta.jpeg",
+      "time": {"total": 180},
+      "category": "french"
+    },
+
+    {
+      "id": 5,
+      "title": "Rasberry Granola",
+      "description": "Classic French beef stew",
+      "rating": 4.8,
+      "image": "images/RasberryGranola.jpeg",
+      "time": {"total": 180},
+      "category": "french"
+    }, 
+    {
+      "id": 6,
+      "title": "Cranberry Mocktail",
+      "description": "Classic French beef stew",
+      "rating": 4.8,
+      "image": "images/Mojitio.jpeg",
+      "time": {"total": 180},
+      "category": "french"
+    },
+
+    {
+      "id": 7,
+      "title": "Teriyaki Chicken",
+      "description": "Classic French beef stew",
+      "rating": 4.8,
+      "image": "images/TeriyakiChicken.jpeg",
+      "time": {"total": 180},
+      "category": "french"
+    },
+
+    {
+      "id": 8,
+      "title": "Pancakes",
+      "description": "Classic French beef stew",
+      "rating": 4.8,
+      "image": "images/Pancakes.jpeg",
+      "time": {"total": 180},
+      "category": "french"
+    },
+    {
+      "id": 9,
+      "title": "Asparagus Risotto",
+      "description": "Classic French beef stew",
+      "rating": 4.8,
+      "image": "images/AsparagusRisotto.jpeg",
+      "time": {"total": 180},
+      "category": "french"
+    }
+  ],
+  "featured": [1, 3, 5, 7], 
+  "popular": [1,2,3,4,5,6,7,8]   
+}

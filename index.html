@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/footer.css" />
 
-    <script src="main.js"></script>
+    <script src="/javascript/main.js" defer></script>
   </head>
   <body>
     <!--Navigation-->
@@ -38,7 +38,8 @@
           <div class="menu">
             <ul>
               <li onclick="">Meals</li>
-              <li>Occassions</li>
+              <li>
+                <a href="favoritespage.html">Occassions</a></li>
               <li>Ingredients</li>
               <li>About Us</li>
             </ul>
@@ -68,6 +69,12 @@
           <input type="text" placeholder="Search Recipes.." />
         </div>
       </section>
+
+   
+      
+      <h1 style="text-align: center; margin-top: 20px;">Popular Recipes</h1>
+      <div id="recipe-container" class="recipe-container"></div>
+
     </main>
 
     <!--Footer-->
