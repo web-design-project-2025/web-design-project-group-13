@@ -20,10 +20,14 @@
     />
 
     <link rel="stylesheet" href="css/favoritespage.css" />
+    <link rel="stylesheet" href="css/recipecard.css" />
     <link rel="stylesheet" href="css/navigation.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/footer.css" />
-  </head>
+
+    <script src="javascript/generalrecipe.js" defer></script>
+    <script src="javascript/likedrecipes.js" defer></script> 
+   </head>
   <body>
     
     <main>
@@ -31,7 +35,7 @@
         
       <section class="picture">
         <div class="pic-header">
-          <img src="favoritepageheader.jpeg" alt="Favorites" id="img"/>
+          <img src="images/favoritepageheader.jpeg" alt="Favorites" id="img"/>
           <h1>Your liked recipes</h1>
           <h4>Here are all the recipes you liked, good taste!</h4>
 
@@ -42,6 +46,10 @@
           />
         </div>
       </section>
+
+       <!--Content dynamically loaded here, thru javascript-->
+       <div id="recipe-container" class="recipe-container"></div>
+
     </main>
   </body>
 </html>
