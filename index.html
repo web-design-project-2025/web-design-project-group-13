@@ -20,11 +20,13 @@
     />
 
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/recipecard.css" />
     <link rel="stylesheet" href="css/navigation.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/footer.css" />
 
-    <script src="/javascript/recipe.js" defer></script>
+    <script src="javascript/generalrecipe.js" defer></script>
+    <script src="javascript/index.js" defer></script>
   </head>
   <body>
     <!--Navigation-->
@@ -60,19 +62,17 @@
     <main>
       <section class="picture">
         <div class="explore-header">
-          <img src="explorepage.jpeg" id="img" />
+          <img src="images/explorepage.jpeg" id="img" />
           <h1>Explore New Recipes</h1>
           <h4>
-            Discover fresh, flavorful dishes that will inspire your next meal!
+            Discover fresh, flavorful dishes that will  inspire your next meal!
           </h4>
 
           <input type="text" placeholder="Search Recipes.." />
         </div>
       </section>
 
-   
-      
-      <h1 style="text-align: center; margin-top: 20px;">Popular Recipes</h1>
+      <!--Content dynamically loaded here, thru javascript-->
       <div id="recipe-container" class="recipe-container"></div>
 
     </main>
