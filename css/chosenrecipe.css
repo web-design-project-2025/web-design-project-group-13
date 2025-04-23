@@ -1,136 +1,93 @@
-
-
-/*.ingredients, .method {
-    padding: 50px;
-    text-align: left; 
-}
-
-.ingredients p {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
-    line-height: 1.6;
-}
-
-.ingredient-name {
-    font-weight: bold;
-    margin-right: 20px;
-}
-
-.method p {
-    margin: 15px 0; 
-    line-height: 1.6;
-    padding-bottom: 10px; 
-    border-bottom: 1px solid #eee;
-}
-
-.method p {
-    margin: 20px 0;
-    counter-increment: step-counter;
-    position: relative;
-    padding-left: 30px;
-}
-
-.method p::before {
-    content: counter(step-counter);
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-weight: bold;
-    color: #333;
-    background: #f5f5f5;
-    padding: 2px 8px;
-    border-radius: 50%;
-}
-
-.ingredients {
-    margin: 50px;
-    padding: 30px;
-    border: 1px solid #e0e0e0; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    background-color: white; 
-    margin-right: 20px; 
-}
-
-
-.ingredients:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    transition: box-shadow 0.3s ease;
-}
-
-.method {
-    padding: 30px;
-    background-color: white; 
-    border-radius: 8px; */
-
-    
-    .recipe-container {
-        display: flex;
-        gap: 40px;
+    .recipe-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-left: 60px;
+        margin-right: 60px;
+        margin-top: 20px
     }
     
-    .ingredients-table {
+    .recipe-section {
+        margin-bottom: 30px;
+    }
+    
+    .headers {
+        font-size: 15px;
+        padding: 12px 17px;
+        background-color: #E6CD6A;
+        box-sizing: border-box; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        font-weight: 600;
+        padding: 12px 17px; 
+        background-color: #ffffff;
+    }
+    
+    .ingredients-box {
         background: white;
         padding: 25px;
         border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        height: 90%;
     }
     
     .ingredients-table {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
+        width: 100%;
+        border-collapse: collapse;
     }
     
-    .ingredient-row {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        padding-bottom: 8px;
-        border-bottom: 1px solid #f0f0f0;
+    .ingredients-table td {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        vertical-align: top;
     }
     
-    .ingredient-row:last-child {
-        border-bottom: none;
-    }
     
     .ingredient-name {
         font-weight: 500;
+        padding-right: 15px;
     }
     
     .ingredient-measure {
         text-align: right;
-        color: #666;
+        color: #000000;
+        white-space: nowrap;
     }
     
-    .method-container {
+    .method-box {
         background: white;
         padding: 25px;
         border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        height: 90%;
+    }
+    
+    .method-steps {
+        counter-reset: step-counter;
     }
     
     .step {
         margin-bottom: 20px;
-        line-height: 1.6;
-        counter-increment: step-counter;
+        padding-left: 30px;
         position: relative;
-        padding-left: 35px;
     }
     
     .step::before {
         content: counter(step-counter) ".";
+        counter-increment: step-counter;
         position: absolute;
         left: 0;
         font-weight: bold;
         color: #333;
     }
     
-    h1 {
-        font-size: 24px;
-        margin-bottom: 20px;
-        color: #333;
-        border-bottom: 2px solid #4CAF50;
-        padding-bottom: 8px;
-        display: inline-block;
+    .step p {
+        margin: 0;
     }
+
