@@ -1,36 +1,42 @@
 
 header {
     height: fit-content;
-    background-color: green;
+    background-color: rgb(255, 255, 255);
+    
   }
   
   nav {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 2rem;
+    padding: 0;
     font-size:larger;
       
   } 
   
+.logo img {
+  max-height: 120px;
+  height: auto;
+  
+}
+
   .logo-menu{
-      left: 0;
-      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
       margin-left: 2rem;
   }
   
   .menu > ul {
     display: flex;
-    gap: 1rem;
+    gap: 3rem;
     list-style: none;
   }
   
-  .logo-menu {
-    display: flex;
-  }
   
   .icons > ul {
     display: flex;
-    gap: 1rem;
+    gap: 2.5rem;
     list-style: none;
     
   
