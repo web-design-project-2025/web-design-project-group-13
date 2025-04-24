@@ -46,7 +46,8 @@ function applyFilters(reset = false) {
   // Filter
   filteredRecipes = allRecipes.filter(recipe =>
     recipe.title.toLowerCase().includes(searchTerm) ||
-    recipe.description.toLowerCase().includes(searchTerm)
+    recipe.description.toLowerCase().includes(searchTerm) ||
+    recipe.category.toLowerCase().includes(searchTerm)
   );
 
   // Sort
