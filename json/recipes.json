@@ -3,107 +3,215 @@
     {
       "id": 1,
       "title": "Chicken Taco",
-      "description": "Chicken tacos are a delicious and easy-to-make dish",
+      "description": "Juicy grilled chicken wrapped in warm tortillas, topped with fresh pico de gallo, creamy avocado, crisp lettuce, and zesty lime. A flavorful, satisfying bite of Mexican street food magic!",
       "rating": 4.7,
       "image": "images/Tacos.jpeg",
-      "time": { "total": 30 },
-      "category": "mexican",
-      "isPopular": true,
-      "isFeatured": true
+      "time": { "total": 70 },
+      "category": "dinner",
+      "isPopular": true
     },
 
     {
       "id": 2,
       "title": "Blueberry Smoothie",
-      "description": "Classic French beef stew",
+      "description": "A refreshing blueberry smoothie blended with ripe berries, creamy yogurt, and a touch of honey. Bursting with antioxidants and natural sweetness, it’s a cool, energizing treat perfect for any time!",
       "rating": 4.8,
       "image": "images/BlueberrySmoothie.jpeg",
-      "time": { "total": 180 },
-      "category": "french",
-      "isPopular": true,
-      "isFeatured": true
+      "time": { "total": 30 },
+      "category": "breakfast",
+      "isPopular": true
     },
 
     {
       "id": 3,
       "title": "Potato Fritters",
-      "description": "Classic French beef stew",
-      "rating": 4.8,
+      "description": "Crispy on the outside, fluffy inside—these golden potato fritters are seasoned to perfection with herbs and spices. A satisfying savory snack or side, best enjoyed hot with your favorite dip!",
+      "rating": 3.5,
       "image": "images/Fritters.jpeg",
-      "time": { "total": 180 },
-      "category": "french",
-      "isPopular": true,
-      "isFeatured": true
+      "time": { "total": 50 },
+      "category": "snacks",
+      "isPopular": true
     },
 
     {
       "id": 4,
       "title": "Tomato Pasta",
-      "description": "Classic French beef stew",
-      "rating": 4.8,
+      "description": "Al dente pasta coated in a rich, slow-simmered tomato sauce bursting with garlic, herbs, and olive oil. Comforting and flavorful, it’s a classic Italian dish perfect for any mealtime!",
+      "rating": 3.8,
       "image": "images/TomatoPasta.jpeg",
-      "time": { "total": 180 },
-      "category": "french",
-      "isPopular": true,
-      "isFeatured": true
+      "time": { "total": 60 },
+      "category": "dinner",
+      "isPopular": true
     },
 
     {
       "id": 5,
       "title": "Rasberry Granola",
-      "description": "Classic French beef stew",
-      "rating": 4.8,
+      "description": "Crunchy granola clusters mixed with tart, juicy raspberries, toasted oats, and a hint of honey. A wholesome, fruity breakfast or snack that’s both energizing and deliciously satisfying with every bite!",
+      "rating": 4.1,
       "image": "images/RasberryGranola.jpeg",
-      "time": { "total": 180 },
-      "category": "french",
-      "isPopular": true,
-      "isFeatured": true
+      "time": { "total": 25 },
+      "category": "breakfast",
+      "isPopular": true
     },
     {
       "id": 6,
       "title": "Cranberry Mocktail",
-      "description": "Classic French beef stew",
-      "rating": 4.8,
+      "description": "A sparkling blend of tart cranberry juice, citrus, and herbs, this refreshing mocktail balances sweet and sour notes beautifully. Served chilled, it's a festive, alcohol-free drink that’s vibrant and zesty!",
+      "rating": 3.9,
       "image": "images/Mojitio.jpeg",
-      "time": { "total": 180 },
-      "category": "french",
-      "isPopular": true,
-      "isFeatured": true
+      "time": { "total": 20 },
+      "category": "drinks",
+      "isPopular": true
     },
 
     {
       "id": 7,
       "title": "Teriyaki Chicken",
-      "description": "Classic French beef stew",
-      "rating": 4.8,
+      "description": "Tender chicken glazed in a sweet and savory teriyaki sauce, seared to perfection. Infused with soy, garlic, and ginger, it’s a mouthwatering dish rich in bold, umami-packed flavor!",
+      "rating": 4.0,
       "image": "images/TeriyakiChicken.jpeg",
-      "time": { "total": 180 },
-      "category": "french",
-      "isPopular": true,
-      "isFeatured": true
+      "time": { "total": 50 },
+      "category": "lunch",
+      "isPopular": true
     },
 
     {
       "id": 8,
       "title": "Pancakes",
-      "description": "Classic French beef stew",
-      "rating": 4.8,
+      "description": "Fluffy, golden pancakes stacked high, drizzled with maple syrup and topped with fresh berries. A warm, comforting breakfast favorite that’s sweet, satisfying, and perfect to start your day right!",
+      "rating": 4.9,
       "image": "images/Pancakes.jpeg",
-      "time": { "total": 180 },
-      "category": "french",
-      "isPopular": true,
-      "isFeatured": true
+      "time": { "total": 30 },
+      "category": "breakfast",
+      "isPopular": true
     },
     {
       "id": 9,
       "title": "Asparagus Risotto",
-      "description": "Classic French beef stew",
-      "rating": 4.8,
+      "description": "Creamy risotto infused with delicate asparagus, Parmesan, and a splash of white wine. A velvety, spring-inspired dish that’s elegant, earthy, and full of rich, comforting flavor in every bite!",
+      "rating": 5.0,
       "image": "images/AsparagusRisotto.jpeg",
-      "time": { "total": 180 },
-      "category": "french"
+      "time": { "total": 60 },
+      "category": "dinner"
+    },
+    {
+      "id": 10,
+      "title": "Apple Pie",
+      "description": "A golden, flaky crust cradles sweet cinnamon-spiced apples baked to perfection. This timeless dessert delivers cozy warmth and nostalgic sweetness in every slice—America’s favorite pie for good reason!",
+      "rating": 3.4,
+      "image": "images/Applepie.jpeg",
+      "time": { "total": 55 },
+      "category": "desserts"
+    },
+    {
+      "id": 11,
+      "title": "Beef Noodles",
+      "description": "Tender slices of beef stir-fried with noodles, soy sauce, and fresh vegetables. This savory, hearty dish is packed with bold flavor and satisfying textures that keep you coming back for more!",
+      "rating": 4.6,
+      "image": "images/BeefNoodles.jpeg",
+      "time": { "total": 45 },
+      "category": "lunch"
+    },
+    {
+      "id": 12,
+      "title": "Chicken Risotto",
+      "description": "Creamy Arborio rice blended with tender chicken, garlic, and herbs. This hearty one-pot comfort dish is rich in flavor and perfect for a cozy, satisfying mealtime experience any day!",
+      "rating": 3.8,
+      "image": "images/ChickenRisotto.jpeg",
+      "time": { "total": 50 },
+      "category": "dinner"
+    },
+    {
+      "id": 13,
+      "title": "Dumplings",
+      "description": "Soft, steamed or pan-fried dough pockets filled with seasoned meats or veggies. Each bite is juicy, savory, and packed with flavor—a global comfort food classic worth savoring!",
+      "rating": 4.7,
+      "image": "images/Dumplings.jpeg",
+      "time": { "total": 75 },
+      "category": "dinner"
+    },
+    {
+      "id": 14,
+      "title": "Hamburger",
+      "description": "A juicy grilled beef patty layered with crisp lettuce, tomato, cheese, and pickles in a toasted bun. This all-American favorite is satisfying, bold, and perfect for any appetite!",
+      "rating": 3.2,
+      "image": "images/Hamburger.jpeg",
+      "time": { "total": 55 },
+      "category": "dinner"
+    },
+    {
+      "id": 15,
+      "title": "Fried Mushrooms",
+      "description": "Golden, crispy mushrooms with a tender, juicy center and herby seasoning. These addictive bites are perfect as a snack or side, delivering earthy flavor and a satisfying crunch every time!",
+      "rating": 3.0,
+      "image": "images/Mushroompotatoes.jpeg",
+      "time": { "total": 20 },
+      "category": "snacks"
+    },
+    {
+      "id": 16,
+      "title": "Oatmeal",
+      "description": "Warm, creamy oats topped with fruit, nuts, and a drizzle of honey. This wholesome breakfast bowl is comforting, nutritious, and endlessly customizable to suit any mood or morning!",
+      "rating": 3.9,
+      "image": "images/Oatmeal.jpeg",
+      "time": { "total": 15 },
+      "category": "breakfast"
+    },
+    {
+      "id": 17,
+      "title": "Padthai",
+      "description": "Stir-fried rice noodles tossed with egg, peanuts, lime, and a savory-sweet tamarind sauce. This iconic Thai street food is vibrant, balanced, and full of exciting flavor in every forkful!",
+      "rating": 4.9,
+      "image": "images/Padthai.jpeg",
+      "time": { "total": 45 },
+      "category": "lunch"
+    },
+    {
+      "id": 18,
+      "title": "Pizza",
+      "description": "A crispy crust topped with zesty tomato sauce, gooey mozzarella, and your favorite toppings. This beloved classic is cheesy, comforting, and endlessly customizable for every craving and occasion!",
+      "rating": 4.3,
+      "image": "images/Pizza.jpeg",
+      "time": { "total": 160 },
+      "category": "dinner"
+    },
+    {
+      "id": 19,
+      "title": "Scones",
+      "description": "Buttery, crumbly scones baked to golden perfection and often served with jam and cream. These delightful treats are perfect for tea time, brunch, or a cozy mid-day snack!",
+      "rating": 3.8,
+      "image": "images/Scones.jpeg",
+      "time": { "total": 55 },
+      "category": "desserts"
+    },
+    {
+      "id": 20,
+      "title": "Sushi",
+      "description": "Artfully rolled rice and seaweed encase fresh fish or veggies in every bite. Sushi is delicate, elegant, and packed with flavor, making it a beloved Japanese culinary masterpiece!",
+      "rating": 4.0,
+      "image": "images/Sushi.jpeg",
+      "time": { "total": 60 },
+      "category": "dinner"
+    },
+    {
+      "id": 21,
+      "title": "Tofu Salad",
+      "description": "Crispy or soft tofu tossed with fresh greens, crunchy veggies, and a zesty dressing. This vibrant, plant-based dish is healthy, flavorful, and perfect for a light yet satisfying meal!",
+      "rating": 3.5,
+      "image": "images/TofuSalad.jpeg",
+      "time": { "total": 30 },
+      "category": "lunch"
+    },
+    {
+      "id": 22,
+      "title": "Yellow Risotto",
+      "description": "Creamy risotto infused with saffron and Parmesan for a rich golden hue and luxurious flavor. This colorful, aromatic dish is both comforting and elegant, perfect for any special occasion!",
+      "rating": 4.8,
+      "image": "images/YellowRisotto.jpeg",
+      "time": { "total": 45 },
+      "category": "dinner"
     }
   ],
-  "popular": [1, 2, 3, 4, 5, 6, 7, 8],
-  "featured": [1, 3, 5, 7]
+  "popular": [1, 2, 3, 4, 5, 6, 7, 8]
 }
