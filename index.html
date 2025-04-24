@@ -29,6 +29,7 @@
     <script src="javascript/index.js" defer></script>
     <script src="javascript/searchfunction.js" defer></script>
     <script src="javascript/heartclick.js" defer></script>
+    <script src="javascript/loadmore.js" defer></script>
   </head>
   <body>
     <!--Navigation-->
@@ -36,14 +37,15 @@
       <nav>
         <section class="logo-menu">
           <div class="logo">
-            <img src="images/LettuceCookLogo.png" /> 
+            <img src="images/LettuceCookLogo.png" />
           </div>
 
           <div class="menu">
             <ul>
               <li onclick="">Meals</li>
               <li>
-                <a href="favoritespage.html">Occassions</a></li>
+                <a href="favoritespage.html">Occassions</a>
+              </li>
               <li>Ingredients</li>
               <li>About Us</li>
             </ul>
@@ -64,23 +66,37 @@
     <main>
       <section class="picture">
         <div class="explore-header">
-          <img src="images/explorepage.jpeg" id="img" />
+          <img loading="lazy" src="images/explorepage.jpeg" id="img" />
           <h1>Explore New Recipes</h1>
           <h4>
-            Discover fresh, flavorful dishes that will  inspire your next meal!
+            Discover fresh, flavorful dishes that will inspire your next meal!
           </h4>
 
-          <input
-          type="text"
-          id="search"
-          placeholder="Search from your liked recipes..."
-        />        
-      </div>
+          <div class="search-container">
+            <i class="fa-solid fa-sliders"></i>
+            <input type="text" id="search" placeholder="Search recipes..." />
+          </div>
+        </div>
       </section>
+
+      <div class="sort-container">
+        <label for="sort-select">Sort by:</label>
+        <select id="sort-select">
+          <option value="default">Default</option>
+          <option value="rating">Rating</option>
+          <option value="time">Time (Ascending)</option>
+          <option value="title">Title (A–Z)</option>
+        </select>
+      </div>
+
+      <hr style="margin-bottom: 10px; margin-top: 10px;">
 
       <!--Content dynamically loaded here, thru javascript-->
       <div id="recipe-container" class="recipe-container"></div>
 
+      <div style="text-align: center; margin-bottom: 40px">
+        <button id="load-more" class="load-more-btn">Load More Recipes</button>
+      </div>
     </main>
 
     <!--Footer-->
@@ -91,7 +107,7 @@
           <strong id="strong">news!</strong>
         </p>
         <div class="email-subscribe">
-          <input type="email" placeholder="Email">
+          <input type="email" placeholder="Email" />
           <button type="submit">&rarr;</button>
         </div>
       </div>

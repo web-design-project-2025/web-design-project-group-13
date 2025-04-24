@@ -1,3 +1,4 @@
+
 /*Image overlay*/
 .explore-header::after {
   content: "";
@@ -34,20 +35,10 @@
   z-index: 1;
 }
 
-/*Explore header 2*/
-.explore-header h4 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 1.5em;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
+
 
 /*Explore*/
-.explore-header input {
+/* .explore-header input {
   position: absolute;
   top: 70%;
   left: 50%;
@@ -59,4 +50,18 @@
   width: fit-content;
   min-width: 250px;
   max-width: 90%;
+} */
+
+
+
+/*Explore header 2*/
+.explore-header h4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }

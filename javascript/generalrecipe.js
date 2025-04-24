@@ -78,3 +78,4 @@ async function loadRecipes() {
     
     localStorage.setItem('likedRecipes', JSON.stringify(likedRecipes));
   }
+
