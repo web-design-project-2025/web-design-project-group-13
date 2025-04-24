@@ -27,9 +27,8 @@
 
     <script src="javascript/generalrecipe.js" defer></script>
     <script src="javascript/index.js" defer></script>
-    <script src="javascript/searchfunction.js" defer></script>
+    <script src="javascript/searchfunction+loadbtn.js" defer></script>
     <script src="javascript/heartclick.js" defer></script>
-    <script src="javascript/loadmore.js" defer></script>
   </head>
   <body>
     <!--Navigation-->
@@ -108,17 +107,7 @@
 
       <hr style="margin-bottom: 10px; margin-top: 10px;">
 
-      <div class="sort-container">
-        <label for="sort-select">Sort by:</label>
-        <select id="sort-select">
-          <option value="default">Default</option>
-          <option value="rating">Rating</option>
-          <option value="time">Time (Ascending)</option>
-          <option value="title">Title (A–Z)</option>
-        </select>
-      </div>
-
-      <hr style="margin-bottom: 10px; margin-top: 10px;">
+      
 
       <!--Content dynamically loaded thru javascript-->
       <div id="recipe-container" class="recipe-container"></div>
