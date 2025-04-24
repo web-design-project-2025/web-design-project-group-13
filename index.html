@@ -42,10 +42,25 @@
 
           <div class="menu">
             <ul>
-              <li onclick="">Meals</li>
-              <li>
-                <a href="favoritespage.html">Occassions</a>
-              </li>
+              <li> 
+
+                <div class="dropdown">
+                <button id="mealsDropdownBtn" class="dropdownswitch">My Meals </button>
+                <div id="mealsDropdownMenu" class="dropdownmenu hidden">
+                  <a href="dinnerpage.html">Dinner</a>
+                  <a href="#">Breakfast</a>
+                  <a href="#">Lunch</a>
+                  <a href="#">Desserts</a>
+                  <a href="#">Snacks</a>
+                  <a href="#">Quick meals</a>
+                  <a href="#">Drinks</a>
+                  <a href="#">Side Dishes</a>
+                  <a href="allmealspage.html">View All</a>
+                </div>
+              </div>
+
+            </li>
+              <li>Occassions</li>
               <li>Ingredients</li>
               <li>About Us</li>
             </ul>
@@ -59,6 +74,8 @@
             <li><i class="fa-regular fa-heart"></i></li>
           </ul>
         </div>
+
+       
       </nav>
     </header>
 
@@ -91,7 +108,19 @@
 
       <hr style="margin-bottom: 10px; margin-top: 10px;">
 
-      <!--Content dynamically loaded here, thru javascript-->
+      <div class="sort-container">
+        <label for="sort-select">Sort by:</label>
+        <select id="sort-select">
+          <option value="default">Default</option>
+          <option value="rating">Rating</option>
+          <option value="time">Time (Ascending)</option>
+          <option value="title">Title (A–Z)</option>
+        </select>
+      </div>
+
+      <hr style="margin-bottom: 10px; margin-top: 10px;">
+
+      <!--Content dynamically loaded thru javascript-->
       <div id="recipe-container" class="recipe-container"></div>
 
       <div style="text-align: center; margin-bottom: 40px">
@@ -106,7 +135,7 @@
           Subscribe for exclusive <strong id="strong">recipes</strong> and
           <strong id="strong">news!</strong>
         </p>
-        <div class="email-subscribe">
+        <div class="emailbox">
           <input type="email" placeholder="Email" />
           <button type="submit">&rarr;</button>
         </div>
@@ -116,7 +145,7 @@
         <div class="links">
           <ul>
             <li>
-              <a href="#" id="meal-link">Meals</a>
+              <a href="#" id="meallink">Meals</a>
             </li>
             <li>Occasions</li>
             <li>Ingredients</li>
@@ -133,7 +162,18 @@
         </div>
 
         <div class="follow-us">
+          
           <h3>Follow Us</h3>
+          <div class="socialmedia">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i> 
+          </div>
+            <div class="socialmedia2">
+              <i class="fab fa-youtube"></i>
+            <i class="fab fa-tiktok"></i>
+            </div>
+          </div>
         </div>
       </section>
 
