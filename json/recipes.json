@@ -7,7 +7,7 @@
       "rating": 4.7,
       "image": "images/Tacos.jpeg",
       "time": { "total": 70 },
-      "category": "dinner",
+      "category": "dinner, lunch",
       "isPopular": true
     },
 
@@ -40,7 +40,7 @@
       "rating": 3.8,
       "image": "images/TomatoPasta.jpeg",
       "time": { "total": 60 },
-      "category": "dinner",
+      "category": "dinner, lunch",
       "isPopular": true
     },
 
@@ -72,7 +72,7 @@
       "rating": 4.0,
       "image": "images/TeriyakiChicken.jpeg",
       "time": { "total": 50 },
-      "category": "lunch",
+      "category": "lunch, dinner",
       "isPopular": true
     },
 
@@ -93,7 +93,7 @@
       "rating": 5.0,
       "image": "images/AsparagusRisotto.jpeg",
       "time": { "total": 60 },
-      "category": "dinner"
+      "category": "dinner, lunch"
     },
     {
       "id": 10,
@@ -111,7 +111,7 @@
       "rating": 4.6,
       "image": "images/BeefNoodles.jpeg",
       "time": { "total": 45 },
-      "category": "lunch"
+      "category": "lunch, dinner"
     },
     {
       "id": 12,
@@ -120,7 +120,7 @@
       "rating": 3.8,
       "image": "images/ChickenRisotto.jpeg",
       "time": { "total": 50 },
-      "category": "dinner"
+      "category": "dinner, lunch"
     },
     {
       "id": 13,
@@ -129,7 +129,7 @@
       "rating": 4.7,
       "image": "images/Dumplings.jpeg",
       "time": { "total": 75 },
-      "category": "dinner"
+      "category": "dinner, lunch"
     },
     {
       "id": 14,
@@ -138,7 +138,7 @@
       "rating": 3.2,
       "image": "images/Hamburger.jpeg",
       "time": { "total": 55 },
-      "category": "dinner"
+      "category": "dinner, lunch"
     },
     {
       "id": 15,
@@ -165,7 +165,7 @@
       "rating": 4.9,
       "image": "images/Padthai.jpeg",
       "time": { "total": 45 },
-      "category": "lunch"
+      "category": "lunch, dinner"
     },
     {
       "id": 18,
@@ -174,7 +174,7 @@
       "rating": 4.3,
       "image": "images/Pizza.jpeg",
       "time": { "total": 160 },
-      "category": "dinner"
+      "category": "dinner, lunch"
     },
     {
       "id": 19,
@@ -192,7 +192,7 @@
       "rating": 4.0,
       "image": "images/Sushi.jpeg",
       "time": { "total": 60 },
-      "category": "dinner"
+      "category": "dinner, lunch"
     },
     {
       "id": 21,
@@ -205,7 +205,7 @@
     },
     {
       "id": 22,
-      "title": "Yellow Risotto",
+      "title": "Saffran Risotto",
       "description": "Creamy risotto infused with saffron and Parmesan for a rich golden hue and luxurious flavor. This colorful, aromatic dish is both comforting and elegant, perfect for any special occasion!",
       "rating": 4.8,
       "image": "images/YellowRisotto.jpeg",
