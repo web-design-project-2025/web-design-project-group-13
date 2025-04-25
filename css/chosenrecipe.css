@@ -1,0 +1,91 @@
+    .recipe-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-left: 60px;
+        margin-right: 60px;
+        margin-top: 20px
+    }
+    
+    .recipe-section {
+        margin-bottom: 30px;
+    }
+    
+    .headers {
+        font-size: 15px;
+        background-color: #E6CD6A;
+        box-sizing: border-box; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    h1 {
+        font-size: 24px;
+        font-weight: 600;
+        padding: 12px 17px; 
+        background-color: #ffffff;
+    }
+    
+    .ingredients-box {
+        background: white;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        height: 90%;
+    }
+    
+    .ingredients-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .ingredients-table td {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        vertical-align: top;
+    }
+    
+    
+    .ingredient-name {
+        font-weight: 500;
+        padding-right: 15px;
+    }
+    
+    .ingredient-measure {
+        text-align: right;
+        color: #000000;
+        white-space: nowrap;
+    }
+    
+    .method-box {
+        background: white;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        height: 90%;
+    }
+    
+    .method-steps {
+        counter-reset: step-counter;
+    }
+    
+    .step {
+        margin-bottom: 20px;
+        padding-left: 30px;
+        position: relative;
+    }
+    
+    .step::before {
+        content: counter(step-counter) ".";
+        counter-increment: step-counter;
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+        color: #333;
+    }
+    
+    .step p {
+        margin: 0;
+    }
+
