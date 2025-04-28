@@ -50,6 +50,8 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   transition: all 0.3s ease;
+  animation: fadeIn 0.3s ease;
+  will-change: transform, opacity;
 }
 .recipe-image {
   width: 100%;
@@ -86,13 +88,40 @@
   border-radius: 4px;
 }
 
+.empty {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #333;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 @keyframes fadeOut {
-  from { 
-    opacity: 1;
-    transform: scale(1);
-  }
-  to { 
-    opacity: 0;
-    transform: scale(0.95);
-  }
+  to { opacity: 0; transform: scale(0.9); }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Heart button transition */
+.heart-button i {
+  transition: transform 0.2s ease;
+}
+
+.heart-button:hover i {
+  transform: scale(1.1);
 }

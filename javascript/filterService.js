@@ -5,20 +5,20 @@ let filteredRecipes = [];
 let currentDisplayIndex = 0;
 const recipesPerPage = 8;
 
-function applyFilters(reset = false, baseRecipes = allRecipes) {
+export function applyFilters(reset = false, baseRecipes = allRecipes) {
   const searchInput = document.getElementById("search");
   const sortSelect = document.getElementById("sort-select");
 
   const searchTerm = searchInput?.value.toLowerCase() || "";
 
-  // Filter
+  // Filter recipes
   filteredRecipes = baseRecipes.filter(recipe =>
     recipe.title.toLowerCase().includes(searchTerm) ||
     recipe.description.toLowerCase().includes(searchTerm) ||
     recipe.category.toLowerCase().includes(searchTerm)
   );
 
-  // Sort
+  // Sort recipes
   const sortBy = sortSelect?.value || "";
   if (sortBy === "rating") {
     filteredRecipes.sort((a, b) => b.rating - a.rating);
@@ -36,11 +36,11 @@ function applyFilters(reset = false, baseRecipes = allRecipes) {
 
   displayRecipes(visible);
 
-  // Show/hide "Load More"
+  // Show/hide "Load More" button
   const loadMoreBtn = document.getElementById("load-more");
   if (loadMoreBtn) {
     loadMoreBtn.style.display = currentDisplayIndex < filteredRecipes.length ? "block" : "none";
   }
 }
 
-export { applyFilters, filteredRecipes };
+export { filteredRecipes };

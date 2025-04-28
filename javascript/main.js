@@ -11,54 +11,28 @@ document.addEventListener("DOMContentLoaded", async function () {
     const recipeContainer = document.getElementById("recipe-container");
     recipeContainer.innerHTML = '<div class="loading">Loading recipes...</div>';
 
-    // Load all recipes - using proper array modification
+    // Load recipes
     const data = await loadRecipes();
-    allRecipes.length = 0; // Clear existing array
-    allRecipes.push(...data.recipes); // Add new items without reassignment
+    allRecipes.length = 0;
+    allRecipes.push(...data.recipes);
 
-    let baseRecipes = [...allRecipes]; // Create a working copy
-    const pageType = document.body.dataset.page;
-
-    if (pageType === "favorites") {
-      const likedIds = JSON.parse(localStorage.getItem('likedRecipes')) || [];
-      baseRecipes = allRecipes.filter(recipe => likedIds.includes(recipe.id));
-      
-      if (baseRecipes.length === 0) {
-        recipeContainer.innerHTML = '<div class="loading">No favorites yet!</div>';
-      }
-    } 
-    
-    if (pageType === "category") {
-      const category = document.body.dataset.category;
-      baseRecipes = allRecipes.filter(recipe => 
-        recipe.category.toLowerCase() === category.toLowerCase());
-    }
-
-    // Initial render
-    applyFilters(true, baseRecipes);
+    // Initialize view
+    updateRecipeDisplay();
 
     // Setup event listeners
     if (searchInput) {
-      const savedSearch = localStorage.getItem("searchTerm") || "";
-      searchInput.value = savedSearch;
-
-      searchInput.addEventListener("input", function (e) {
-        localStorage.setItem("searchTerm", e.target.value.toLowerCase());
-        applyFilters(true, baseRecipes);
-      });
+      searchInput.value = localStorage.getItem("searchTerm") || "";
+      searchInput.addEventListener("input", () => updateRecipeDisplay(true));
     }
 
     if (sortSelect) {
-      sortSelect.addEventListener("change", function () {
-        applyFilters(true, baseRecipes);
-      });
+      sortSelect.addEventListener("change", () => updateRecipeDisplay(true));
     }
 
     if (loadMoreBtn) {
-      loadMoreBtn.addEventListener("click", function () {
-        applyFilters(false, baseRecipes);
-      });
+      loadMoreBtn.addEventListener("click", () => updateRecipeDisplay(false));
     }
+
   } catch (error) {
     console.error("Error initializing:", error);
     document.getElementById("recipe-container").innerHTML = 
@@ -66,17 +40,27 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 });
 
-// Handle likes updates across the application
-document.addEventListener('likesUpdated', () => {
-  if (document.body.dataset.page === "favorites") {
+function updateRecipeDisplay(reset = true) {
+  const pageType = document.body.dataset.page;
+  let baseRecipes = [...allRecipes];
+  
+  if (pageType === "favorites") {
     const likedIds = JSON.parse(localStorage.getItem('likedRecipes')) || [];
-    const baseRecipes = allRecipes.filter(recipe => likedIds.includes(recipe.id));
-    
-    const recipeContainer = document.getElementById("recipe-container");
-    if (baseRecipes.length === 0) {
-      recipeContainer.innerHTML = '<div class="loading">No favorites yet!</div>';
-    } else {
-      applyFilters(true, baseRecipes);
-    }
+    baseRecipes = allRecipes.filter(recipe => likedIds.includes(recipe.id));
+  } 
+  
+  if (pageType === "category") {
+    const category = document.body.dataset.category;
+    baseRecipes = allRecipes.filter(recipe => 
+      recipe.category.toLowerCase() === category.toLowerCase());
+  }
+
+  applyFilters(reset, baseRecipes);
+}
+
+// Listen for like updates
+document.addEventListener('likeUpdated', () => {
+  if (document.body.dataset.page === "favorites") {
+    updateRecipeDisplay(true);
   }
 });
