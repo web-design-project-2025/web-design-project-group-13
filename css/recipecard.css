@@ -49,6 +49,7 @@
   height: 400px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: relative;
+  transition: all 0.3s ease;
 }
 .recipe-image {
   width: 100%;
@@ -83,4 +84,15 @@
   color: #ff0000;
   border: 1px solid #ff0000;
   border-radius: 4px;
+}
+
+@keyframes fadeOut {
+  from { 
+    opacity: 1;
+    transform: scale(1);
+  }
+  to { 
+    opacity: 0;
+    transform: scale(0.95);
+  }
 }
