@@ -21,6 +21,11 @@ document.addEventListener("DOMContentLoaded", async function() {
   }
 });
 
+// This will handle clicks on navigation heart link
+document.getElementById('heart-icon').addEventListener('click', function() {
+  window.location.href = 'favoritespage.html'; // Redirect to the homepage
+});
+
 document.addEventListener("DOMContentLoaded", function() {
   // This will handle clicks on existing heart buttons
   document.addEventListener("click", function(e) {
