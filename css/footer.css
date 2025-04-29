@@ -134,3 +134,52 @@
     transform: scale(1.1);
   }
   
+
+/*Responsive*/
+  @media screen and (min-width: 320px) and (max-width: 890px) {
+     
+    .footer {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 100%;
+      }
+
+      .links > ul, .links2 > ul{
+        align-items: center;
+      }
+    
+      .all-links {
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+    
+    
+      .follow-us {
+        margin-top: 1rem;
+      }
+    
+      .footer-bottom {
+        margin-top: 1rem;
+      }
+    
+      .footer-bottom > ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    
+      .newspaper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .socialmedia, 
+      .socialmedia2 {
+        gap: 1rem;
+      }
+    }
+
+    
