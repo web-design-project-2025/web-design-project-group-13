@@ -36,24 +36,6 @@
 }
 
 
-
-/*Explore*/
-/* .explore-header input {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  border-radius: 100px;
-  border: none;
-  padding: 1rem;
-  width: fit-content;
-  min-width: 250px;
-  max-width: 90%;
-} */
-
-
-
 /*Explore header 2*/
 .explore-header h4 {
   position: absolute;

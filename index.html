@@ -28,8 +28,11 @@
     <script type="module" src="javascript/main.js" defer ></script>
     <script type="module" src="javascript/dropdown.js" defer ></script>
     <script type="module" src="javascript/index.js" defer ></script>
+    <script type="module" src="javascript/hamburger.js" defer></script>
+
   </head>
   <body data-page="main" >
+
     <!--Navigation-->
     <header>
       <nav>
@@ -37,34 +40,34 @@
           <div class="logo">
             <img src="images/LettuceCookLogo.png" />
           </div>
-
-          <div class="menu">
+    
+          <button class="hamburger" id="hamburger">☰</button>
+    
+          <div class="menu" id="mobileMenu">
             <ul>
-              <li> 
-
+              <li>
                 <div class="dropdown">
-                <button id="mealsDropdownBtn" class="dropdownswitch">My Meals </button>
-                <div id="mealsDropdownMenu" class="dropdownmenu hidden">
-                  <a href="dinnerpage.html">Dinner</a>
-                  <a href="#">Breakfast</a>
-                  <a href="#">Lunch</a>
-                  <a href="#">Desserts</a>
-                  <a href="#">Snacks</a>
-                  <a href="#">Quick meals</a>
-                  <a href="#">Drinks</a>
-                  <a href="#">Side Dishes</a>
-                  <a href="allmealspage.html">View All</a>
+                  <button id="mealsDropdownBtn" class="dropdownswitch">My Meals</button>
+                  <div id="mealsDropdownMenu" class="dropdownmenu hidden">
+                    <a href="dinnerpage.html">Dinner</a>
+                    <a href="#">Breakfast</a>
+                    <a href="#">Lunch</a>
+                    <a href="#">Desserts</a>
+                    <a href="#">Snacks</a>
+                    <a href="#">Quick meals</a>
+                    <a href="#">Drinks</a>
+                    <a href="#">Side Dishes</a>
+                    <a href="allmealspage.html">View All</a>
+                  </div>
                 </div>
-              </div>
-
-            </li>
-              <li>Occassions</li>
+              </li>
+              <li>Occasions</li>
               <li>Ingredients</li>
               <li>About Us</li>
             </ul>
           </div>
         </section>
-
+    
         <div class="icons">
           <ul>
             <li><i class="fa-solid fa-magnifying-glass"></i></li>
@@ -72,10 +75,8 @@
             <li id="heart-icon"><i class="fa-regular fa-heart"></i></li>
           </ul>
         </div>
-
-       
       </nav>
-    </header>
+    </header>    
 
     <!--Explore page-->
     <main>

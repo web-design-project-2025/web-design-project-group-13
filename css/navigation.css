@@ -92,4 +92,59 @@ header {
   .hidden {
     display: none;
   }
+
+  /* Hamburger base style */
+.hamburger {
+  display: none;
+  background: none;
+  color: black;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .menu > ul {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    left: 0; /* ⬅ Ensures it opens from the left side */
+    width: 70%; /* Optional: not full width to avoid icon overlap */
+    padding: 1rem 2rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+
+  .menu.open > ul {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: 1rem;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  .logo-menu {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .icons {
+    position: static;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+}
+
+
   
