@@ -1,14 +1,21 @@
-// document.addEventListener("DOMContentLoaded", async function() {
-//     try {
-//       const recipeContainer = document.getElementById("recipe-container");
-//       recipeContainer.innerHTML = '<div class="loading">Loading popular recipes...</div>';
-      
-//       const data = await loadRecipes();
-//       const popularRecipes = data.recipes.filter(recipe => recipe.isPopular);
-//       displayRecipes(popularRecipes);
-//     } catch (error) {
-//       console.error("Error loading popular recipes:", error);
-//       document.getElementById("recipe-container").innerHTML = 
-//         `<div class="error">Error loading recipes: ${error.message}</div>`;
-//     }
-//   });
+import { loadRecipes, displayRecipes, toggleLike } from './recipeService.js';
+
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const data = await loadRecipes();
+    displayRecipes(data.recipes);
+    
+    // Handle like button clicks
+    document.addEventListener('click', (e) => {
+      const button = e.target.closest('.heart-button');
+      if (button) {
+        const recipeId = button.dataset.recipeId;
+        toggleLike(recipeId, button);
+      }
+    });
+  } catch (error) {
+    console.error('Error:', error);
+    document.getElementById('recipe-container').innerHTML = 
+      `<div class="error">Error loading recipes: ${error.message}</div>`;
+  }
+});

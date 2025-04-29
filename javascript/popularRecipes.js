@@ -13,4 +13,4 @@ document.addEventListener("DOMContentLoaded", async function() {
       document.getElementById("recipe-container").innerHTML = 
         `<div class="error">Error loading recipes: ${error.message}</div>`;
     }
-  });
+});
