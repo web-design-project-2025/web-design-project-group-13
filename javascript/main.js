@@ -1,18 +1,11 @@
+// main.js
 import {
   fetchRecipes,
   getPopularRecipes,
   getRegularRecipes,
 } from "/javascript/recipeApi.js";
 import { createRecipeCard } from "/javascript/recipeCard.js";
-
-// Polyfill for requestIdleCallback
-if (!window.requestIdleCallback) {
-  window.requestIdleCallback = (callback) => {
-    return setTimeout(() => {
-      callback({ didTimeout: false });
-    }, 0);
-  };
-}
+import { RecipeSorter } from "/javascript/recipeSorter.js";
 
 class RecipeApp {
   constructor() {
@@ -23,14 +16,20 @@ class RecipeApp {
     this.otherRecipesSection = document.getElementById("other-recipes");
     this.loadingPlaceholder = document.getElementById("loading-placeholder");
     this.errorMessage = document.getElementById("error-message");
+    this.sortSelect = document.getElementById("sort-select");
 
     // State Management
     this.currentPage = 0;
     this.recipesPerPage = 8;
+    this.allRecipes = [];
+    this.popularIds = [];
+    this.displayedRecipes = [];
     this.regularRecipes = [];
+    this.currentSort = 'popular';
 
     // Event Listeners
     this.loadMoreBtn?.addEventListener("click", () => this.loadMoreRecipes());
+    this.sortSelect?.addEventListener("change", (e) => this.handleSortChange(e));
   }
 
   async initialize() {
@@ -44,18 +43,19 @@ class RecipeApp {
         throw new Error("No recipes found in the data");
       }
 
-      // Display popular recipes immediately
-      const popularRecipes = getPopularRecipes(recipes, popularIds);
+      this.allRecipes = recipes;
+      this.popularIds = popularIds;
+
+      // Initial display - only popular recipes
+      const popularRecipes = getPopularRecipes(this.allRecipes, this.popularIds);
       this.displayRecipes(popularRecipes, this.popularContainer, true);
 
-      // Store regular recipes for lazy loading
-      this.regularRecipes = getRegularRecipes(recipes, popularIds);
+      // Store regular recipes for later
+      this.regularRecipes = getRegularRecipes(this.allRecipes, this.popularIds);
 
-      // Initialize lazy loading if there are regular recipes
+      // Show load more button if there are regular recipes
       if (this.regularRecipes.length > 0) {
         this.showLoadMoreSection();
-      } else {
-        this.hideLoadMoreSection();
       }
 
     } catch (error) {
@@ -66,28 +66,64 @@ class RecipeApp {
     }
   }
 
-  loadMoreRecipes() {
-    try {
-      const start = this.currentPage * this.recipesPerPage;
-      const end = start + this.recipesPerPage;
-      const recipesToShow = this.regularRecipes.slice(start, end);
+  handleSortChange(event) {
+    this.currentSort = event.target.value;
+    this.applySorting();
+  }
 
-      this.displayRecipes(recipesToShow, this.otherContainer);
-      this.currentPage++;
+  applySorting() {
+    // Sort all recipes according to current sort method
+    this.displayedRecipes = RecipeSorter.sortRecipes(
+      this.allRecipes,
+      this.currentSort,
+      this.popularIds
+    );
 
-      // Hide button if we've loaded all recipes
-      if (end >= this.regularRecipes.length) {
-        this.hideLoadMoreButton();
+    // Clear containers
+    this.popularContainer.innerHTML = '';
+    this.otherContainer.innerHTML = '';
+
+    // Separate popular and regular after sorting
+    const popularRecipes = this.displayedRecipes.filter(recipe => 
+      this.popularIds.includes(recipe.id)
+    );
+    const regularRecipes = this.displayedRecipes.filter(recipe => 
+      !this.popularIds.includes(recipe.id)
+    );
+
+    // Always show popular recipes
+    this.displayRecipes(popularRecipes, this.popularContainer, true);
+
+    // Only show regular recipes if not in default 'popular' sort
+    if (this.currentSort !== 'popular') {
+      this.displayRecipes(regularRecipes, this.otherContainer);
+      this.hideLoadMoreButton(); // Hide button when showing all sorted recipes
+    } else {
+      // Reset pagination for regular recipes
+      this.currentPage = 0;
+      this.regularRecipes = regularRecipes;
+      if (this.regularRecipes.length > 0) {
+        this.showLoadMoreSection();
       }
-    } catch (error) {
-      console.error("Error loading more recipes:", error);
-      this.showError("Failed to load more recipes");
+    }
+  }
+
+  loadMoreRecipes() {
+    const start = this.currentPage * this.recipesPerPage;
+    const end = start + this.recipesPerPage;
+    const recipesToShow = this.regularRecipes.slice(start, end);
+
+    this.displayRecipes(recipesToShow, this.otherContainer);
+    this.currentPage++;
+
+    if (end >= this.regularRecipes.length) {
+      this.hideLoadMoreButton();
     }
   }
 
   // DOM Helper Methods
   displayRecipes(recipes, container, showBadge = false) {
-    if (!container) return;
+    if (!container || !recipes?.length) return;
 
     const fragment = document.createDocumentFragment();
     recipes.forEach(recipe => {
@@ -105,7 +141,7 @@ class RecipeApp {
       this.otherRecipesSection.classList.remove("hidden");
     }
     if (this.loadMoreBtn) {
-      this.loadMoreBtn.classList.remove("block");
+      this.loadMoreBtn.style.display = "block";
     }
   }
 
@@ -149,24 +185,8 @@ class RecipeApp {
   }
 }
 
-// Global Error Handling
-window.addEventListener("error", (event) => {
-  console.error("Unhandled error:", event.error);
-  const loading = document.getElementById("loading-placeholder");
-  if (loading) loading.style.display = "none";
-});
-
 // Initialize Application
 document.addEventListener("DOMContentLoaded", () => {
-  try {
-    const app = new RecipeApp();
-    app.initialize();
-  } catch (error) {
-    console.error("Application failed to initialize:", error);
-    const errorDisplay = document.getElementById("error-message") || 
-                        document.createElement("div");
-    errorDisplay.textContent = "Application error. Please refresh.";
-    errorDisplay.style.color = "red";
-    document.body.prepend(errorDisplay);
-  }
+  const app = new RecipeApp();
+  app.initialize();
 });
