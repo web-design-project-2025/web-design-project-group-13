@@ -24,10 +24,12 @@
     <link rel="stylesheet" href="css/navigation.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/filtering.css" />
 
     <script type="module" src="javascript/main.js" defer ></script>
     <script type="module" src="javascript/dropdown.js" defer ></script>
     <script type="module" src="javascript/index.js" defer ></script>
+    <script src="javascript/filtering.js" defer ></script>
   </head>
   <body data-page="main" >
     <!--Navigation-->
@@ -88,8 +90,29 @@
           </h4>
 
           <div class="search-container">
-            <i class="fa-solid fa-sliders"></i>
+
+            <button class="filter-button" onclick="toggleFilter()"> 
+              <i class="fa-solid fa-sliders"></i>
+            </button>
+
+            
+
             <input type="text" id="search" placeholder="Search recipes..." />
+          </div>
+
+          <div id="filter-popup" class="filter-popup">
+            <div class="filter-popup-header">
+              <h2>Filter Recipes</h2>
+              <button onclick="toggleFilter()" class="close-btn">&times;</button>
+            </div>
+            <div class="filter-popup-body">
+              <label><input type="checkbox" name="vegetarian"> Vegetarian</label>
+              <label><input type="checkbox" name="vegan"> Vegan</label>
+              <label><input type="checkbox" name="glutenFree"> Gluten-Free</label>
+            </div>
+            <div class="filter-popup-footer">
+              <button class="apply-filters-btn">Apply Filters</button>
+            </div>
           </div>
         </div>
       </section>
