@@ -27,10 +27,39 @@
     <script src="main.js"></script>
   </head>
   <body>
-    <div class ="headers">
-    <h1>Ingredients</h1>
-    <h1>Step By Step</h1>
-  </div>
+    <!--Aspargus risotto-->
+    <div class="recipe-card">
+      <div class="recipe-image">
+        <img src="images/AsparagusRisotto.jpeg" alt="Asparagus Risotto" />
+        <div class="heart-icon">
+          <i class="fas fa-heart"></i>
+        </div>
+      </div>
+      <div class="recipe-content">
+        <h2 class="recipe-title">Asparagus Risotto</h2>
+    
+        <div class="recipe-meta">
+          <div class="time">
+            <i class="fa fa-clock"></i> 60 Min
+          </div>
+          <div class="stars">
+            ★★★★★
+            <a href="#">See more</a>
+          </div>
+        </div>
+        <p>
+          Creamy risotto infused with delicate asparagus, Parmesan, and a splash
+          of white wine. A velvety, spring-inspired dish that’s elegant, earthy,
+          and full of rich, comforting flavor in every bite!
+        </p>
+      </div>
+    </div>
+
+    <!--Ingredients + method-->
+    <div class="headers">
+      <h1>Ingredients</h1>
+      <h1>Step By Step</h1>
+    </div>
     <div class="recipe-columns">
       <!--Ingredients-->
       <div class="recipe-section">
@@ -144,5 +173,53 @@
         </div>
       </div>
     </div>
+
+    <!--recommendations + reviews-->
+    <section class="similar-recipes">
+      <h2>Similar Recipes</h2>
+      <div class="carousel">
+        <button class="arrow left"><i class="fas fa-chevron-left"></i></button>
+        <div class="recipe-images">
+          <img src="images/ChickenRisotto.jpeg" alt="Dish 1" />
+          <img src="images/Padthai.jpeg" alt="Dish 2" />
+          <img src="images/BeefNoodles.jpeg" alt="Dish 3" />
+          <img src="images/YellowRisotto.jpeg" alt="Dish 4" />
+        </div>
+        <button class="arrow right">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <h2>Reviews</h2>
+      <div class="rating-overall">
+        <span class="stars">★★★★☆</span> <span class="rating">4/5</span>
+      </div>
+
+      <div class="review">
+        <img src=" person icon needs to be added here!!!" alt="Avatar" />
+        <div class="review-content">
+          <div class="name-rating">
+            <span>Sara</span>
+            <span class="stars">★★☆☆☆</span> <span>2/5</span>
+          </div>
+          <p>This was so good but difficult! Made with regular...</p>
+        </div>
+      </div>
+
+      <div class="review">
+        <img src=" person icon needs to be added here!!! " alt="Avatar" />
+        <div class="review-content">
+          <div class="name-rating">
+            <span>Adam</span>
+            <span class="stars">★★★★★</span> <span>5/5</span>
+          </div>
+          <p>So good! Even my partner who is usually sceptical...</p>
+        </div>
+      </div>
+
+      <button class="load-more">Load more</button>
+    </section>
   </body>
 </html>
