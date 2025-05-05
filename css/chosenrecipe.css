@@ -13,7 +13,7 @@
     
     .headers {
         font-size: 15px;
-        background-color: #E6CD6A;
+        background-color: #99CC5F;
         box-sizing: border-box; 
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -88,4 +88,191 @@
     .step p {
         margin: 0;
     }
+
+    /* recommendations + reviews */
+    body {
+        font-family: system-ui, sans-serif;
+        padding: 20px;
+        margin: none;
+        background: #fff;
+        color: #333;
+      }
+      
+      .similar-recipes h2,
+      .reviews h2 {
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 1.7rem;
+        margin-top: 1.7rem;
+      }
+      
+      .carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        margin-bottom: 3rem;
+      }
+      
+      .carousel .arrow {
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        cursor: pointer;
+      }
+      
+      .recipe-images {
+        display: flex;
+        gap: 100px;
+      }
+      
+      .recipe-images img {
+        width: 190px;
+        height: 190px;
+        border-radius: 12px;
+        object-fit: cover;
+      }
+      
+      .reviews {
+        text-align: center;
+      }
+      
+      .rating-overall {
+        font-size: 1.2em;
+        margin-bottom: 1rem;
+      }
+      
+      .review {
+        display: flex;
+        align-items: flex-start;
+        background: #eeeeee72;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 25px auto;
+        max-width: 400px;
+        gap: 17px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      }
+      
+      .review img {
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+      }
+      
+      .review-content {
+        text-align: left;
+      }
+      
+      .name-rating {
+        display: flex;
+        align-items: center;
+        gap: 100px;
+        font-size: 0.9em;
+        margin-bottom: 13px;
+      }
+      
+      .stars {
+        color: #000;
+        letter-spacing: 2px;
+      }
+      
+      .load-more {
+        background-color: #E6CD6A;
+        font-size: medium;
+        border: none;
+        border-radius: 100px;
+        padding: 15px 25px;
+        cursor: pointer;
+        margin-top: 1.5rem;
+      }
+
+      /* Aspargus risotto card */
+      .recipe-card {
+        display: flex;
+        background-color: #fff;
+        border-radius: 16px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        width: 100%;
+        max-width: 950px;
+        margin: auto;
+        margin-bottom: 3rem;
+        font-family: sans-serif;
+        padding: 30px;
+        gap: 32px;
+      }
+      
+      .recipe-image {
+        position: relative;
+        flex: 0 0 420px;
+        border-radius: 12px;
+        overflow: hidden;
+        
+      }
+      
+      .recipe-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+      }
+      
+      .heart-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #fff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .heart-icon i {
+        color: red;
+        font-size: 23px;
+      }
+      
+      .recipe-content h2 {
+        font-size: 26px;
+        font-weight: 00;
+        margin-bottom: 70px;;
+      }
+      
+      .recipe-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px; 
+      }
+      
+      .recipe-meta .time {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      
+      .recipe-meta .stars {
+        font-size: 18px;
+        color: #000;
+      }
+      
+      .recipe-meta .stars a {
+        font-size: 14px;
+        margin-left: 8px;
+        color: #333;
+        text-decoration: underline;
+      }
+    
+      .recipe-content p {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-top: 30px;
+      }
+      
+      
 
