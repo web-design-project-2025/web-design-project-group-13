@@ -4,6 +4,7 @@
   overflow: hidden;
   transition: transform 0.3s ease;
   will-change: transform; /* Improves animation performance */
+  margin-bottom: 2rem;
 }
 
 .recipe-card:hover {
@@ -65,12 +66,12 @@ h1, h2 {
   contain: content; /* Improves rendering performance */
 }
 
-.btn-primary {
+/* .btn-primary {
   display: block;
   margin: 20px auto;  
   padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
+  background-color: #E6CD6A;
+  color: black;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -79,10 +80,11 @@ h1, h2 {
 }
 
 .btn-primary:hover {
-  background-color: #45a049;
+  background-color: #e3c85c;
 }
 
 .btn-primary:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
+   */
 }
