@@ -48,12 +48,14 @@ function updateRecipeDetails(recipe) {
     return;
   }
 
+
   console.log("Updating recipe:", recipe.title);
 
   document.getElementById("recipe-title").textContent = recipe.title;
   document.getElementById("recipe-main-image").src = recipe.image;
   document.getElementById("recipe-main-image").alt = recipe.title;
-  document.getElementById("recipe-time").textContent = `${recipe.time} Min`;
+//   document.getElementById("recipe-time").textContent = `${recipe.time} Min`;
+  document.getElementById('recipe-time').textContent = formatTime(recipe.time);
   document.getElementById("recipe-description").textContent =
     recipe.description;
 
@@ -122,4 +124,14 @@ function loadReviews(rating) {
         `;
     reviewsContainer.appendChild(reviewDiv);
   });
+}
+
+function formatTime(minutes) {
+    if (minutes < 60) {
+        return `${minutes} min`;
+    } else {
+        const hours = Math.floor(minutes / 60);
+        const remainingMinutes = minutes % 60;
+        return `${hours}h ${remainingMinutes > 0 ? remainingMinutes + ' min' : ''}`;
+    }
 }
