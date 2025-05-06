@@ -92,8 +92,31 @@
       "description": "Creamy risotto infused with delicate asparagus, Parmesan, and a splash of white wine. A velvety, spring-inspired dish that’s elegant, earthy, and full of rich, comforting flavor in every bite!",
       "rating": 5.0,
       "image": "images/AsparagusRisotto.jpeg",
-      "time":  60 ,
-      "categories": "dinner, lunch"
+      "time":  60,
+      "categories": "dinner, lunch",
+      "ingredients": [
+        {"name": "Water", "measure": "2 liters"},
+        {"name": "Vegetable broth", "measure": "4 dice"},
+        {"name": "Banana shallots", "measure": "3"},
+        {"name": "Fresh green asparagus", "measure": "500 g"},
+        {"name": "Butter at room temperature", "measure": "75 g"},
+        {"name": "Arborioris", "measure": "4 dl"},
+        {"name": "Dry white wine or 1 tablespoon white wine vinegar", "measure": "2 dl"},
+        {"name": "Grated Parmesan cheese", "measure": "3 dl"},
+        {"name": "Salt", "measure": "1 pinch"},
+        {"name": "Coarsely ground black pepper", "measure": "1 tsp"},
+        {"name": "Lemon juice", "measure": "2 tbsp"}
+      ], 
+      "steps": [
+        "Bring water and broth to a boil. Keep warm.",
+        "Peel and finely chop the onion. Trim the asparagus and cut off the bottom part if it is coarse. Cut off the buds and set aside. Cut the stem into thin slices.",
+        "Heat 25 g butter in a wide saucepan. Sweat the onion until it becomes soft, without it taking color. Add the finely chopped asparagus and fry for about 3 minutes.",
+        "Add the rice and sauté for another 3 minutes, stirring constantly. When the rice is shiny and translucent, pour in the wine and let it boil for 2 minutes.",
+        "Dilute the risotto with hot broth, stirring constantly. The risotto is ready when the rice feels creamy but still has a firm core.",
+        "Fry the asparagus buds in a hot frying pan with 1 tablespoon butter. Salt.",
+        "Stir in the remaining butter and finely grated Parmesan cheese into the risotto. Remove from heat and season with salt, freshly ground black pepper and lemon juice.",
+        "Serve the asparagus risotto on flat plates. Top with freshly fried asparagus buds."
+      ]
     },
     {
       "id": 10,

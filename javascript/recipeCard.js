@@ -9,6 +9,7 @@ export function createRecipeCard(recipe, options = {}) {
   
     return `
       <div class="recipe-card" 
+           onclick="window.location.href='chosenrecipe.html?id=${recipe.id}'"
            data-id="${recipe.id}" 
            data-time="${recipe.time}" 
            data-rating="${recipe.rating}"
