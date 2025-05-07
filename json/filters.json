@@ -2,14 +2,22 @@
     "dietFilters": [
         {"id": "vegetarian", "label": "Vegetarian"},
         {"id": "vegan", "label": "Vegan"},
-        {"id": "glutenFree", "label": "Gluten-Free"}
+        {"id": "glutenFree", "label": "Gluten-Free"},
+        {"id": "lactoseFree", "label": "Lactose-Free"}
     ],
     "ingredientsFilters": [
-        {"id": "breakfast", "label": "Breakfast"},
-        {"id": "lunch", "label": "Lunch"},
-        {"id": "dinner", "label": "Dinner"},
+        {"id": "chicken", "label": "Chicken"},
+        {"id": "beef", "label": "Beef"},
+        {"id": "seafood", "label": "Seafood"},
+        {"id": "plantBased", "label": "Plant-Based"},
+        {"id": "fruitAndBerries", "label": "Fruit-and-Berries"},
+        {"id": "pork", "label": "Pork"},
+
         {"id": "snacks", "label": "Snacks"},
         {"id": "desserts", "label": "Desserts"},
         {"id": "drinks", "label": "Drinks"}
+        {"id": "dinner", "label": "Dinner"},
+        {"id": "breakfast", "label": "Breakfast"},
+        {"id": "lunch", "label": "Lunch"}
     ]
 }
