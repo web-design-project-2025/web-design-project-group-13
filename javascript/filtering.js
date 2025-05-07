@@ -6,7 +6,7 @@ import { createRecipeCard } from './recipeCard.js';
 let allRecipes = [];
 let activeFilters = {
     diet: [],
-    meal: []
+    ingredients: []
 };
 
 
@@ -21,7 +21,7 @@ const elements = {
     loadMoreBtn: document.getElementById('load-more'),
     filterPopup: document.getElementById('filter-popup'),
     dietFilters: document.getElementById('diet-filters'),
-    mealFilters: document.getElementById('meal-filters')
+    ingredientsFilters: document.getElementById('ingredients-filters')
 };
 
 
@@ -67,7 +67,7 @@ function setupEventListeners() {
 
 
 function toggleFilter(button) {
-    const filterType = button.closest('.filter-buttons').id.includes('diet') ? 'diet' : 'meal';
+    const filterType = button.closest('.filter-buttons').id.includes('diet') ? 'diet' : 'ingredients';
     const filterValue = button.dataset.filter;
    
     // Toggle filter
@@ -101,18 +101,19 @@ function applyFilters() {
 
 function filterRecipes(recipes, searchTerm) {
     return recipes.filter(recipe => {
+        
         if (activeFilters.diet.length > 0) {
             const matchesDiet = activeFilters.diet.some(diet => {
-                return recipe[diet] === true;
+                return recipe.categories.toLowerCase().includes(diet.toLowerCase());
             });
             if (!matchesDiet) return false;
         }
        
-        if (activeFilters.meal.length > 0) {
-            const matchesMeal = activeFilters.meal.some(meal => {
-                return recipe.categories.toLowerCase().includes(meal.toLowerCase());
+        if (activeFilters.ingredients.length > 0) {
+            const matchesIngredients = activeFilters.ingredients.some(ingredient => {
+                return recipe.categories.toLowerCase().includes(ingredient.toLowerCase());
             });
-            if (!matchesMeal) return false;
+            if (!matchesIngredients) return false;
         }
        
         if (searchTerm) {
