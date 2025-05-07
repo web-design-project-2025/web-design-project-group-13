@@ -6,6 +6,7 @@ import {
 } from "/javascript/recipeApi.js";
 import { createRecipeCard } from "/javascript/recipeCard.js";
 import { RecipeSorter } from "/javascript/recipeSorter.js";
+import { RecipeSearch } from "/javascript/searchbar.js";
 
 class RecipeApp {
   constructor() {
@@ -17,6 +18,7 @@ class RecipeApp {
     this.loadingPlaceholder = document.getElementById("loading-placeholder");
     this.errorMessage = document.getElementById("error-message");
     this.sortSelect = document.getElementById("sort-select");
+    this.searchInput = document.getElementById("search");
 
     // State Management
     this.currentPage = 0;
@@ -25,11 +27,20 @@ class RecipeApp {
     this.popularIds = [];
     this.displayedRecipes = [];
     this.regularRecipes = [];
-    this.currentSort = 'popular';
+    this.currentSort = "popular";
+
+    // Initialize modules
+    this.recipeSearch = new RecipeSearch(this.searchInput, this);
 
     // Event Listeners
+    this.initializeEventListeners();
+  }
+
+  initializeEventListeners() {
     this.loadMoreBtn?.addEventListener("click", () => this.loadMoreRecipes());
-    this.sortSelect?.addEventListener("change", (e) => this.handleSortChange(e));
+    this.sortSelect?.addEventListener("change", (e) =>
+      this.handleSortChange(e)
+    );
   }
 
   async initialize() {
@@ -38,7 +49,7 @@ class RecipeApp {
       this.hideError();
 
       const { recipes, popularIds } = await fetchRecipes();
-      
+
       if (!recipes?.length) {
         throw new Error("No recipes found in the data");
       }
@@ -46,18 +57,7 @@ class RecipeApp {
       this.allRecipes = recipes;
       this.popularIds = popularIds;
 
-      // Initial display - only popular recipes
-      const popularRecipes = getPopularRecipes(this.allRecipes, this.popularIds);
-      this.displayRecipes(popularRecipes, this.popularContainer, true);
-
-      // Store regular recipes for later
-      this.regularRecipes = getRegularRecipes(this.allRecipes, this.popularIds);
-
-      // Show load more button if there are regular recipes
-      if (this.regularRecipes.length > 0) {
-        this.showLoadMoreSection();
-      }
-
+      this.applyFiltersAndSort();
     } catch (error) {
       console.error("Recipe loading failed:", error);
       this.showError("Failed to load recipes. Please try again later.");
@@ -66,46 +66,77 @@ class RecipeApp {
     }
   }
 
-  handleSortChange(event) {
-    this.currentSort = event.target.value;
-    this.applySorting();
-  }
+  applyFiltersAndSort() {
+    // Filter recipes based on search term
+    let filteredRecipes = this.recipeSearch.filterRecipes(this.allRecipes);
 
-  applySorting() {
-    // Sort all recipes according to current sort method
+    // Sort the filtered recipes
     this.displayedRecipes = RecipeSorter.sortRecipes(
-      this.allRecipes,
+      filteredRecipes,
       this.currentSort,
       this.popularIds
     );
 
+    // Update UI
+    this.updateRecipeDisplay();
+  }
+
+  updateRecipeDisplay() {
     // Clear containers
-    this.popularContainer.innerHTML = '';
-    this.otherContainer.innerHTML = '';
+    this.clearContainers();
 
-    // Separate popular and regular after sorting
-    const popularRecipes = this.displayedRecipes.filter(recipe => 
-      this.popularIds.includes(recipe.id)
-    );
-    const regularRecipes = this.displayedRecipes.filter(recipe => 
-      !this.popularIds.includes(recipe.id)
-    );
-
-    // Always show popular recipes
-    this.displayRecipes(popularRecipes, this.popularContainer, true);
-
-    // Only show regular recipes if not in default 'popular' sort
-    if (this.currentSort !== 'popular') {
-      this.displayRecipes(regularRecipes, this.otherContainer);
-      this.hideLoadMoreButton(); // Hide button when showing all sorted recipes
+    if (this.recipeSearch.searchTerm) {
+      // When searching - show ALL matching recipes in the main container
+      this.displayRecipes(this.displayedRecipes, this.popularContainer);
+      this.hideLoadMoreSection(); // Hide pagination when searching
     } else {
-      // Reset pagination for regular recipes
+      // Normal view - separate popular and regular recipes
+      const popularRecipes = this.displayedRecipes.filter((recipe) =>
+        this.popularIds.includes(recipe.id)
+      );
+      const regularRecipes = this.displayedRecipes.filter(
+        (recipe) => !this.popularIds.includes(recipe.id)
+      );
+
+      this.displayRecipes(popularRecipes, this.popularContainer, true);
+      this.handleRegularRecipesDisplay(regularRecipes);
+    }
+
+    this.handleDisplayMessages();
+  }
+
+  clearContainers() {
+    this.popularContainer.innerHTML = "";
+    this.otherContainer.innerHTML = "";
+  }
+
+  handleRegularRecipesDisplay(regularRecipes) {
+    if (this.currentSort !== "popular" || this.recipeSearch.searchTerm) {
+      // Show all regular recipes when sorting or searching
+      this.displayRecipes(regularRecipes, this.otherContainer);
+      this.hideLoadMoreButton();
+    } else {
+      // Paginate regular recipes in default view
       this.currentPage = 0;
       this.regularRecipes = regularRecipes;
       if (this.regularRecipes.length > 0) {
         this.showLoadMoreSection();
+        this.loadMoreRecipes(); // Load first page immediately
       }
     }
+  }
+
+  handleDisplayMessages() {
+    if (this.recipeSearch.searchTerm && this.displayedRecipes.length === 0) {
+      this.showNoResultsMessage();
+    } else {
+      this.hideError();
+    }
+  }
+
+  handleSortChange(event) {
+    this.currentSort = event.target.value;
+    this.applyFiltersAndSort();
   }
 
   loadMoreRecipes() {
@@ -126,16 +157,22 @@ class RecipeApp {
     if (!container || !recipes?.length) return;
 
     const fragment = document.createDocumentFragment();
-    recipes.forEach(recipe => {
+    recipes.forEach((recipe) => {
       const card = document.createElement("div");
-      card.innerHTML = createRecipeCard(recipe, { 
-        showPopularBadge: showBadge 
+      card.innerHTML = createRecipeCard(recipe, {
+        showPopularBadge: showBadge,
       });
       fragment.appendChild(card.firstElementChild);
     });
     container.appendChild(fragment);
   }
 
+  showNoResultsMessage() {
+    const message = `No recipes found for "${this.recipeSearch.searchTerm}"`;
+    this.showError(message);
+  }
+
+  // UI State Methods
   showLoadMoreSection() {
     if (this.otherRecipesSection) {
       this.otherRecipesSection.classList.remove("hidden");
@@ -157,7 +194,6 @@ class RecipeApp {
     }
   }
 
-  // UI State Methods
   showLoading() {
     if (this.loadingPlaceholder) {
       this.loadingPlaceholder.style.display = "flex";
@@ -173,14 +209,14 @@ class RecipeApp {
   showError(message) {
     if (this.errorMessage) {
       this.errorMessage.textContent = message;
-      this.errorMessage.style.display = "block";
+      this.errorMessage.classList.remove("hidden");
       setTimeout(() => this.hideError(), 5000);
     }
   }
 
   hideError() {
     if (this.errorMessage) {
-      this.errorMessage.style.display = "none";
+      this.errorMessage.classList.add("hidden");
     }
   }
 }
