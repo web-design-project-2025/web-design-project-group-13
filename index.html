@@ -27,7 +27,7 @@
     <script type="module" src="javascript/main.js" defer ></script>
    
 
-    <script src="javascript/filtering.js" defer ></script>
+    <script type="module" src="javascript/filtering.js" defer ></script>
   </head>
   <body data-page="main" >
 
@@ -103,12 +103,62 @@
               <button onclick="toggleFilter()" class="close-btn">&times;</button>
             </div>
             <div class="filter-popup-body">
-              <label><input type="checkbox" name="vegetarian"> Vegetarian</label>
-              <label><input type="checkbox" name="vegan"> Vegan</label>
-              <label><input type="checkbox" name="glutenFree"> Gluten-Free</label>
-            </div>
-            <div class="filter-popup-footer">
-              <button class="apply-filters-btn">Apply Filters</button>
+              <div class="filter-buttons" id="diet-filters">
+                <p4>Dietary</p4>
+                <button class="filter-btn" data-filter="vegetarian">
+                  <span>Vegetarian</span>
+                  <span>+</span>
+                </button>
+
+                <button class="filter-btn" data-filter="vegan"><span>Vegan</span>
+                  <span>+</span></button>
+
+                <button class="filter-btn" data-filter="glutenFree"><span>Gluten Free</span>
+                  <span>+</span></button>
+
+                  <button class="filter-btn" data-filter="lactoseFree"><span>Lactose Free</span>
+                    <span>+</span></button>
+              </div>
+          
+          
+              <div class="filter-buttons" id="ingredients-filters">
+                <p4>Ingredients</p4>
+                <button class="filter-btn" data-filter="chicken"><span>Chicken</span>
+                  <span>+</span></button>
+
+                <button class="filter-btn" data-filter="beef"><span>Beef</span>
+                  <span>+</span></button>
+
+                <button class="filter-btn" data-filter="fish"><span>Fish</span>
+                  <span>+</span></button>
+
+                  <button class="filter-btn" data-filter="plantBased"><span>Plant Based</span>
+                    <span>+</span></button>
+
+                    <button class="filter-btn" data-filter="fruitAndBerries"><span>Fruit and Berries</span>
+                      <span>+</span></button>
+
+
+                  <p4>Meals</p4>
+                <button class="filter-btn" data-filter="snacks"><span>Snacks</span>
+                  <span>+</span></button>
+
+                <button class="filter-btn" data-filter="desserts"><span>Desserts</span>
+                  <span>+</span></button>
+
+                <button class="filter-btn" data-filter="drinks"><span>Drinks</span>
+                  <span>+</span></button>
+
+                  <button class="filter-btn" data-filter="dinner"><span>Dinner</span>
+                    <span>+</span></button>
+
+                    <button class="filter-btn" data-filter="breakfast"><span>Breakfast</span>
+                      <span>+</span></button>
+
+                      <button class="filter-btn" data-filter="lunch"><span>Lunch</span>
+                        <span>+</span></button>
+                
+              </div>
             </div>
           </div>
         </div>

@@ -1,0 +1,15 @@
+{
+    "dietFilters": [
+        {"id": "vegetarian", "label": "Vegetarian"},
+        {"id": "vegan", "label": "Vegan"},
+        {"id": "glutenFree", "label": "Gluten-Free"}
+    ],
+    "ingredientsFilters": [
+        {"id": "breakfast", "label": "Breakfast"},
+        {"id": "lunch", "label": "Lunch"},
+        {"id": "dinner", "label": "Dinner"},
+        {"id": "snacks", "label": "Snacks"},
+        {"id": "desserts", "label": "Desserts"},
+        {"id": "drinks", "label": "Drinks"}
+    ]
+}
