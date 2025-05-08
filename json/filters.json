@@ -10,14 +10,13 @@
         {"id": "beef", "label": "Beef"},
         {"id": "seafood", "label": "Seafood"},
         {"id": "plantBased", "label": "Plant-Based"},
-        {"id": "fruitAndBerries", "label": "Fruit-and-Berries"},
+        {"id": "fruit", "label": "Fruit"},
         {"id": "pork", "label": "Pork"},
-
-        {"id": "snacks", "label": "Snacks"},
-        {"id": "desserts", "label": "Desserts"},
-        {"id": "drinks", "label": "Drinks"}
-        {"id": "dinner", "label": "Dinner"},
-        {"id": "breakfast", "label": "Breakfast"},
-        {"id": "lunch", "label": "Lunch"}
+        {"id": "beans", "label": "Beans"},
+        {"id": "fish", "label": "Fish"},
+        {"id": "mushrooms", "label": "Mushrooms"}
+        {"id": "nuts", "label": "Nuts"},
+        {"id": "berries", "label": "Berries"},
+        {"id": "cheese", "label": "Cheese"}
     ]
 }

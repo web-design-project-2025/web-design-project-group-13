@@ -55,6 +55,7 @@
   font-size: 0.9em;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 
@@ -69,6 +70,9 @@
   border-color: #99CC5F;
 }
 
+.filter-btn.active span:last-child {
+  display: none;
+}
 
 .filter-btn.active::after {
   content: " ✓";
