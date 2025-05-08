@@ -6,7 +6,7 @@
       "description": "Juicy grilled chicken wrapped in warm tortillas, topped with fresh pico de gallo, creamy avocado, crisp lettuce, and zesty lime. A flavorful, satisfying bite of Mexican street food magic!",
       "rating": 4.7,
       "image": "images/Tacos.jpeg",
-      "time": 70, 
+      "time": 70,
       "categories": "dinner, lunch, chicken",
       "isPopular": true,
       "ingredients": [
@@ -29,6 +29,18 @@
         "Add chicken to tortillas.",
         "Top with lettuce, salsa, and avocado.",
         "Add greek yogurt and a squeeze of lime."
+      ],
+      "reviews": [
+        {
+          "username": "Sara",
+          "rating": 4.3,
+          "comment": "Perfectly seasoned and super satisfying!"
+        },
+        {
+          "username": "Adam",
+          "rating": 5,
+          "comment": "Juicy, flavorful chicken with fresh toppings — absolutely delicious!"
+        }
       ]
     },
 
@@ -53,6 +65,18 @@
         "Add the blueberries, banana, yogurt, milk, and honey (if using) to a blender.",
         "Blend on high until smooth and creamy. Add ice if desired for a thicker, colder smoothie.",
         "Taste and adjust sweetness if needed. Pour into glasses and enjoy immediately."
+      ],
+      "reviews": [
+        {
+          "username": "Carla",
+          "rating": 4.7,
+          "comment": "Fresh, creamy, and bursting with real blueberry flavor—so refreshing!"
+        },
+        {
+          "username": "Stefan",
+          "rating": 4.8,
+          "comment": "Smooth, not too sweet, and perfectly chilled. A great pick-me-up!"
+        }
       ]
     },
 
@@ -84,6 +108,18 @@
         "Fry for about 3-4 minutes per side, or until golden brown and crispy.",
         "Transfer to a paper towel-lined plate to drain excess oil.",
         "Serve warm with sour cream, ketchup, or your favorite dip."
+      ],
+      "reviews": [
+        {
+          "username": "Luke",
+          "rating": 3.2,
+          "comment": "Crispy on the outside, soft and flavorful inside—absolutely delicious!"
+        },
+        {
+          "username": "Polly",
+          "rating": 3.7,
+          "comment": "Golden, perfectly seasoned, and addictively crunchy. A must-try snack!"
+        }
       ]
     },
 
@@ -115,6 +151,18 @@
         "Add the drained pasta to the pan and toss to coat well in the sauce.",
         "Cook together for 1-2 minutes so the flavors blend.",
         "Plate the pasta and top with grated cheese."
+      ],
+      "reviews": [
+        {
+          "username": "Kevin",
+          "rating": 3.6,
+          "comment": "Rich, savory, and perfectly balanced—this tomato pasta hits all the right notes!"
+        },
+        {
+          "username": "Cassandra",
+          "rating": 4,
+          "comment": "The sauce was bursting with fresh tomato flavor, and the pasta was cooked to perfection. Simple, but amazing!"
+        }
       ]
     },
 
@@ -144,6 +192,18 @@
         "Drizzle with honey and add your chopped nuts.",
         "Sprinkle with chia seeds.",
         "Enjoy immediately for the best crunch, or let it sit for a softer texture."
+      ],
+      "reviews": [
+        {
+          "username": "Aiden",
+          "rating": 3.9,
+          "comment": "Crispy, sweet, and packed with fresh raspberry flavor—such a delicious and healthy snack!"
+        },
+        {
+          "username": "Lila",
+          "rating": 4.2,
+          "comment": "Perfectly balanced with crunchy granola and tart raspberries. A tasty and energizing treat!"
+        }
       ]
     },
 
@@ -171,6 +231,18 @@
         "In the glass, combine the cranberry juice, fresh lime juice, and honey (or maple syrup). Stir well with a spoon until the honey is fully dissolved. Taste and adjust sweetness if needed.",
         "Slowly pour in the sparkling water, letting it mix gently with the cranberry base. ",
         "Garnish with cranberries, lime, and herbs."
+      ],
+      "reviews": [
+        {
+          "username": "Mateo",
+          "rating": 3.8,
+          "comment": "Crisp, refreshing, and the perfect balance of tart and sweet. A delightful drink!"
+        },
+        {
+          "username": "Elijah",
+          "rating": 4,
+          "comment": "The cranberry flavor is bold and vibrant, making this mocktail a refreshing, non-alcoholic treat!"
+        }
       ]
     },
 
@@ -204,6 +276,18 @@
         "Stir the cornstarch mixture (cornstach + water) into the pan and cook for another 1-2 minutes, or until the sauce thickens.",
         "Fill a pot with water and add the rice, cook on medium hear till done",
         "Serve the chicken teriyaki over cooked rice. Garnish with sesame seeds and green onions, if desired."
+      ],
+      "reviews": [
+        {
+          "username": "Zara",
+          "rating": 4.1,
+          "comment": "The teriyaki sauce was perfectly sweet and savory, and the chicken was tender and juicy. A flavor-packed dish!"
+        },
+        {
+          "username": "Rohan",
+          "rating": 3.9,
+          "comment": "Juicy, tender chicken coated in rich teriyaki glaze—this dish is a total winner!"
+        }
       ]
     },
 
@@ -233,6 +317,18 @@
         "Pour about 1/4 cup of batter onto the hot griddle for each pancake.",
         "Cook for 2-3 minutes per side, or until golden brown and bubbly. Flip when bubbles appear on the surface and the edges look set.",
         "Serve immediately with your favorite toppings like maple syrup, fruit, or whipped cream."
+      ],
+      "reviews": [
+        {
+          "username": "Lucia",
+          "rating": 4.8,
+          "comment": "Fluffy, light, and perfectly sweet—these pancakes are a breakfast dream!"
+        },
+        {
+          "username": "Niko",
+          "rating": 5.1,
+          "comment": "Golden and soft with just the right amount of syrup. A deliciously satisfying start to the day!"
+        }
       ]
     },
 
@@ -269,6 +365,18 @@
         "Fry the asparagus buds in a hot frying pan with 1 tablespoon butter. Salt.",
         "Stir in the remaining butter and finely grated Parmesan cheese into the risotto. Remove from heat and season with salt, freshly ground black pepper and lemon juice.",
         "Serve the asparagus risotto on flat plates. Top with freshly fried asparagus buds."
+      ],
+      "reviews": [
+        {
+          "username": "Omar",
+          "rating": 4.9,
+          "comment": "Creamy, rich, and perfectly cooked—this asparagus risotto is bursting with flavor!"
+        },
+        {
+          "username": "Isla",
+          "rating": 5.1,
+          "comment": "The tender asparagus paired beautifully with the creamy risotto. A comforting and delicious dish!"
+        }
       ]
     },
 
@@ -299,6 +407,18 @@
         "Unroll the second pie crust. Place it over the filling. Trim any excess dough and crimp the edges of the top and bottom crusts together to seal. Cut a few slits in the top crust to allow steam to escape.",
         "Bake: Brush the top crust with milk or egg wash (if using) and sprinkle with sugar (if desired). Bake in a preheated oven at 175°C (350°F) for 45-55 minutes, or until the crust is golden brown and the filling is bubbly. If the crust starts to brown too quickly, you can loosely tent the pie with aluminum foil.",
         "Let the pie cool on a wire rack for at least 2-3 hours before slicing and serving. This allows the filling to set properly."
+      ],
+      "reviews": [
+        {
+          "username": "Yasmin",
+          "rating": 3.3,
+          "comment": "A perfect balance of sweet and tart, with a flaky crust that melts in your mouth. Pure comfort!"
+        },
+        {
+          "username": "Benjamin",
+          "rating": 3.5,
+          "comment": "Warm, buttery, and filled with deliciously spiced apples—this apple pie is a slice of heaven!"
+        }
       ]
     },
 
@@ -333,6 +453,18 @@
         "Add the sliced bell pepper and onion to the pan and stir-fry for 2-3 minutes until slightly softened.",
         "Return the cooked beef to the pan. Add the cooked noodles, oyster sauce, the additional 1 tablespoon of soy sauce, and brown sugar. Toss everything together until well combined and heated through.",
         "Garnish with chopped green onions, if desired."
+      ],
+      "reviews": [
+        {
+          "username": "Leila",
+          "rating": 4.5,
+          "comment": "Tender beef, savory broth, and perfectly cooked noodles—this dish is a flavor explosion!"
+        },
+        {
+          "username": "Dante",
+          "rating": 4.7,
+          "comment": "The beef was melt-in-your-mouth tender, and the noodles had the perfect texture. A hearty, satisfying meal!"
+        }
       ]
     },
 
@@ -366,6 +498,18 @@
         "Add one ladleful of warm chicken broth to the rice, stirring constantly until the liquid is absorbed. Continue adding the broth, one ladleful at a time, stirring constantly and allowing each ladleful to be absorbed before adding the next. This process should take about 18-20 minutes, or until the rice is creamy and al dente (tender but still slightly firm in the center).",
         "Stir in the cooked chicken and the Parmesan cheese. Remove the pot from the heat and stir in the butter until melted and the risotto is creamy. Season with salt and pepper to taste.",
         "Serve the risotto immediately, garnished with extra Parmesan cheese and chopped fresh parsley, if desired."
+      ],
+      "reviews": [
+        {
+          "username": "Ali",
+          "rating": 3.7,
+          "comment": "Creamy, flavorful, and packed with tender chicken—this risotto is comfort in a bowl!"
+        },
+        {
+          "username": "Hugo",
+          "rating": 3.9,
+          "comment": "The chicken was perfectly cooked, and the risotto had just the right amount of richness. A truly satisfying dish!"
+        }
       ]
     },
 
@@ -400,6 +544,18 @@
         "Steam the dumplings for 5-7 minutes, or until most of the water has evaporated and the wrappers look slightly translucent.",
         "Remove the lid and continue to cook for another 1-2 minutes until the bottoms are crispy and golden brown again.",
         "Serve the dumplings hot with your favorite dipping sauce (such as a mixture of soy sauce, rice vinegar, and sesame oil)."
+      ],
+      "reviews": [
+        {
+          "username": "Malik",
+          "rating": 4.6,
+          "comment": "Perfectly steamed with a deliciously savory filling. These dumplings are a must-try!"
+        },
+        {
+          "username": "Amara",
+          "rating": 4.8,
+          "comment": "The dough was light and soft, while the filling was flavorful and satisfying. Simply irresistible!"
+        }
       ]
     },
 
@@ -432,6 +588,18 @@
         "During the last minute of cooking, you can add cheese slices to the patties if you like.",
         "Lightly toast the hamburger buns if desired.",
         "Assemble your hamburgers by placing a patty on the bottom bun and adding your favorite toppings. "
+      ],
+      "reviews": [
+        {
+          "username": "Hanna",
+          "rating": 3.1,
+          "comment": "Juicy, perfectly seasoned patty with all the right toppings. This burger is a total winner!"
+        },
+        {
+          "username": "Kiara",
+          "rating": 3.3,
+          "comment": "A classic done right! The meat was tender, the bun soft, and the flavors all came together perfectly!"
+        }
       ]
     },
 
@@ -458,6 +626,18 @@
         "Cook for 5-7 minutes, stirring occasionally, until the mushrooms are golden brown and tender.",
         "Remove the mushrooms from the skillet and place them on a paper towel-lined plate to drain any excess oil.",
         "Serve hot as a side dish or appetizer."
+      ],
+      "reviews": [
+        {
+          "username": "Suri",
+          "rating": 2.9,
+          "comment": "Crispy on the outside, tender on the inside—these fried mushrooms are absolutely addictive!"
+        },
+        {
+          "username": "Idris",
+          "rating": 3.1,
+          "comment": "Perfectly battered and full of flavor. These fried mushrooms are the ultimate snack or side!"
+        }
       ]
     },
 
@@ -483,6 +663,18 @@
         "Bring the mixture to a boil over medium heat.",
         "Reduce the heat to low and simmer for 3-5 minutes, stirring occasionally, until the oatmeal is thickened to your desired consistency.",
         "Pour the oatmeal into a bowl and add your favorite toppings."
+      ],
+      "reviews": [
+        {
+          "username": "Micah",
+          "rating": 3.8,
+          "comment": "Warm, creamy, and comforting! This oatmeal is the perfect start to my day, and the added toppings make it even better!"
+        },
+        {
+          "username": "Kian",
+          "rating": 4,
+          "comment": "Deliciously smooth and filling. A great balance of sweetness and heartiness. A wholesome breakfast option!"
+        }
       ]
     },
 
@@ -520,6 +712,18 @@
         "Add the bean sprouts and half of the chopped green onions. Stir-fry for another minute until the sprouts are slightly wilted.",
         "Transfer the Pad Thai to a serving plate. Garnish with the remaining green onions and chopped peanuts.",
         "Serve immediately with lime wedges on the side."
+      ],
+      "reviews": [
+        {
+          "username": "Elias",
+          "rating": 4.8,
+          "comment": "Sweet, tangy, and perfectly spiced—this Pad Thai is packed with flavor and absolutely delicious!"
+        },
+        {
+          "username": "Celeste",
+          "rating": 5,
+          "comment": "The noodles were perfectly cooked, the sauce was rich, and the crunch from the peanuts added the perfect touch. A Thai classic done right!"
+        }
       ]
     },
 
@@ -553,6 +757,18 @@
         "If desired, lightly brush the crust with olive oil and sprinkle with dried oregano.",
         "Bake for 12-15 minutes, or until the crust is golden brown and the cheese is melted and bubbly. If using a pizza stone, slide the pizza from the peel onto the hot stone after the oven is preheated and bake for about 10-12 minutes.",
         "Carefully remove the pizza from the oven and let it cool for a few minutes before slicing and serving."
+      ],
+      "reviews": [
+        {
+          "username": "Esme",
+          "rating": 4.2,
+          "comment": "Crispy crust, gooey cheese, and rich sauce—every bite was perfect!"
+        },
+        {
+          "username": "Shreya",
+          "rating": 4.4,
+          "comment": "Fresh ingredients and bold flavors make this pizza an instant favorite. Absolutely delicious!"
+        }
       ]
     },
 
@@ -588,6 +804,18 @@
         "Brush the tops of the scones with the lightly beaten egg.",
         "Bake for 15-20 minutes, or until the scones are golden brown and lightly risen.",
         "Let the scones cool slightly on the baking sheet before serving. They are best enjoyed warm with your favorite toppings like salmon, basil, or mozarella."
+      ],
+      "reviews": [
+        {
+          "username": "Noura",
+          "rating": 3.7,
+          "comment": "Buttery, flaky, and just the right amount of sweetness—this scone is a perfect treat with tea!"
+        },
+        {
+          "username": "Noemi",
+          "rating": 3.9,
+          "comment": "Golden on the outside, soft inside, and bursting with flavor. Absolutely delightful!"
+        }
       ]
     },
 
@@ -618,6 +846,18 @@
         "Use the rolling mat to gently squeeze and shape the roll into a nice round or square shape.",
         "Place the sushi roll on a cutting board. Use a very sharp knife (wipe the blade with a damp cloth between cuts to prevent sticking) to slice the roll into 6-8 even pieces.",
         "Arrange the sushi pieces on a plate. Serve with pickled ginger, wasabi, and soy sauce for dipping."
+      ],
+      "reviews": [
+        {
+          "username": "Carmen",
+          "rating": 4.1,
+          "comment": "Fresh, flavorful, and beautifully presented—this sushi was a true delight!"
+        },
+        {
+          "username": "Salma",
+          "rating": 3.9,
+          "comment": "Perfectly rolled with melt-in-your-mouth fish. Every bite was pure umami heaven!"
+        }
       ]
     },
 
@@ -651,6 +891,18 @@
         "Add the tofu, chopped celery, red onion, and parsley (if using) to the dressing. Gently stir everything together until well combined.",
         "For the best flavor, cover the tofu salad and refrigerate it for at least 15-20 minutes to allow the flavors to meld.",
         "Serve the tofu salad on lettuce leaves for a light and refreshing salad, or use it as a filling for sandwiches or wraps. It's also great served with crackers."
+      ],
+      "reviews": [
+        {
+          "username": "Elara",
+          "rating": 3.4,
+          "comment": "Light, refreshing, and packed with flavor—the tofu was perfectly seasoned and paired so well with the crisp veggies!"
+        },
+        {
+          "username": "Edvin",
+          "rating": 3.6,
+          "comment": "A healthy and tasty option! The tofu was tender, and the dressing brought everything together beautifully."
+        }
       ]
     },
 
@@ -686,8 +938,25 @@
         "Once the risotto is cooked, remove the pan from the heat. Stir in the grated Parmesan cheese and butter until they are melted and the risotto is smooth and creamy.",
         "Season the risotto with salt and freshly ground black pepper to taste.",
         "Let the risotto rest for a couple of minutes before serving. Garnish with fresh chopped parsley, if desired"
+      ],
+      "reviews": [
+        {
+          "username": "Mireya",
+          "rating": 4.7,
+          "comment": "Creamy, luxurious, and beautifully infused with saffron—this risotto is pure elegance on a plate!"
+        },
+        {
+          "username": "Susan",
+          "rating": 4.9,
+          "comment": "Rich flavor with a golden hue, the saffron adds a fragrant depth that makes every bite unforgettable!"
+        }
       ]
     }
   ],
   "popular": [1, 2, 3, 4, 5, 6, 7, 8]
 }
+
+
+
+
+

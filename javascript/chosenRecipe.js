@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const data = await response.json();
     console.log("Fetched recipe data:", data);
     
-
     const recipe = data.recipes.find((r) => r.id == recipeId);
     if (!recipe) throw new Error("Recipe not found");
 
@@ -25,17 +24,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     updateRecipeDetails(recipe);
 
     const similarRecipes = data.recipes
-      .filter(
-        (r) =>
-          r.id != recipeId &&
-          r.categories
-            .split(", ")
-            .some((cat) => recipe.categories.includes(cat))
-      )
+      .filter((r) => r.id != recipeId && 
+        r.categories.split(", ").some((cat) => recipe.categories.includes(cat)))
       .slice(0, 4);
 
     updateSimilarRecipes(similarRecipes);
-    loadReviews(recipe.rating);
+    displayReviews(recipe);
   } catch (error) {
     console.error("Error:", error);
     window.location.href = "/";
@@ -48,25 +42,16 @@ function updateRecipeDetails(recipe) {
     return;
   }
 
-
   console.log("Updating recipe:", recipe.title);
 
   document.getElementById("recipe-title").textContent = recipe.title;
   document.getElementById("recipe-main-image").src = recipe.image;
   document.getElementById("recipe-main-image").alt = recipe.title;
-//   document.getElementById("recipe-time").textContent = `${recipe.time} Min`;
-  document.getElementById('recipe-time').textContent = formatTime(recipe.time);
-  document.getElementById("recipe-description").textContent =
-    recipe.description;
+  document.getElementById("recipe-time").textContent = formatTime(recipe.time);
+  document.getElementById("recipe-description").textContent = recipe.description;
 
-  const ratingStars =
-    "★".repeat(Math.round(recipe.rating)) +
-    "☆".repeat(5 - Math.round(recipe.rating));
-  document.getElementById(
-    "recipe-rating"
-  ).innerHTML = `${ratingStars} <a href="#">See more</a>`;
-  document.getElementById("review-stars").textContent = ratingStars;
-  document.getElementById("review-rating").textContent = `${recipe.rating}/5`;
+  const ratingStars = "★".repeat(Math.round(recipe.rating)) + "☆".repeat(5 - Math.round(recipe.rating));
+  document.getElementById("recipe-rating").innerHTML = `${ratingStars} <a href="#">See more</a>`;
 
   const ingredientsTable = document.getElementById("ingredients-table");
   if (recipe.ingredients && Array.isArray(recipe.ingredients)) {
@@ -76,8 +61,7 @@ function updateRecipeDetails(recipe) {
       ingredientsTable.appendChild(row);
     });
   } else {
-    ingredientsTable.innerHTML =
-      "<tr><td colspan='2'>No ingredients listed.</td></tr>";
+    ingredientsTable.innerHTML = "<tr><td colspan='2'>No ingredients listed.</td></tr>";
   }
 
   const methodSteps = document.getElementById("method-steps");
@@ -99,39 +83,70 @@ function updateSimilarRecipes(recipes) {
     const img = document.createElement("img");
     img.src = recipe.image;
     img.alt = recipe.title;
-    img.onclick = () =>
-      (window.location.href = `/chosenrecipe.html?id=${recipe.id}`);
+    img.onclick = () => (window.location.href = `/chosenrecipe.html?id=${recipe.id}`);
     similarRecipesContainer.appendChild(img);
   });
 }
 
-function loadReviews(rating) {
+function displayReviews(recipe) {
   const reviewsContainer = document.getElementById("reviews-container");
-  const reviews = []; // Add real reviews here or fetch separately
-  reviews.forEach((review) => {
-    const reviewDiv = document.createElement("div");
-    reviewDiv.className = "review";
-    const stars = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
-    reviewDiv.innerHTML = `
-            <img src="https://via.placeholder.com/40" alt="Avatar" />
-            <div class="review-content">
-                <div class="name-rating">
-                    <span>${review.name}</span>
-                    <span class="stars">${stars}</span> <span>${review.rating}/5</span>
-                </div>
-                <p>${review.comment}</p>
-            </div>
-        `;
-    reviewsContainer.appendChild(reviewDiv);
+  const reviewStars = document.getElementById("review-stars");
+  const reviewRating = document.getElementById("review-rating");
+
+  // Check if recipe has reviews
+  if (!recipe.reviews || !Array.isArray(recipe.reviews)) {
+    reviewsContainer.innerHTML = "<p>No reviews yet.</p>";
+    reviewStars.textContent = "★".repeat(Math.round(recipe.rating)) + "☆".repeat(5 - Math.round(recipe.rating));
+    reviewRating.textContent = `${recipe.rating}/5`;
+    return;
+  }
+
+  // Calculate average rating from reviews if available
+  const averageRating = recipe.reviews.length > 0 
+    ? recipe.reviews.reduce((sum, review) => sum + review.rating, 0) / recipe.reviews.length
+    : recipe.rating; // Fallback to recipe rating if no reviews
+  
+  // Display average rating
+  const roundedRating = Math.round(averageRating * 10) / 10; // Round to 1 decimal
+  reviewStars.textContent = "★".repeat(Math.round(averageRating)) + "☆".repeat(5 - Math.round(averageRating));
+  reviewRating.textContent = `${roundedRating}/5`;
+
+  // Clear previous reviews
+  reviewsContainer.innerHTML = '';
+
+  // Display each review
+  if (recipe.reviews.length === 0) {
+    reviewsContainer.innerHTML = "<p>No reviews yet.</p>";
+    return;
+  }
+
+  recipe.reviews.forEach((review) => {
+    const reviewElement = document.createElement("div");
+    reviewElement.className = "review";
+    
+    reviewElement.innerHTML = `
+      <img src="images/user-icon.png" alt="Avatar" />
+      <div class="review-content">
+        <div class="name-rating">
+          <span>${review.username || 'Anonymous'}</span>
+          <span class="stars">${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</span>
+          <span>${review.rating}/5</span>
+        </div>
+        <p>${review.comment}</p>
+        ${review.date ? `<small class="review-date">${review.date}</small>` : ''}
+      </div>
+    `;
+    
+    reviewsContainer.appendChild(reviewElement);
   });
 }
 
 function formatTime(minutes) {
-    if (minutes < 60) {
-        return `${minutes} min`;
-    } else {
-        const hours = Math.floor(minutes / 60);
-        const remainingMinutes = minutes % 60;
-        return `${hours}h ${remainingMinutes > 0 ? remainingMinutes + ' min' : ''}`;
-    }
+  if (minutes < 60) {
+    return `${minutes} min`;
+  } else {
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+    return `${hours}h ${remainingMinutes > 0 ? remainingMinutes + ' min' : ''}`;
+  }
 }

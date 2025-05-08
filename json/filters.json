@@ -15,7 +15,7 @@
 
         {"id": "snacks", "label": "Snacks"},
         {"id": "desserts", "label": "Desserts"},
-        {"id": "drinks", "label": "Drinks"}
+        {"id": "drinks", "label": "Drinks"},
         {"id": "dinner", "label": "Dinner"},
         {"id": "breakfast", "label": "Breakfast"},
         {"id": "lunch", "label": "Lunch"}
