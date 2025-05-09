@@ -69,6 +69,9 @@
   border-color: #99CC5F;
 }
 
+.filter-btn.active span:last-child {
+  display: none;
+}
 
 .filter-btn.active::after {
   content: " ✓";
