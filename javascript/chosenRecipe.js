@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const recipeId = urlParams.get("id");
 
   if (!recipeId) {
+    console.error("Recipe ID is missing in the URL.");
     window.location.href = "/"; // or another fallback
     return;
   }
@@ -23,17 +24,33 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     updateRecipeDetails(recipe);
 
-    const similarRecipes = data.recipes
-      .filter((r) => r.id != recipeId && 
-        r.categories.split(", ").some((cat) => recipe.categories.includes(cat)))
-      .slice(0, 4);
+  const similarRecipes = data.recipes
+  .filter((r) => 
+    r.id != recipeId && 
+    Array.isArray(r.categories) && 
+    Array.isArray(recipe.categories) &&
+    r.categories.some((cat) => recipe.categories.includes(cat))
+  )
+  .slice(0, 4);
 
-    updateSimilarRecipes(similarRecipes);
+  console.log("Recipe Categories:", recipe.categories);
+data.recipes.forEach((r) => {
+  console.log(`Recipe ID: ${r.id}, Categories:`, r.categories);
+});
+
+if (similarRecipes.length === 0) {
+  console.warn("No similar recipes found for recipe ID:", recipeId);
+} else {
+  console.log("Similar recipes found:", similarRecipes);
+}
+
+updateSimilarRecipes(similarRecipes);
     displayReviews(recipe);
   } catch (error) {
     console.error("Error:", error);
     window.location.href = "/";
   }
+  
 });
 
 function updateRecipeDetails(recipe) {
@@ -78,12 +95,25 @@ function updateRecipeDetails(recipe) {
 }
 
 function updateSimilarRecipes(recipes) {
-  const similarRecipesContainer = document.getElementById("similar-recipes");
+  const similarRecipesContainer = document.querySelector(".recipe-images");
+  if (!similarRecipesContainer) {
+    console.error("Similar recipes container not found.");
+    return;
+  }
+
+  similarRecipesContainer.innerHTML = ""; // Clear existing content
+
+  if (recipes.length === 0) {
+    similarRecipesContainer.innerHTML = "<p>No similar recipes found.</p>";
+    return;
+  }
+
   recipes.forEach((recipe) => {
     const img = document.createElement("img");
     img.src = recipe.image;
     img.alt = recipe.title;
-    img.onclick = () => (window.location.href = `/chosenrecipe.html?id=${recipe.id}`);
+    img.classList.add("similar-recipe-image");
+    img.onclick = () => (window.location.href = `chosenrecipe.html?id=${recipe.id}`);
     similarRecipesContainer.appendChild(img);
   });
 }
@@ -126,6 +156,7 @@ function displayReviews(recipe) {
     
     reviewElement.innerHTML = `
       <img src="images/user-icon.png" alt="Avatar" />
+      
       <div class="review-content">
         <div class="name-rating">
           <span>${review.username || 'Anonymous'}</span>

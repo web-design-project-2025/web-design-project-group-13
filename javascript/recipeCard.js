@@ -2,6 +2,12 @@
 export function createRecipeCard(recipe, options = {}) {
   const { showPopularBadge = false } = options;
 
+  // Validate the recipe ID
+  if (!recipe.id) {
+    console.error("Recipe ID is missing or invalid:", recipe);
+    return ""; // Skip rendering this card if the ID is missing
+  }
+
   const displayTime =
     recipe.time >= 60
       ? `${Math.floor(recipe.time / 60)}h ${recipe.time % 60}m`
@@ -19,6 +25,9 @@ export function createRecipeCard(recipe, options = {}) {
            loading="lazy"
            width="250"
            height="188">
+           <div class="heart-icon">
+          <i class="fas fa-heart"></i>
+        </div>
       <div class="recipe-info">
         <h3 class="recipe-title">
           ${recipe.title}

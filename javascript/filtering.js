@@ -91,17 +91,23 @@ function filterRecipes(recipes, searchTerm) {
   return recipes.filter((recipe) => {
     if (activeFilters.diet.length > 0) {
       const matchesDiet = activeFilters.diet.some((diet) => {
-        return recipe.categories.toLowerCase().includes(diet.toLowerCase());
+        return recipe.categories.some(
+          (cat) => cat.toLowerCase() === diet.toLowerCase()
+        );
       });
       if (!matchesDiet) return false;
     }
 
+    console.log("Active Diet Filters:", activeFilters.diet);
+    console.log("Active Ingredient Filters:", activeFilters.ingredients);
+    console.log("Recipe Categories:", recipe.categories);
+
     if (activeFilters.ingredients.length > 0) {
       const matchesIngredients = activeFilters.ingredients.some(
         (ingredient) => {
-          return recipe.categories
-            .toLowerCase()
-            .includes(ingredient.toLowerCase());
+          return recipe.categories.some(
+            (cat) => cat.toLowerCase() === ingredient.toLowerCase()
+          );
         }
       );
       if (!matchesIngredients) return false;
