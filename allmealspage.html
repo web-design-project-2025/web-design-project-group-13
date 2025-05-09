@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All meals</title>
-
-
 
     <link
       rel="stylesheet"
@@ -16,28 +14,152 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-
     <link rel="stylesheet" href="css/allmealspage.css" />
+    <link rel="stylesheet" href="css/recipecard.css" />
     <link rel="stylesheet" href="css/navigation.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/footer.css" />
-</head>
-<body>
+    <link rel="stylesheet" href="css/filtering.css" />
+
+
+<script type="module" src="/javascript/allMeals.js" defer></script>
+ <!-- <script type="module" src="javascript/dropdown.js" defer ></script> -->
+    <!-- <script type="module" src="javascript/hamburger.js" defer></script> -->
+    <!-- <script type="module" src="javascript/main.js" defer ></script> -->
+    <script type="module" src="javascript/filtering.js" defer ></script>
+
+
+  </head>
+  <body>
     <main>
-        <section class="allmealphoto"> 
+      <section class="allmealphoto">
         <div class="allmealheader">
-            <img id="img" src="images/allmealheader.jpeg" alt="Allmealspageheader">
-            <h1>All meals</h1>
-            <h4>Choose between a variety of delicious meals!</h4>
-            <input type="text" id="search"
-            placeholder="Search from meal recipes..." >
+          <img
+            id="img" loading="lazy"
+            src="images/allmealheader.jpeg"
+            alt="Allmealspageheader"
+          />
+          <h1>All meals</h1>
+          <h4>Choose between a variety of delicious meals!</h4>
+
+       <div class="search-container">
+            <button class="filter-button" onclick="toggleFilterPopup()">
+              <i class="fa-solid fa-sliders"></i>
+            </button>
+            <input type="text" id="search" placeholder="Search recipes..." />
+          </div>
+
+
+          <div id="filter-popup" class="filter-popup">
+            <div class="filter-popup-header">
+              <h2>Filter Recipes</h2>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="filter-popup-body">
+              <div class="filter-buttons" id="diet-filters">
+                <p4>Dietary</p4>
+                <button class="filter-btn" data-filter="vegetarian">
+                  <span>Vegetarian</span>
+                  <span>+</span>
+                </button>
+
+
+                <button class="filter-btn" data-filter="vegan"><span>Vegan</span>
+                  <span>+</span></button>
+
+
+                <button class="filter-btn" data-filter="glutenFree"><span>Gluten Free</span>
+                  <span>+</span></button>
+
+
+                  <button class="filter-btn" data-filter="lactoseFree"><span>Lactose Free</span>
+                    <span>+</span></button>
+              </div>
+         
+         
+              <div class="filter-buttons" id="ingredients-filters">
+                <p4>Ingredients</p4>
+                <button class="filter-btn" data-filter="chicken"><span>Chicken</span>
+                  <span>+</span></button>
+
+
+                <button class="filter-btn" data-filter="beef"><span>Beef</span>
+                  <span>+</span></button>
+
+
+                <button class="filter-btn" data-filter="seafood"><span>Seafood</span>
+                  <span>+</span></button>
+
+
+                  <button class="filter-btn" data-filter="plantBased"><span>Plant Based</span>
+                    <span>+</span></button>
+
+                    <button class="filter-btn" data-filter="fruit"><span>Fruit</span>
+                      <span>+</span></button>
+
+                      <button class="filter-btn" data-filter="pork"><span>Pork</span>
+                        <span>+</span></button>
+
+                <button class="filter-btn" data-filter="beans"><span>Beans</span>
+                  <span>+</span></button>
+
+                <button class="filter-btn" data-filter="fish"><span>Fish</span>
+                  <span>+</span></button>
+
+                <button class="filter-btn" data-filter="mushrooms"><span>Mushrooms</span>
+                  <span>+</span></button>
+
+                  <button class="filter-btn" data-filter="nuts"><span>Nuts</span>
+                    <span>+</span></button>
+
+                    <button class="filter-btn" data-filter="berries"><span>Berries</span>
+                      <span>+</span></button>
+
+                      <button class="filter-btn" data-filter="cheese"><span>Cheese</span>
+                        <span>+</span></button>
+                
+              </div>
+               
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
+
+
+      <div class="sort-container">
+        <label for="sort-select">Sort by:</label>
+        <select id="sort-select">
+          <!-- <option value="default">Default</option> -->
+          <option value="popular">Popular</option>
+          <option value="rating">Rating</option>
+          <option value="time">Time (Ascending)</option>
+          <option value="title">Title (A–Z)</option>
+        </select>
+      </div>
+
+
+      <hr style="margin-bottom: 10px; margin-top: 10px;">
+
+
+      <!-- Loading Indicator -->
+<!-- <div id="loading-placeholder" class="loading-placeholder">
+  <div class="spinner"></div>
+  <p>Loading recipes...</p>
+</div> -->
+
+
+<!-- Error Display -->
+<!-- <div id="error-message" class="error-message hidden"></div> -->
+
+      <div id="all-recipes-container" class="recipes-container"></div>
+      <button id="load-more" class="load-more">Load More</button>
+
     </main>
-</body>
+  </body>
 </html>

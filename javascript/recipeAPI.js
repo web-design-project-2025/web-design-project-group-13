@@ -16,7 +16,7 @@ export async function fetchRecipes() {
     } catch (error) {
         console.error('Error in fetchRecipes:', error);
         throw error; // Re-throw to be caught by the caller
-    }
+    } 
 }
 
 
