@@ -90,25 +90,17 @@ function applyFilters() {
 function filterRecipes(recipes, searchTerm) {
   return recipes.filter((recipe) => {
     if (activeFilters.diet.length > 0) {
-      const matchesDiet = activeFilters.diet.some((diet) => {
-        return recipe.categories.some(
-          (cat) => cat.toLowerCase() === diet.toLowerCase()
-        );
-      });
+      const recipeCategories = recipe.categories.split(", ");
+      const matchesDiet = activeFilters.diet.some((diet) =>
+        recipeCategories.includes(diet)
+      );
       if (!matchesDiet) return false;
     }
 
-    console.log("Active Diet Filters:", activeFilters.diet);
-    console.log("Active Ingredient Filters:", activeFilters.ingredients);
-    console.log("Recipe Categories:", recipe.categories);
-
     if (activeFilters.ingredients.length > 0) {
-      const matchesIngredients = activeFilters.ingredients.some(
-        (ingredient) => {
-          return recipe.categories.some(
-            (cat) => cat.toLowerCase() === ingredient.toLowerCase()
-          );
-        }
+      const recipeCategories = recipe.categories.split(", ");
+      const matchesIngredients = activeFilters.ingredients.some((ingredient) =>
+        recipeCategories.includes(ingredient)
       );
       if (!matchesIngredients) return false;
     }

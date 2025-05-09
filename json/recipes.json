@@ -7,7 +7,7 @@
       "rating": 4.7,
       "image": "images/Tacos.jpeg",
       "time": 70,
-      "categories": ["dinner", "lunch", "chicken"],
+      "categories": "dinner , lunch , chicken",
       "isPopular": true,
       "ingredients": [
         { "name": "Chicken breasts (boneless)", "measure": "450g" },
@@ -17,7 +17,7 @@
         { "name": "Lettuce", "measure": "1 cup" },
         { "name": "Salsa", "measure": "1/2 cup" },
         { "name": "Avocado", "measure": "1" },
-        { "name": "Greek yogurt", "measure": "1/4 cup" },
+        { "name": "Greek yogurt", "measure": "1/4 cup" }, 
         { "name": "Lime wedges", "measure": " " }
       ],
       "steps": [
@@ -51,7 +51,7 @@
       "rating": 4.8,
       "image": "images/BlueberrySmoothie.jpeg",
       "time": 30,
-      "categories": ["breakfast, berries, fruit, vegetarian, glutenFree"],
+      "categories": "breakfast, berries, fruit, vegetarian, glutenFree",
       "isPopular": true,
       "ingredients": [
         { "name": "Blueberries", "measure": "1 cup" },
@@ -87,7 +87,7 @@
       "rating": 3.5,
       "image": "images/Fritters.jpeg",
       "time": 50,
-      "categories": ["snacks, vegetarian"],
+      "categories": "snacks, vegetarian",
       "isPopular": true,
       "ingredients": [
         { "name": "Potatoes", "measure": "3 Medium" },
@@ -130,7 +130,7 @@
       "rating": 3.8,
       "image": "images/TomatoPasta.jpeg",
       "time": 60,
-      "categories": ["dinner, lunch, vegetarian, cheese"],
+      "categories": "dinner, lunch, vegetarian, cheese",
       "isPopular": true,
       "ingredients": [
         { "name": "Pasta", "measure": "200g" },
@@ -173,7 +173,7 @@
       "rating": 4.1,
       "image": "images/RasberryGranola.jpeg",
       "time": 25,
-      "categories": ["breakfast, berries, vegetarian, nuts"],
+      "categories": "breakfast, berries, vegetarian, nuts",
       "isPopular": true,
       "ingredients": [
         { "name": "Greek yogurt", "measure": "1/2 cup" },
@@ -214,7 +214,7 @@
       "rating": 3.9,
       "image": "images/Mojitio.jpeg",
       "time": 20,
-      "categories": ["drinks, vegan, vegetarian, berries, lactoseFree, glutenFree"],
+      "categories": "drinks, vegan, vegetarian, berries, lactoseFree, glutenFree",
       "isPopular": true,
       "ingredients": [
         { "name": "Cranberry juice", "measure": "1/2 cup" },
@@ -253,7 +253,7 @@
       "rating": 4.0,
       "image": "images/TeriyakiChicken.jpeg",
       "time": 50,
-      "categories": ["lunch, dinner, chicken"],
+      "categories": "lunch, dinner, chicken",
       "isPopular": true,
       "ingredients": [
         { "name": "Chicken breats", "measure": "2" },
@@ -298,7 +298,7 @@
       "rating": 4.9,
       "image": "images/Pancakes.jpeg",
       "time": 30,
-      "categories": ["breakfast, vegetarian"],
+      "categories": "breakfast, vegetarian",
       "isPopular": true,
       "ingredients": [
         { "name": "Flour", "measure": "1 cup" },
@@ -339,7 +339,7 @@
       "rating": 5.0,
       "image": "images/AsparagusRisotto.jpeg",
       "time": 60,
-      "categories": ["dinner, lunch, vegetarian, glutenFree, cheese"],
+      "categories": "dinner, lunch, vegetarian, glutenFree, cheese",
       "ingredients": [
         { "name": "Water", "measure": "2 liters" },
         { "name": "Vegetable broth", "measure": "4 dice" },
@@ -387,7 +387,7 @@
       "rating": 3.4,
       "image": "images/Applepie.jpeg",
       "time": 55,
-      "categories": ["desserts, vegetarian, fruit, nuts"],
+      "categories": "desserts, vegetarian, fruit, nuts",
       "ingredients": [
         { "name": "Apples", "measure": "6 medium" },
         { "name": "Granulated sugar", "measure": "1/4 cup" },
@@ -429,7 +429,7 @@
       "rating": 4.6,
       "image": "images/BeefNoodles.jpeg",
       "time": 45,
-      "categories": ["lunch, dinner, beef"],
+      "categories": "lunch, dinner, beef",
       "ingredients": [
         { "name": "Beef sirloin", "measure": "200g" },
         { "name": "Soy sauce", "measure": "2 tbsp" },
@@ -475,7 +475,7 @@
       "rating": 3.8,
       "image": "images/ChickenRisotto.jpeg",
       "time": 50,
-      "categories": ["dinner, lunch, chicken, glutenFree, cheese"],
+      "categories": "dinner, lunch, chicken, glutenFree, cheese",
       "ingredients": [
         { "name": "Olive oil", "measure": "1 tbsp" },
         { "name": "Chicken breast", "measure": "1 boneless" },
@@ -520,7 +520,7 @@
       "rating": 4.7,
       "image": "images/Dumplings.jpeg",
       "time": 75,
-      "categories": ["dinner, lunch, vegetarian, chicken, pork"],
+      "categories": "dinner, lunch, vegetarian, chicken, pork",
       "ingredients": [
         { "name": "Round dumpling wrappers", "measure": "20-25" },
         { "name": "Ground chicken, pork or vegetables", "measure": "250g" },
@@ -566,7 +566,7 @@
       "rating": 3.2,
       "image": "images/Hamburger.jpeg",
       "time": 55,
-      "categories": ["dinner, lunch, beef, cheese"],
+      "categories": "dinner, lunch, beef, cheese",
       "ingredients": [
         { "name": "Ground beef", "measure": "500g" },
         { "name": "Onion", "measure": "1 small" },
@@ -610,7 +610,7 @@
       "rating": 3.0,
       "image": "images/Mushroompotatoes.jpeg",
       "time": 20,
-      "categories": ["snacks, lactoseFree, vegan, vegetarian, mushrooms"],
+      "categories": "snacks, lactoseFree, vegan, vegetarian, mushrooms",
       "ingredients": [
         { "name": "Mushrooms", "measure": "250g" },
         { "name": "Flour", "measure": "1/4 cup" },
@@ -648,7 +648,7 @@
       "rating": 3.9,
       "image": "images/Oatmeal.jpeg",
       "time": 15,
-      "categories": ["breakfast, fruit, vegetarian, nuts"],
+      "categories": "breakfast, fruit, vegetarian, nuts",
       "ingredients": [
         { "name": "Oatmeal", "measure": "1/2 cup" },
         { "name": "Water or milk", "measure": "1 cup" },
@@ -685,7 +685,7 @@
       "rating": 4.9,
       "image": "images/Padthai.jpeg",
       "time": 45,
-      "categories": ["lunch, dinner, plantBased, seafood, chicken, glutenFree, nuts"],
+      "categories": "lunch, dinner, plantBased, seafood, chicken, glutenFree, nuts",
       "ingredients": [
         { "name": "Flat rice noodles", "measure": "100g" },
         { "name": "Vegetable oil", "measure": "1 tbsp" },
@@ -734,7 +734,7 @@
       "rating": 4.3,
       "image": "images/Pizza.jpeg",
       "time": 160,
-      "categories": ["dinner, lunch, pork, cheese, mushrooms"],
+      "categories": "dinner, lunch, pork, cheese, mushrooms",
       "ingredients": [
         { "name": "Pizza dough", "measure": "1" },
         { "name": "Pizza sauce", "measure": "1 cup" },
@@ -779,7 +779,7 @@
       "rating": 3.8,
       "image": "images/Scones.jpeg",
       "time": 55,
-      "categories": ["snacks, fish"],
+      "categories": "snacks, fish",
       "ingredients": [
         { "name": "Flour", "measure": "2 cups" },
         { "name": "Granulated sugar", "measure": "1/4 cup" },
@@ -826,7 +826,7 @@
       "rating": 4.0,
       "image": "images/Sushi.jpeg",
       "time": 60,
-      "categories": ["dinner, lunch, glutenFree, seafood, fish, lactoseFree"],
+      "categories": "dinner, lunch, glutenFree, seafood, fish, lactoseFree",
       "ingredients": [
         { "name": "Sushi rice", "measure": "1 cup" },
         { "name": "Nori sheets", "measure": "1 packet" },
@@ -868,7 +868,7 @@
       "rating": 3.5,
       "image": "images/TofuSalad.jpeg",
       "time": 30,
-      "categories": ["dinner, lunch, glutenFree, seafood, fish, lactoseFree"],
+      "categories": "dinner, lunch, glutenFree, seafood, fish, lactoseFree",
       "ingredients": [
         { "name": "Tofu", "measure": "1 block" },
         { "name": "Olive oil", "measure": "2 tbsp" },
@@ -913,7 +913,7 @@
       "rating": 4.8,
       "image": "images/YellowRisotto.jpeg",
       "time": 45,
-      "categories": ["dinner, vegetarian, glutenFree, cheese"],
+      "categories": "dinner, vegetarian, glutenFree, cheese",
       "ingredients": [
         { "name": "Olive oil", "measure": "1 tbsp" },
         { "name": "Onion", "measure": "1 small" },
