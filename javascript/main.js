@@ -82,33 +82,23 @@ class RecipeApp {
   }
 
   updateRecipeDisplay() {
-    // Clear containers
-    this.clearContainers();
+  // Clear the popular container
+  this.clearContainers();
 
-    if (this.recipeSearch.searchTerm) {
-      // When searching - show ALL matching recipes in the main container
-      this.displayRecipes(this.displayedRecipes, this.popularContainer);
-      this.hideLoadMoreSection(); // Hide pagination when searching
-    } else {
-      // Normal view - separate popular and regular recipes
-      const popularRecipes = this.displayedRecipes.filter((recipe) =>
-        this.popularIds.includes(recipe.id)
-      );
-      const regularRecipes = this.displayedRecipes.filter(
-        (recipe) => !this.popularIds.includes(recipe.id)
-      );
+  // Only display popular recipes
+  const popularRecipes = this.displayedRecipes.filter((recipe) =>
+    this.popularIds.includes(recipe.id)
+  );
 
-      this.displayRecipes(popularRecipes, this.popularContainer, true);
-      this.handleRegularRecipesDisplay(regularRecipes);
-    }
+  this.displayRecipes(popularRecipes, this.popularContainer, true);
 
-    this.handleDisplayMessages();
-  }
+  // Remove any logic related to "Other Recipes"
+  this.handleDisplayMessages();
+}
 
   clearContainers() {
-    this.popularContainer.innerHTML = "";
-    this.otherContainer.innerHTML = "";
-  }
+  if (this.popularContainer) this.popularContainer.innerHTML = "";
+}
 
   handleRegularRecipesDisplay(regularRecipes) {
     if (this.currentSort !== "popular" || this.recipeSearch.searchTerm) {

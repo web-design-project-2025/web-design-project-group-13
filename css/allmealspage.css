@@ -43,19 +43,3 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     z-index: 1;
   }
-  
-  
-  
-  .allmealheader input {
-      position: absolute;
-      top: 70%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-      border-radius: 100px;
-      border: none;
-      padding: 1rem;
-      width: fit-content; 
-      min-width: 250px; 
-      max-width: 90%;
-    }
