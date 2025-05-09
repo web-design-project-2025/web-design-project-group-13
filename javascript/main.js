@@ -1,4 +1,4 @@
-// main.js
+// javascript/main.js
 import {
   fetchRecipes,
   getPopularRecipes,
@@ -20,6 +20,9 @@ class RecipeApp {
     this.sortSelect = document.getElementById("sort-select");
     this.searchInput = document.getElementById("search");
 
+    // New: Scroll to Top Button
+    this.scrollToTopBtn = document.getElementById("scrollToTopBtn"); // Ensure this ID matches your HTML button
+
     // State Management
     this.currentPage = 0;
     this.recipesPerPage = 8;
@@ -34,6 +37,8 @@ class RecipeApp {
 
     // Event Listeners
     this.initializeEventListeners();
+    // New: Add scroll event listener for the "scroll to top" button visibility
+    window.addEventListener("scroll", () => this.handleScroll());
   }
 
   initializeEventListeners() {
@@ -41,6 +46,9 @@ class RecipeApp {
     this.sortSelect?.addEventListener("change", (e) =>
       this.handleSortChange(e)
     );
+
+    // New: Add click listener for scroll to top button
+    this.scrollToTopBtn?.addEventListener("click", () => this.scrollToTop());
   }
 
   async initialize() {
@@ -218,6 +226,26 @@ class RecipeApp {
     if (this.errorMessage) {
       this.errorMessage.classList.add("hidden");
     }
+  }
+
+  // NEW: Handle scroll event to show/hide the "scroll to top" button
+  handleScroll() {
+    if (this.scrollToTopBtn) {
+      // Show button if scrolled down more than 200px from the top
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        this.scrollToTopBtn.style.display = "block";
+      } else {
+        this.scrollToTopBtn.style.display = "none";
+      }
+    }
+  }
+
+  // NEW: Function to smoothly scroll to the top of the page
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth" // This provides a smooth scrolling animation
+    });
   }
 }
 
