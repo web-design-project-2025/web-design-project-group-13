@@ -83,7 +83,8 @@ function toggleFilter(button) {
 }
 
 
-function toggleFilterPopup() {
+// Make this function available globally
+window.toggleFilterPopup = function() {
     elements.filterPopup.classList.toggle('show');
 }
 
@@ -101,7 +102,6 @@ function applyFilters() {
 
 function filterRecipes(recipes, searchTerm) {
     return recipes.filter(recipe => {
-        
         if (activeFilters.diet.length > 0) {
             const matchesDiet = activeFilters.diet.some(diet => {
                 return recipe.categories.toLowerCase().includes(diet.toLowerCase());
@@ -211,9 +211,7 @@ function toggleNoResultsMessage(show) {
         message.id = 'no-results-message';
         message.className = 'no-results';
         message.innerHTML = `
-            <i class="fas fa-search"></i>
             <h3>No recipes found</h3>
-            <p>Try adjusting your filters or search term</p>
         `;
         document.querySelector('main').appendChild(message);
     } else if (!show && message) {

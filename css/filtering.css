@@ -55,7 +55,6 @@
   font-size: 0.9em;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 
@@ -70,9 +69,6 @@
   border-color: #99CC5F;
 }
 
-.filter-btn.active span:last-child {
-  display: none;
-}
 
 .filter-btn.active::after {
   content: " ✓";
@@ -125,8 +121,12 @@
   padding: 20px;
   box-sizing: border-box;
   overflow-y: auto;
-  display: flex;
   flex-direction: column;
+}
+
+
+.filter-popup.show {
+  display: flex;
 }
 
 
@@ -135,4 +135,6 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
 }
