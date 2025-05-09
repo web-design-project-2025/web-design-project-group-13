@@ -51,7 +51,7 @@
       "rating": 4.8,
       "image": "images/BlueberrySmoothie.jpeg",
       "time": 30,
-      "categories": "breakfast, fruitAndBerries, vegetarian, glutenFree",
+      "categories": "breakfast, berries, fruit, vegetarian, glutenFree",
       "isPopular": true,
       "ingredients": [
         { "name": "Blueberries", "measure": "1 cup" },
@@ -130,7 +130,7 @@
       "rating": 3.8,
       "image": "images/TomatoPasta.jpeg",
       "time": 60,
-      "categories": "dinner, lunch, vegetarian",
+      "categories": "dinner, lunch, vegetarian, cheese",
       "isPopular": true,
       "ingredients": [
         { "name": "Pasta", "measure": "200g" },
@@ -173,7 +173,7 @@
       "rating": 4.1,
       "image": "images/RasberryGranola.jpeg",
       "time": 25,
-      "categories": "breakfast, fruitAndBerries, vegetarian",
+      "categories": "breakfast, berries, vegetarian, nuts",
       "isPopular": true,
       "ingredients": [
         { "name": "Greek yogurt", "measure": "1/2 cup" },
@@ -214,7 +214,7 @@
       "rating": 3.9,
       "image": "images/Mojitio.jpeg",
       "time": 20,
-      "categories": "drinks, vegan, vegetarian, lactoseFree, glutenFree",
+      "categories": "drinks, vegan, vegetarian, berries, lactoseFree, glutenFree",
       "isPopular": true,
       "ingredients": [
         { "name": "Cranberry juice", "measure": "1/2 cup" },
@@ -339,7 +339,7 @@
       "rating": 5.0,
       "image": "images/AsparagusRisotto.jpeg",
       "time": 60,
-      "categories": "dinner, lunch, vegetarian, glutenFree",
+      "categories": "dinner, lunch, vegetarian, glutenFree, cheese",
       "ingredients": [
         { "name": "Water", "measure": "2 liters" },
         { "name": "Vegetable broth", "measure": "4 dice" },
@@ -387,7 +387,7 @@
       "rating": 3.4,
       "image": "images/Applepie.jpeg",
       "time": 55,
-      "categories": "desserts, vegetarian, fruitAndBerries",
+      "categories": "desserts, vegetarian, fruit, nuts",
       "ingredients": [
         { "name": "Apples", "measure": "6 medium" },
         { "name": "Granulated sugar", "measure": "1/4 cup" },
@@ -475,7 +475,7 @@
       "rating": 3.8,
       "image": "images/ChickenRisotto.jpeg",
       "time": 50,
-      "categories": "dinner, lunch, chicken, glutenFree",
+      "categories": "dinner, lunch, chicken, glutenFree, cheese",
       "ingredients": [
         { "name": "Olive oil", "measure": "1 tbsp" },
         { "name": "Chicken breast", "measure": "1 boneless" },
@@ -566,7 +566,7 @@
       "rating": 3.2,
       "image": "images/Hamburger.jpeg",
       "time": 55,
-      "categories": "dinner, lunch, beef",
+      "categories": "dinner, lunch, beef, cheese",
       "ingredients": [
         { "name": "Ground beef", "measure": "500g" },
         { "name": "Onion", "measure": "1 small" },
@@ -610,7 +610,7 @@
       "rating": 3.0,
       "image": "images/Mushroompotatoes.jpeg",
       "time": 20,
-      "categories": "snacks, lactoseFree, vegan, vegetarian",
+      "categories": "snacks, lactoseFree, vegan, vegetarian, mushrooms",
       "ingredients": [
         { "name": "Mushrooms", "measure": "250g" },
         { "name": "Flour", "measure": "1/4 cup" },
@@ -648,7 +648,7 @@
       "rating": 3.9,
       "image": "images/Oatmeal.jpeg",
       "time": 15,
-      "categories": "breakfast, fruitsAndBerries, vegetarian",
+      "categories": "breakfast, fruit, vegetarian, nuts",
       "ingredients": [
         { "name": "Oatmeal", "measure": "1/2 cup" },
         { "name": "Water or milk", "measure": "1 cup" },
@@ -685,7 +685,7 @@
       "rating": 4.9,
       "image": "images/Padthai.jpeg",
       "time": 45,
-      "categories": "lunch, dinner, seafood, chicken, glutenFree",
+      "categories": "lunch, dinner, plantBased, seafood, chicken, glutenFree, nuts",
       "ingredients": [
         { "name": "Flat rice noodles", "measure": "100g" },
         { "name": "Vegetable oil", "measure": "1 tbsp" },
@@ -734,7 +734,7 @@
       "rating": 4.3,
       "image": "images/Pizza.jpeg",
       "time": 160,
-      "categories": "dinner, lunch, pork",
+      "categories": "dinner, lunch, pork, cheese, mushrooms",
       "ingredients": [
         { "name": "Pizza dough", "measure": "1" },
         { "name": "Pizza sauce", "measure": "1 cup" },
@@ -779,7 +779,7 @@
       "rating": 3.8,
       "image": "images/Scones.jpeg",
       "time": 55,
-      "categories": "snacks, seafood",
+      "categories": "snacks, fish,",
       "ingredients": [
         { "name": "Flour", "measure": "2 cups" },
         { "name": "Granulated sugar", "measure": "1/4 cup" },
@@ -821,12 +821,12 @@
 
     {
       "id": 20,
-      "title": "Sushi, seafood",
+      "title": "Sushi",
       "description": "Artfully rolled rice and seaweed encase fresh fish or veggies in every bite. Sushi is delicate, elegant, and packed with flavor, making it a beloved Japanese culinary masterpiece!",
       "rating": 4.0,
       "image": "images/Sushi.jpeg",
       "time": 60,
-      "categories": "dinner, lunch, glutenFree, lactoseFree",
+      "categories": "dinner, lunch, glutenFree, seafood, fish, lactoseFree",
       "ingredients": [
         { "name": "Sushi rice", "measure": "1 cup" },
         { "name": "Nori sheets", "measure": "1 packet" },
@@ -913,7 +913,7 @@
       "rating": 4.8,
       "image": "images/YellowRisotto.jpeg",
       "time": 45,
-      "categories": "dinner, vegetarian, glutenFree",
+      "categories": "dinner, vegetarian, glutenFree, cheese",
       "ingredients": [
         { "name": "Olive oil", "measure": "1 tbsp" },
         { "name": "Onion", "measure": "1 small" },

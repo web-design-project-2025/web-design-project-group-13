@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
 
+
     <!-- Combine Font Awesome loads -->
-    <link rel="stylesheet" 
+    <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
           crossorigin="anonymous">
+
 
       <!-- Preload critical resources -->
       <!-- <link rel="preload" href="css/general.css" as="style" crossorigin="anonymous">
       <link rel="preload" href="javascript/main.js" as="script" crossorigin="anonymous"> -->
+
 
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/recipecard.css" />
@@ -21,15 +24,19 @@
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/filtering.css" />
 
+
     <script type="module" src="javascript/dropdown.js" defer ></script>
     <script type="module" src="javascript/hamburger.js" defer></script>
+
 
     <script type="module" src="javascript/main.js" defer ></script>
    
 
+
     <script type="module" src="javascript/filtering.js" defer ></script>
   </head>
   <body data-page="main" >
+
 
     <!--Navigation-->
     <header>
@@ -38,9 +45,9 @@
           <div class="logo">
             <img src="images/LettuceCookLogo.png" />
           </div>
-    
+   
           <button class="hamburger" id="hamburger">☰</button>
-    
+   
           <div class="menu" id="mobileMenu">
             <ul>
               <li>
@@ -65,7 +72,7 @@
             </ul>
           </div>
         </section>
-    
+   
         <div class="icons">
           <ul>
             <li><i class="fa-solid fa-magnifying-glass"></i></li>
@@ -75,6 +82,7 @@
         </div>
       </nav>
     </header>    
+
 
     <!--Explore page-->
     <main>
@@ -86,22 +94,27 @@
             Discover fresh, flavorful dishes that will inspire your next meal!
           </h4>
 
+
           <div class="search-container">
 
-            <button class="filter-button" onclick="toggleFilter()"> 
+
+            <button class="filter-button" onclick="toggleFilterPopup()">
               <i class="fa-solid fa-sliders"></i>
             </button>
 
-            
+
+           
+
 
             <input type="text" id="search" placeholder="Search recipes..." />
-            
+           
           </div>
+
 
           <div id="filter-popup" class="filter-popup">
             <div class="filter-popup-header">
               <h2>Filter Recipes</h2>
-              <button onclick="toggleFilter()" class="close-btn">&times;</button>
+              <button class="close-btn">&times;</button>
             </div>
             <div class="filter-popup-body">
               <div class="filter-buttons" id="diet-filters">
@@ -111,62 +124,78 @@
                   <span>+</span>
                 </button>
 
+
                 <button class="filter-btn" data-filter="vegan"><span>Vegan</span>
                   <span>+</span></button>
+
 
                 <button class="filter-btn" data-filter="glutenFree"><span>Gluten Free</span>
                   <span>+</span></button>
 
+
                   <button class="filter-btn" data-filter="lactoseFree"><span>Lactose Free</span>
                     <span>+</span></button>
               </div>
-          
-          
+         
+         
               <div class="filter-buttons" id="ingredients-filters">
                 <p4>Ingredients</p4>
                 <button class="filter-btn" data-filter="chicken"><span>Chicken</span>
                   <span>+</span></button>
 
+
                 <button class="filter-btn" data-filter="beef"><span>Beef</span>
                   <span>+</span></button>
+
 
                 <button class="filter-btn" data-filter="seafood"><span>Seafood</span>
                   <span>+</span></button>
 
+
                   <button class="filter-btn" data-filter="plantBased"><span>Plant Based</span>
                     <span>+</span></button>
+
 
                     <button class="filter-btn" data-filter="fruitAndBerries"><span>Fruit and Berries</span>
                       <span>+</span></button>
 
+
                       <button class="filter-btn" data-filter="pork"><span>Pork</span>
                         <span>+</span></button>
+
+
 
 
                   <p4>Meals</p4>
                 <button class="filter-btn" data-filter="snacks"><span>Snacks</span>
                   <span>+</span></button>
 
+
                 <button class="filter-btn" data-filter="desserts"><span>Desserts</span>
                   <span>+</span></button>
+
 
                 <button class="filter-btn" data-filter="drinks"><span>Drinks</span>
                   <span>+</span></button>
 
+
                   <button class="filter-btn" data-filter="dinner"><span>Dinner</span>
                     <span>+</span></button>
+
 
                     <button class="filter-btn" data-filter="breakfast"><span>Breakfast</span>
                       <span>+</span></button>
 
+
                       <button class="filter-btn" data-filter="lunch"><span>Lunch</span>
                         <span>+</span></button>
-                
+               
               </div>
             </div>
           </div>
         </div>
       </section>
+
 
       <div class="sort-container">
         <label for="sort-select">Sort by:</label>
@@ -179,7 +208,9 @@
         </select>
       </div>
 
+
       <hr style="margin-bottom: 10px; margin-top: 10px;">
+
 
       <!-- Loading Indicator -->
 <div id="loading-placeholder" class="loading-placeholder">
@@ -187,13 +218,16 @@
   <p>Loading recipes...</p>
 </div>
 
+
 <!-- Error Display -->
 <div id="error-message" class="error-message hidden"></div>
+
 
 <!-- Popular Recipes -->
 <section id="popular-recipes">
   <div class="recipes-container" id="popular-container"></div>
 </section>
+
 
 <!-- Other Recipes (initially hidden) -->
 <section id="other-recipes" class="hidden">
@@ -201,6 +235,7 @@
   <button id="load-more" class="load-more">Load More</button>
 </section>
     </main>
+
 
     <!--Footer-->
     <footer class="footer">
@@ -215,6 +250,7 @@
         </div>
       </div>
 
+
       <section class="all-links">
         <div class="links">
           <ul>
@@ -227,6 +263,7 @@
           </ul>
         </div>
 
+
         <div class="links2">
           <ul>
             <li>Terms Of Service</li>
@@ -235,13 +272,14 @@
           </ul>
         </div>
 
+
         <div class="follow-us">
-          
+         
           <h3>Follow Us</h3>
           <div class="socialmedia">
             <i class="fab fa-facebook"></i>
             <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter"></i> 
+            <i class="fab fa-twitter"></i>
           </div>
             <div class="socialmedia2">
               <i class="fab fa-youtube"></i>
@@ -250,6 +288,7 @@
           </div>
         </div>
       </section>
+
 
       <div class="footer-bottom">
         <ul>
