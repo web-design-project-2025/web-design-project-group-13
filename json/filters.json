@@ -14,7 +14,7 @@
         {"id": "pork", "label": "Pork"},
         {"id": "beans", "label": "Beans"},
         {"id": "fish", "label": "Fish"},
-        {"id": "mushrooms", "label": "Mushrooms"}
+        {"id": "mushrooms", "label": "Mushrooms"},
         {"id": "nuts", "label": "Nuts"},
         {"id": "berries", "label": "Berries"},
         {"id": "cheese", "label": "Cheese"}
