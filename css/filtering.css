@@ -4,22 +4,40 @@
   cursor: pointer;
 }
 
+.filter-popup-header {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
 .close-btn {
   background: none;
   border: none;
-  font-size: 1.5em;
   cursor: pointer;
+  font-size: 1.5rem;
+  color: red;
+  transition: color 0.3s;
+  border: red 1px solid;
+  border-radius: 50%;
+  padding: 5px;
+  width: 40px;
 }
 
-.filter-popup-body label {
-  display: block;
-  margin: 10px 0;
+.close-btn:hover {
+  transform: scale(1.1);
 }
 
-.filter-popup-footer {
-  position: absolute;
-  bottom: 20px;
-  width: 90%;
+.filter-popup-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .apply-filters-btn {
@@ -35,12 +53,39 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 10px;
+  /* margin-top: 10px; */
+}
+
+.all-recipes-btn {
+  background: red;
+  color: white;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9em;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+  /* margin-bottom: 20px; */
+}
+
+.all-recipes-btn:hover {
+  background: #940505;
+  transform: scale(1.05);
+}
+
+.filter-buttons p4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+  color: black;
 }
 
 .filter-btn {
-  background: #f5f5f5;
+  background: #fbf4f44d;
   border: 1px solid #ddd;
   border-radius: 20px;
   padding: 6px 12px;
@@ -75,29 +120,6 @@
   border-top: 1px solid #eee;
 }
 
-#active-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.active-filter-tag {
-  background: #99cc5f;
-  color: white;
-  border-radius: 20px;
-  padding: 6px 12px;
-  font-size: 0.9em;
-  display: flex;
-  align-items: center;
-}
-
-.active-filter-tag .remove-filter {
-  margin-left: 8px;
-  cursor: pointer;
-  font-size: 1.1em;
-}
-
 .filter-popup {
   display: none;
   position: fixed;
@@ -118,29 +140,52 @@
   display: flex;
 }
 
-.filter-popup-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
-  margin-bottom: 15px;
+.filter-popup-header h2 {
+  font-size: 1.5rem;
+  color: black;
 }
 
-@media screen and (max-width: 768px) {
-  .filter-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: fit-content;
-    background-color: #fff;
-    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
-    z-index: 9999;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
+/* Responsive styles for filtering functionality */
+@media screen and (max-width: 375px) {
+  .filter-buttons {
     flex-direction: column;
+    gap: 5px; /* Reduce gap for smaller screens */
+    margin: 10px; /* Add some margin for spacing */
   }
+
+  .filter-btn {
+    font-size: 0.8em; /* Scale down font size */
+    padding: 5px 10px; /* Adjust padding */
+    border-radius: 15px; /* Slightly smaller border radius */
+  }
+
+  .filter-popup {
+    width: 90%; /* Adjust width to fit smaller screens */
+    height: auto; /* Allow height to adjust dynamically */
+    padding: 15px; /* Reduce padding */
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  }
+
+  .filter-popup-header {
+    font-size: 1.2rem; /* Scale down header font size */
+    padding-bottom: 5px; /* Adjust padding */
+  }
+
+  .close-btn {
+    font-size: 1.2rem; /* Scale down close button size */
+    width: 30px; /* Adjust width */
+    height: 30px; /* Adjust height */
+  }
+
+  .apply-filters-btn {
+    font-size: 0.9em; /* Scale down button font size */
+    padding: 8px; /* Adjust padding */
+  }
+
+  .selected-filters {
+    font-size: 0.8em; /* Scale down font size */
+    margin-top: 10px; /* Adjust margin */
+  }
+
+  
 }

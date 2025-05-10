@@ -173,3 +173,7 @@ function showError(message) {
     errorElement.classList.remove("hidden");
   }
 }
+
+document.getElementById("show-all-recipes").addEventListener("click", function () {
+  window.location.href = "allmealspage.html";
+});
