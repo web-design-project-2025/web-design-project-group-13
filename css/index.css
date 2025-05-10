@@ -23,7 +23,7 @@
   text-align: center;
 }
 
-/*Explore header 1*/
+/*Explore header 1*/ 
 .explore-header h1 {
   position: absolute;
   top: 40%;
@@ -46,4 +46,15 @@
   font-size: 1.5em;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .explore-header h1 {
+    font-size: 2em;
+  }
+
+  .explore-header h4 {
+    font-size: 1.2em;
+  }
+  
 }

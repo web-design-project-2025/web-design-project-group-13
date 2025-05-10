@@ -4,7 +4,7 @@ header {
   z-index: 1000;
   height: fit-content;
   background-color: white;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1)
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -99,10 +99,17 @@ nav {
   border: none;
   font-size: 28px;
   cursor: pointer;
-  margin-left: auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  /* hamburger */
+
+  .hamburger {
+    display: block;
+    font-size: 20px;
+  }
+
+  /* menu from hamburger */
   .menu > ul {
     display: none;
     flex-direction: column;
@@ -112,7 +119,7 @@ nav {
     top: 100%;
     left: 0; /* ⬅ Ensures it opens from the left side */
     width: 70%; /* Optional: not full width to avoid icon overlap */
-    padding: 1rem 2rem;
+    padding: 1rem;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     z-index: 100;
   }
@@ -123,37 +130,71 @@ nav {
     width: fit-content;
   }
 
-  .hamburger {
-    display: block;
-    margin-left: 1rem;
+  .menu > ul > li {
+    font-size: 16px;
   }
 
-  nav {
-    position: relative;
-  }
-
-  .logo-menu {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .icons {
-    position: static;
-    margin-left: auto;
-    margin-right: 1rem;
-  }
+  /* dropdown */
 
   .dropdownmenu {
     position: absolute;
-    top: -70%;
-    left: 150%;
+    top: -84%;
+    left: 136%;
     background: white;
     border: 1px solid #ffffff;
     min-width: 160px;
     z-index: 1;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+  }
+
+  .dropdownswitch {
+    font-size: 16px;
+  }
+
+  /* nav */
+
+  nav {
+    position: relative;
+    margin: 0 2rem;
+  }
+
+  /* logo */
+  .logo-menu {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin: 0;
+  }
+
+  .logo img {
+    max-height: 80px;
+    height: auto;
+  }
+
+  /* .logo {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  } */
+
+  /* icons */
+
+  .icons {
+    position: static;
+    margin-left: auto;
+    margin: 0;
+  }
+
+  .icons > ul {
+    display: flex;
+    gap: 1rem;
+    font-size: smaller;
+    list-style: none;
     font-size: 15px;
   }
 }

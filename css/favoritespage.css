@@ -58,3 +58,15 @@
     max-width: 90%; /* Prevents overflow on mobile */
   }
 /* PICTURE HEADER */
+
+
+@media screen and (max-width: 768px) {
+  .pic-header h1 {
+    font-size: 2em; /* Adjusts size for smaller screens */
+  }
+
+  .pic-header h4 {
+    font-size: 1.2em; /* Adjusts size for smaller screens */
+  }
+  
+}
