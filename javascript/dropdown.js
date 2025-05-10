@@ -8,12 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Hides the menu if clicking outside
   document.addEventListener("click", (event) => {
-    if (!dropdownBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+    if (
+      !dropdownBtn.contains(event.target) &&
+      !dropdownMenu.contains(event.target)
+    ) {
       dropdownMenu.classList.add("hidden");
     }
   });
 });
 
-document.getElementById('heart-icon').addEventListener('click', function() {
-  window.location.href = 'favoritespage.html'; 
+// This script handles the heart icon click event to redirect to the liked page
+document.getElementById("heart-icon").addEventListener("click", function () {
+  window.location.href = "favoritespage.html";
 });

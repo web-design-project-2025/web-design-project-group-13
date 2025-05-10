@@ -171,7 +171,7 @@ nav {
     margin: 0;
   }
 
-  .logo img {
+  .logo img , .logo source{
     max-height: 80px;
     height: auto;
   }
