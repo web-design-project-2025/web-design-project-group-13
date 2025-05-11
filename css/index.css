@@ -46,6 +46,40 @@
   z-index: 1;
 }
 
+/* Split section */
+.split-section {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10rem;
+}
+
+.image-half {
+  flex: 1;
+}
+
+.image-half img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  }
+
+.color-half {
+  flex: 1;
+  background-color:  #166940; 
+  padding: 40px;
+}
+
+.text-content {
+  color: white;
+}
+
+.text-content > h3 {
+font-size: 3rem;
+margin-bottom: 2rem;
+}
+
+
+
 @media screen and (min-width: 320px) and (max-width: 348px) {
   .explore-header h1 {
     font-size: 1.8em;
