@@ -62,7 +62,7 @@ h1, h2 {
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 20px;
-  margin: 20px 50px;
+  margin: 20px 30px;
   contain: content; /* Improves rendering performance */
 }
 
