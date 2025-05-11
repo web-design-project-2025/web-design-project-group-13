@@ -107,11 +107,17 @@
   margin-top: 1.5rem;
 }
 
+
+
 #load-more {
   position: relative;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #e3c85c;
+}
+
+#load-more:hover {
+  background-color: #d4b84c;
 }
 
 #load-more.hidden {

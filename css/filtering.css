@@ -160,7 +160,7 @@
   }
 
   .filter-popup {
-    width: 90%; /* Adjust width to fit smaller screens */
+    width: 70%; /* Adjust width to fit smaller screens */
     height: auto; /* Allow height to adjust dynamically */
     padding: 15px; /* Reduce padding */
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
