@@ -1,7 +1,7 @@
 import { createRecipeCard } from "./recipeCard.js";
 
 export class RecipePaginator {
-  constructor(recipes, containerId, itemsPerPage = 4) {
+  constructor(recipes, containerId, itemsPerPage = 8) {
     // Reduced initial load
     this.recipes = recipes;
     this.container = document.getElementById(containerId);
