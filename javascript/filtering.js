@@ -4,8 +4,12 @@ import { createRecipeCard } from "./recipeCard.js";
 import { filterRecipes } from "./recipeUtils.js";
 import { RecipeSorter } from "./recipeSorter.js";
 import { RecipePaginator } from "./paginator.js";
-import { showLoadingIndicator, hideLoadingIndicator, showErrorMessage, hideErrorMessage } from "./loadingErrorDisplay.js"; 
-
+import {
+  showLoadingIndicator,
+  hideLoadingIndicator,
+  showErrorMessage,
+  hideErrorMessage,
+} from "./loadingErrorDisplay.js";
 
 let allRecipes = [];
 let activeFilters = {
@@ -129,13 +133,20 @@ function applyFiltersAndRender(resetPage = false) {
   }
 
   // Initialize the paginator with filtered recipes
-  paginator = new RecipePaginator(filtered, containerId, itemsPerPage, elements.loadMoreBtn);
+  paginator = new RecipePaginator(
+    filtered,
+    containerId,
+    itemsPerPage,
+    elements.loadMoreBtn
+  );
   paginator.displayPage(0); // Always display the first page initially
 
   const sorted = elements.sortSelect
     ? RecipeSorter.sortRecipes(filtered, elements.sortSelect.value)
     : filtered;
   const paginated = sorted.slice(0, (currentPage + 1) * itemsPerPage);
+
+  console.log("Dinner recipes:", pageType === "dinner", filtered);
 
   console.log("Paginated recipes:", paginated);
 

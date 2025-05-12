@@ -8,15 +8,7 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
     />
 
     <link rel="stylesheet" href="css/favoritespage.css" />
@@ -24,32 +16,253 @@
     <link rel="stylesheet" href="css/navigation.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/filtering.css" />
 
-    <script type="module" src="javascript/favorites.js" defer></script>
-
-   </head>
+    <script type="module" src="javascript/hamburger.js" defer></script>
+    <script type="module" src="javascript/dropdown.js" defer></script>
+    <!-- <script type="module" src="javascript/filtering.js" defer></script> -->
+    <script type="module" src="javascript/main.js" defer></script>
+  </head>
   <body data-page="favourites">
-    
-    <main>
+    <!--Navigation-->
+    <header>
+      <nav>
+        <section class="logo-menu">
+          <picture class="logo" id="logo">
+            <!-- <source srcset="/images/logoPhone.svg"  > -->
+            <img src="/images/LettuceCookLogo.png" alt="Logo" />
+          </picture>
 
-        
+          <button class="hamburger" id="hamburger">☰</button>
+
+          <div class="menu" id="mobileMenu">
+            <ul>
+              <li>
+                <div class="dropdown">
+                  <button id="mealsDropdownBtn" class="dropdownswitch">
+                    My Meals
+                  </button>
+                  <div id="mealsDropdownMenu" class="dropdownmenu hidden">
+                    <a href="dinnerpage.html">Dinner</a>
+                    <a href="#">Breakfast</a>
+                    <a href="#">Lunch</a>
+                    <a href="#">Desserts</a>
+                    <a href="#">Snacks</a>
+                    <a href="#">Quick meals</a>
+                    <a href="#">Drinks</a>
+                    <a href="#">Side Dishes</a>
+                    <a href="allmealspage.html">View All</a>
+                  </div>
+                </div>
+              </li>
+              <li>Occasions</li>
+              <li>Ingredients</li>
+              <li>About Us</li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="icons">
+          <ul>
+            <li><i class="fa-solid fa-magnifying-glass"></i></li>
+            <li><i class="fa-regular fa-user"></i></li>
+            <li id="heart-icon"><i class="fa-regular fa-heart"></i></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
       <section class="picture">
         <div class="pic-header">
-          <img src="images/favoritepageheader.jpeg" alt="Favorites" id="img"/>
+          <img src="images/favoritepageheader.jpeg" alt="Favorites" id="img" />
           <h1>Your liked recipes</h1>
           <h4>Here are all the recipes you liked, good taste!</h4>
 
-          <input
-            type="text"
-            id="search"
-            placeholder="Search from your liked recipes..."
-          />
+          <div class="search-container">
+            <button class="filter-button" onclick="toggleFilterPopup()">
+              <i class="fa-solid fa-sliders"></i>
+            </button>
+            <input type="text" id="search" placeholder="Search recipes..." />
+          </div>
+
+          <div id="filter-popup" class="filter-popup">
+            <div class="filter-popup-header">
+              <h2>Filter Recipes</h2>
+              <button class="close-btn">&times;</button>
+            </div>
+            <div class="filter-popup-body">
+              <div class="filter-buttons" id="diet-filters">
+                <p4>Dietary</p4>
+                <button class="filter-btn" data-filter="vegetarian">
+                  <span>Vegetarian</span>
+                  <span>+</span>
+                </button>
+
+                <button class="filter-btn" data-filter="vegan">
+                  <span>Vegan</span> <span>+</span>
+                </button>
+
+                <button class="filter-btn" data-filter="glutenFree">
+                  <span>Gluten Free</span> <span>+</span>
+                </button>
+
+                <button class="filter-btn" data-filter="lactoseFree">
+                  <span>Lactose Free</span> <span>+</span>
+                </button>
+              </div>
+
+              <div class="filter-buttons" id="ingredients-filters">
+                <p4>Ingredients</p4>
+                <button class="filter-btn" data-filter="chicken">
+                  <span>Chicken</span> <span>+</span>
+                </button>
+
+                <button class="filter-btn" data-filter="beef">
+                  <span>Beef</span> <span>+</span>
+                </button>
+
+                <button class="filter-btn" data-filter="seafood">
+                  <span>Seafood</span> <span>+</span>
+                </button>
+
+                <button class="filter-btn" data-filter="plantBased">
+                  <span>Plant Based</span> <span>+</span>
+                </button>
+
+                <button class="filter-btn" data-filter="fruit">
+                  <span>Fruit</span> <span>+</span>
+                </button>
+
+                <button class="filter-btn" data-filter="pork">
+                  <span>Pork</span> <span>+</span>
+                </button>
+
+                <button class="filter-btn" data-filter="beans">
+                  <span>Beans</span> <span>+</span>
+                </button>
+
+                <button class="filter-btn" data-filter="fish">
+                  <span>Fish</span> <span>+</span>
+                </button>
+
+                <button class="filter-btn" data-filter="mushrooms">
+                  <span>Mushrooms</span> <span>+</span>
+                </button>
+
+                <button class="filter-btn" data-filter="nuts">
+                  <span>Nuts</span> <span>+</span>
+                </button>
+
+                <button class="filter-btn" data-filter="berries">
+                  <span>Berries</span> <span>+</span>
+                </button>
+
+                <button class="filter-btn" data-filter="cheese">
+                  <span>Cheese</span> <span>+</span>
+                </button>
+              </div>
+              <div class="show-all-recipes">
+                <button class="all-recipes-btn" id="show-all-recipes">
+                  Show All Recipes
+                </button>
+              </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-       <!--Content dynamically loaded here, thru javascript-->
-       <div id="recipe-container" class="recipe-container"></div>
+      <div class="sort-container">
+        <label for="sort-select">Sort by:</label>
+        <select id="sort-select">
+          <!-- <option value="default">Default</option> -->
+          <option value="popular">Popular</option>
+          <option value="rating">Rating</option>
+          <option value="time">Time (Ascending)</option>
+          <option value="title">Title (A–Z)</option>
+        </select>
+      </div>
 
+      <hr style="margin-bottom: 10px; margin-top: 10px" />
+
+      <!-- Loading Indicator -->
+      <!-- <div id="loading-placeholder" class="loading-placeholder">
+  <div class="spinner"></div>
+  <p>Loading recipes...</p> 
+</div> -->
+
+      <!-- Error Display -->
+      <!-- <div id="error-message" class="error-message hidden"></div> -->
+
+      <div id="liked-recipes-container" class="recipes-container"></div>
+      <button id="load-more" class="load-more"><i class="fa-solid fa-plus"></i></button>
+      
     </main>
+    <!--Footer-->
+    <footer class="footer">
+      <div class="newspaper">
+        <p>
+          Subscribe for exclusive <strong id="strong">recipes</strong> and
+          <strong id="strong">news!</strong>
+        </p>
+        <div class="emailbox">
+          <input type="email" placeholder="Email" />
+          <button type="submit">&rarr;</button>
+        </div>
+      </div>
+
+
+      <section class="all-links">
+        <div class="links">
+          <ul>
+            <li>
+              <a href="#" id="meallink">Meals</a>
+            </li>
+            <li>Occasions</li>
+            <li>Ingredients</li>
+            <li>About Us</li>
+          </ul>
+        </div>
+
+
+        <div class="links2">
+          <ul>
+            <li>Terms Of Service</li>
+            <li>Privacy Policy</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+
+
+        <div class="follow-us">
+         
+          <h3>Follow Us</h3>
+          <div class="socialmedia">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+          </div>
+            <div class="socialmedia2">
+              <i class="fab fa-youtube"></i>
+            <i class="fab fa-tiktok"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="footer-bottom">
+        <ul>
+          <li>@ 2025 Lettuce Cook</li>
+          <li id="underlined">Privacy Policy</li>
+          <li id="underlined">About Cookies</li>
+        </ul>
+      </div>
+    </footer>
+
+    <button id="scrollToTopBtn" class="scroll-to-top-btn" title="Go to top">
+      <i class="fa-solid fa-arrow-up"></i>
+  </button>
   </body>
 </html>
