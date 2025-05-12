@@ -8,7 +8,7 @@ export async function fetchRecipes() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        console.log('Fetch completed successfully');
+        console.log('Fetch completed successfully', data);
         return {
             recipes: data.recipes || [],
             popularIds: data.popular || []
@@ -25,6 +25,6 @@ export function getPopularRecipes(allRecipes, popularIds) {
     return allRecipes.filter(recipe => popularIds.includes(recipe.id));
 }
 
-export function getRegularRecipes(allRecipes, popularIds) {
+export function getRegularRecipes(allRecipes, popularIds) { 
     return allRecipes.filter(recipe => !popularIds.includes(recipe.id));
 }

@@ -15,4 +15,4 @@ export function filterRecipes(recipes, { diet = [], ingredients = [], searchTerm
 
     return matchesDiet && matchesIngredients && matchesSearch;
   });
-}
+} 

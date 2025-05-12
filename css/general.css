@@ -88,6 +88,28 @@
   }
 }
 
+.error-message {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f44336;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 1000;
+  display: none;
+}
+
+.error-message.hidden {
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+}
+
 .recipe-image {
   aspect-ratio: 1/0.75;
   background: #f5f5f5;

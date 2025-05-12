@@ -5,19 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dinner</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+   <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/dinnerpage.css" />
     <link rel="stylesheet" href="css/recipecard.css" />
@@ -30,9 +20,8 @@
 
     <script type="module" src="javascript/hamburger.js" defer></script>
     <script type="module" src="javascript/dropdown.js" defer></script>
-  <script type="module" src="javascript/dinnerPage.js" defer></script>
     <script type="module" src="javascript/filtering.js" defer></script>
-        <!-- <script type="module" src="javascript/main.js" defer ></script> -->
+    <script type="module" src="javascript/main.js" defer></script>
   </head>
   <body data-page="dinner">
 
@@ -193,6 +182,15 @@
       </div>
 
       <hr style="margin-bottom: 10px; margin-top: 10px" />
+
+       <!-- Loading Indicator -->
+      <div id="loading-placeholder" class="loading-placeholder">
+  <div class="spinner"></div>
+  <p>Loading recipes...</p> 
+</div>
+
+ <!-- Error Display -->
+      <div id="error-message" class="error-message hidden"></div>
 
       <div id="dinner-recipes-container" class="recipes-container"></div>
       <button id="load-more" class="load-more">Load More</button>
