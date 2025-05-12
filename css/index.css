@@ -89,6 +89,10 @@ font-size: 3rem;
 margin-bottom: 2rem;
 }
 
+.logo, i {
+  cursor: pointer;
+}
+
 
 @media screen and (min-width: 320px) and (max-width: 348px) {
   .explore-header h1 {
