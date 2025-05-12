@@ -1,5 +1,6 @@
 import { RecipePaginator } from "/javascript/paginator.js";
 
+
 export class AllRecipesView {
   constructor(containerId, loadMoreBtnId) {
     this.container = document.getElementById(containerId);

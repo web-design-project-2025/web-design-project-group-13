@@ -1,22 +1,27 @@
+// dinnerPage.js
 import { fetchRecipes } from "/javascript/recipeAPI.js";
 import { AllDinnerView } from "/javascript/allDinnerView.js";
+import { filterRecipes } from "/javascript/recipeUtils.js";
+
+const activeFilters = {
+  diet: [],
+  ingredients: [],
+  searchTerm: "",
+};
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const allDinnerView = new AllDinnerView("dinner-recipes-container", "load-more");
+  const containerId = "dinner-recipes-container";
+  const loadMoreBtnId = "load-more";
+  const allDinnerView = new AllDinnerView(containerId, loadMoreBtnId);
 
   try {
     const { recipes } = await fetchRecipes();
-    console.log("Fetched recipes:", recipes); // Debugging log
+    const dinnerRecipes = recipes.filter((r) =>
+      r.categories.toLowerCase().split(",").map((c) => c.trim()).includes("dinner")
+    );
 
-    // Strict filtering for exact "dinner" category
-    const dinnerRecipes = recipes.filter(recipe => {
-      const categoriesArray = recipe.categories
-        .split(',')
-        .map(cat => cat.trim().toLowerCase());
-      return categoriesArray.includes("dinner");
-    });
-
-    allDinnerView.initialize(dinnerRecipes);
+    const filtered = filterRecipes(dinnerRecipes, activeFilters);
+    allDinnerView.initialize(filtered);
   } catch (error) {
     console.error("Failed to load recipes:", error);
   }

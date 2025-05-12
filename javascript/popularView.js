@@ -12,4 +12,4 @@ export class PopularRecipesView {
             .map(recipe => createRecipeCard(recipe, { showPopularBadge: true }))
             .join('');
     }
-}
+} 

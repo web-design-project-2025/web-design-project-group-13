@@ -1,14 +1,23 @@
- import { fetchRecipes } from "/javascript/recipeAPI.js";
-  import { AllRecipesView } from "/javascript/allRecipesView.js";
-  
+// allmeals.js
+import { fetchRecipes } from "/javascript/recipeAPI.js";
+import { AllDinnerView } from "/javascript/allDinnerView.js";
+import { filterRecipes } from "/javascript/recipeUtils.js";
 
-  document.addEventListener("DOMContentLoaded", async () => {
-  const allRecipesView = new AllRecipesView("all-recipes-container", "load-more");
+const activeFilters = {
+  diet: [],
+  ingredients: [],
+  searchTerm: "",
+};
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const containerId = "all-recipes-container";
+  const loadMoreBtnId = "load-more";
+  const allDinnerView = new AllDinnerView(containerId, loadMoreBtnId);
 
   try {
     const { recipes } = await fetchRecipes();
-    console.log("Fetched recipes:", recipes); // Debugging log
-    allRecipesView.initialize(recipes);
+    const filtered = filterRecipes(recipes, activeFilters);
+    allDinnerView.initialize(filtered);
   } catch (error) {
     console.error("Failed to load recipes:", error);
   }
