@@ -12,6 +12,8 @@ export function saveFavorite(recipe) {
     favorites.push(recipe);
     localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
   }
+  console.log("Saving favorite:", recipe);
+
 }
 
 export function removeFavorite(id) {
@@ -63,6 +65,7 @@ export function handleFavoriteClick(recipeJSON, iconElement) {
   }
 
   updateFavoritesCounter();
+  console.log("Handling favorite click for:", recipe);
 }
 
 // Initial Counter Update
@@ -87,3 +90,19 @@ document.addEventListener("click", (e) => {
     window.location.href = `chosenrecipe.html?id=${card.dataset.id}`;
   }
 });
+
+// Remove Recipe Card after clicking "Remove from Favorites" (no refresh)
+export function removeRecipeCardFromDOM(recipeId) {
+  const card = document.querySelector(`.recipe-card[data-id="${recipeId}"]`);
+
+  if (card) {
+    // Add fade-out effect before removal
+    card.classList.add("fade-out");
+
+    // After fade-out completes, remove the card
+    setTimeout(() => {
+      card.remove();
+      updateFavoritesCounter(); // Update the counter after the removal
+    }, 1000); // Adjust the delay based on your fade-out duration
+  }
+}

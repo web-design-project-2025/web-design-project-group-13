@@ -1,7 +1,11 @@
 //favoritespage.js
 
-import { getFavorites } from './favorites.js';
-import { createRecipeCard } from './recipeCard.js';
+import {
+  getFavorites,
+  removeFavorite,
+  removeRecipeCardFromDOM,
+} from "./favorites.js";
+import { createRecipeCard } from "./recipeCard.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("favorites-container");
@@ -13,10 +17,20 @@ document.addEventListener("DOMContentLoaded", () => {
     container.innerHTML = "<p>No favorites yet.</p>";
     return;
   }
- 
-  favorites.forEach(recipe => {
+
+  favorites.forEach((recipe) => {
     const wrapper = document.createElement("div");
     wrapper.innerHTML = createRecipeCard(recipe);
-    container.appendChild(wrapper.firstElementChild);
+    const card = wrapper.firstElementChild;
+    container.appendChild(card);
+
+    const heartIcon = card.querySelector(".heart-icon");
+    if (heartIcon) {
+      heartIcon.addEventListener("click", (event) => {
+        event.stopPropagation(); // Prevents triggering card click navigation
+        removeFavorite(recipe.id);
+        removeRecipeCardFromDOM(recipe.id);
+      });
+    }
   });
 });

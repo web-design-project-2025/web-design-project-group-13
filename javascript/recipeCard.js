@@ -15,6 +15,8 @@ export function createRecipeCard(recipe, options = {}) {
 
   const favorited = isFavorite(recipe.id);
   const heartClass = favorited ? "fas fa-heart active" : "fas fa-heart";
+  const recipeJSON = encodeURIComponent(JSON.stringify(recipe));
+
 
   return `
     <div class="recipe-card" data-id="${recipe.id}">
@@ -24,7 +26,7 @@ export function createRecipeCard(recipe, options = {}) {
            width="250"
            height="188">
 
-      <div class="heart-icon" data-heart data-recipe='${encodeURIComponent(JSON.stringify(recipe))}'>
+      <div class="heart-icon" data-heart data-recipe="${recipeJSON}">
         <i class="${heartClass}"></i>
       </div>
 

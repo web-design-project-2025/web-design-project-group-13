@@ -10,7 +10,12 @@ document.addEventListener("click", (e) => {
     e.stopPropagation(); // Prevent redirect
     const icon = heart.querySelector("i");
     const recipeData = heart.getAttribute("data-recipe");
-    handleFavoriteClick(recipeData, icon);
+    try {
+      const recipe = JSON.parse(decodeURIComponent(recipeData));
+      handleFavoriteClick(recipe, icon);
+    } catch (err) {
+      console.error("Invalid recipe data:", recipeData, err);
+    }
     return;
   }
 
