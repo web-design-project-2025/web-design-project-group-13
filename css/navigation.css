@@ -1,9 +1,20 @@
+li, .dropdownswitch {
+  font-family: Inter;
+  font-size: large;
+  font-weight: bold;
+}
+
+a {
+   font-family: Inter;
+   font-weight: lighter;
+}
+
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
   height: fit-content;
-  background-color: white;
+  background-color: #F6ECD4;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
@@ -54,11 +65,9 @@ nav {
 }
 
 .dropdownswitch {
-  background-color: white;
+  background-color: #F6ECD4;
   border: none;
   cursor: pointer;
-  font-size: 20px;
-  font-family: none;
 }
 
 .dropdownswitch:hover {
@@ -69,8 +78,8 @@ nav {
   position: absolute;
   top: 100%;
   left: 0;
-  background: white;
-  border: 1px solid #ffffff;
+  background:  #F6ECD4;
+  border: 1px solid  #F6ECD4;
   min-width: 160px;
   z-index: 1;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);

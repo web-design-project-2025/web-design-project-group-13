@@ -1,11 +1,11 @@
 h1, .text-content > h3 {
-  font-family: Archivo Black;
+  font-family: Inter;
 }
 
 
-h4, .text-content > p  {
-  font-family: Cormorant Garamond;
-  font-weight: 100;
+h4  {
+  font-family: Inter;
+  font-weight: 200;
 }
 
 
@@ -39,7 +39,7 @@ h4, .text-content > p  {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 3em;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   z-index: 1;
