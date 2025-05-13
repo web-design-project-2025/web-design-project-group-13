@@ -12,14 +12,14 @@ export class RecipePaginator {
   displayPage(pageNumber) {
     const start = pageNumber * this.itemsPerPage;
     const end = start + this.itemsPerPage;
-    const pageRecipes = this.recipes.slice(start, end);
+    const pageRecipes = this.recipes.slice(start, end); 
 
     // Use document fragment for batch insertion
     const fragment = document.createDocumentFragment();
 
     pageRecipes.forEach((recipe) => {
       const card = document.createElement("div");
-      card.innerHTML = createRecipeCard(recipe);
+      card.innerHTML = createRecipeCard(recipe); 
       fragment.appendChild(card.firstElementChild);
     });
 
