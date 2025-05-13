@@ -12,13 +12,14 @@
 
 .all-links {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
   color: #523E1D;
 }
 
 .newspaper > p {
   padding-bottom: 1rem;
   color: #523E1D;
+  font-family: Inter;
 }
 
 .links {
@@ -41,6 +42,7 @@
 
 .footer-bottom {
   margin-top: 4rem;
+  color: #523E1D;
 }
 
 .footer-bottom > ul {
@@ -53,7 +55,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: Inter;
 }
+
 #underlined {
   text-decoration: underline;
 }
@@ -61,6 +65,7 @@
 #meallink {
   text-decoration: none;
   color: #523E1D;
+  font-weight: bold;
 }
 
 .emailbox {
