@@ -1,5 +1,5 @@
 .footer {
-  background-color: #e6cd6a;
+  background-color: #F6ECD4;
   height: fit-content;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -13,14 +13,17 @@
 .all-links {
   display: flex;
   gap: 2rem;
+  color: #523E1D;
 }
 
 .newspaper > p {
   padding-bottom: 1rem;
+  color: #523E1D;
 }
 
 .links {
   font-weight: bold;
+  color: #523E1D;
 }
 
 .links > ul,
@@ -29,6 +32,11 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  color: #523E1D;
+}
+
+.links2 > ul > li {
+  color:#523E1D;
 }
 
 .footer-bottom {
@@ -52,7 +60,7 @@
 
 #meallink {
   text-decoration: none;
-  color: black;
+  color: #523E1D;
 }
 
 .emailbox {

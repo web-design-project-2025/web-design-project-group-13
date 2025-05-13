@@ -1,5 +1,10 @@
+.recipe-title, .recipe-description, .recipe-info  {
+  font-family: Inter;
+}
+
+
 .recipe-card {
-  border: 1px solid #ddd;
+  background-color: #F6ECD4;
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -30,7 +35,7 @@
 
 .recipe-description {
   font-size: 0.9rem;
-  color: #666;
+  color: #2e250e;
   margin-bottom: 10px;
   overflow: hidden;
 }
@@ -54,9 +59,6 @@
   margin-left: 5px;
 }
 
-h1, h2 {
-  color: #333;
-}
 
 .recipes-container {
   display: grid;
