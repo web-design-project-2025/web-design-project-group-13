@@ -1,18 +1,18 @@
+span {
+  color: #523e1d;
+}
+
 .filter-button {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-span {
-  color: #523E1D;
-}
-
 .filter-popup-header {
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: #523E1D;
+  color: #523e1d;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid ccc;
@@ -26,7 +26,7 @@ span {
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
-  color: #523E1D;
+  color: #523e1d;
   transition: color 0.3s;
   border-radius: 50%;
   padding: 5px;
@@ -75,7 +75,7 @@ span {
   font-weight: bold;
   margin-bottom: 10px;
   display: block;
-  color: #523E1D;
+  color: #523e1d;
 }
 
 .filter-btn {
@@ -96,7 +96,7 @@ span {
 
 .filter-btn.active {
   background: #ddd2b8;
-  color: #523E1D;
+  color: #523e1d;
   border-color: #ddd2b8;
 }
 
@@ -121,7 +121,7 @@ span {
   right: 0;
   height: 100vh;
   width: 300px;
-  background-color: #F6ECD4;
+  background-color: #f6ecd4;
   box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
   z-index: 9999;
   padding: 20px;
@@ -136,7 +136,7 @@ span {
 
 .filter-popup-header h2 {
   font-size: 1.5rem;
-  color: #523E1D;
+  color: #523e1d;
 }
 
 /* Responsive styles for filtering functionality */
@@ -180,6 +180,4 @@ span {
     font-size: 0.8em; /* Scale down font size */
     margin-top: 10px; /* Adjust margin */
   }
-
-  
 }

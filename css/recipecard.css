@@ -68,6 +68,12 @@
   contain: content; /* Improves rendering performance */
 }
 
+.recipe-card.fade-out {
+ opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
 @media screen and (min-width: 320px) and (max-width: 650px) {
   .recipes-container {
     grid-template-columns: repeat(1, 1fr);

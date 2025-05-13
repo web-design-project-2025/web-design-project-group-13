@@ -44,19 +44,6 @@
 }
 
 
-.pic-header input {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    border-radius: 100px;
-    border: none;
-    padding: 1rem;
-    width: fit-content; /* Auto-adjusts to content */
-    min-width: 250px; /* Ensures it doesn't get too narrow */
-    max-width: 90%; /* Prevents overflow on mobile */
-  }
 /* PICTURE HEADER */
 
 
