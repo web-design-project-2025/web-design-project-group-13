@@ -77,6 +77,11 @@
       <section class="picture">
         <div class="pic-header">
           <img src="images/favoritepageheader.jpeg" alt="Favorites" id="img" />
+
+          <button id="goBackBtn" class="go-back-btn" title="← Go Back">
+            <i onclick="history.back()">← Go Back</i>
+          </button>
+
           <h1>Your liked recipes</h1>
           <h4>Here are all the recipes you liked, good taste!</h4>
 
@@ -168,7 +173,6 @@
                   Show All Recipes
                 </button>
               </div>
-              </div>
             </div>
           </div>
         </div>
@@ -204,9 +208,10 @@
       <!-- Error Display -->
       <!-- <div id="error-message" class="error-message hidden"></div> -->
 
-<div id="favorites-container" class="recipes-container"></div>      
-<button id="load-more" class="load-more"><i class="fa-solid fa-plus"></i></button>
-      
+      <div id="liked-recipes-container" class="recipes-container"></div>
+      <button id="load-more" class="load-more">
+        <i class="fa-solid fa-plus"></i>
+      </button>
     </main>
     <!--Footer-->
     <footer class="footer">
@@ -221,7 +226,6 @@
         </div>
       </div>
 
-
       <section class="all-links">
         <div class="links">
           <ul>
@@ -234,7 +238,6 @@
           </ul>
         </div>
 
-
         <div class="links2">
           <ul>
             <li>Terms Of Service</li>
@@ -243,23 +246,19 @@
           </ul>
         </div>
 
-
         <div class="follow-us">
-         
           <h3>Follow Us</h3>
           <div class="socialmedia">
             <i class="fab fa-facebook"></i>
             <i class="fab fa-instagram"></i>
             <i class="fab fa-twitter"></i>
           </div>
-            <div class="socialmedia2">
-              <i class="fab fa-youtube"></i>
+          <div class="socialmedia2">
+            <i class="fab fa-youtube"></i>
             <i class="fab fa-tiktok"></i>
-            </div>
           </div>
         </div>
       </section>
-
 
       <div class="footer-bottom">
         <ul>

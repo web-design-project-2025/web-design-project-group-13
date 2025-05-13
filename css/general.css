@@ -230,6 +230,26 @@
   transform: scale(1.1);
 }
 
+/*go back btn*/
+.go-back-btn {
+  position: fixed;
+  font-size: 16px;
+  top: 20%;
+  left: 0;
+  z-index: 9999;
+  margin: 20px 20px;
+  color: white;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-style: italic;
+}
+
+.go-back-btn:hover {
+  transform: scale(1.1);
+  transition: ease 1s ;
+}
+
 .favorites-bar {
   display: flex;
   align-items: center;
@@ -272,7 +292,7 @@
 
 
 @media screen and (max-width: 867px) {
-  /* scroll to top btn */
+  /* scroll to top button */
   .scroll-to-top-btn {
     display: none;
     position: fixed;
@@ -320,3 +340,6 @@
 
   /* sort by function */
 }
+
+
+

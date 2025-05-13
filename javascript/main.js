@@ -1,6 +1,6 @@
 // javascript/main.js
 
-// Scroll to Top Button
+// scroll to top button
 document.addEventListener("DOMContentLoaded", () => {
   const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
@@ -19,3 +19,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
  
+// go back button 
+document.addEventListener("DOMContentLoaded", () => {
+  const goBackBtn = document.getElementById("goBackBtn");
+
+  if (goBackBtn) {
+    window.addEventListener("scroll", () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+      if (scrollTop > 400) { 
+        goBackBtn.style.display = "none";
+      } else {
+        goBackBtn.style.display = "block";
+      }
+    });
+  }
+});
