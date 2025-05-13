@@ -22,8 +22,9 @@
     <script type="module" src="javascript/dropdown.js" defer></script>
     <!-- <script type="module" src="javascript/filtering.js" defer></script> -->
     <script type="module" src="javascript/main.js" defer></script>
+    <script type="module" src="javascript/favoritespage.js" defer></script>
   </head>
-  <body data-page="favourites">
+  <body data-page="favorites">
     <!--Navigation-->
     <header>
       <nav>
@@ -173,7 +174,14 @@
         </div>
       </section>
 
+
+
+
       <div class="sort-container">
+        <div class="favorites-bar">
+  <div id="favorites-counter">❤️ 0 Favorites</div>
+</div>
+    <div class="sort">
         <label for="sort-select">Sort by:</label>
         <select id="sort-select">
           <!-- <option value="default">Default</option> -->
@@ -182,6 +190,7 @@
           <option value="time">Time (Ascending)</option>
           <option value="title">Title (A–Z)</option>
         </select>
+        </div>
       </div>
 
       <hr style="margin-bottom: 10px; margin-top: 10px" />
@@ -195,8 +204,8 @@
       <!-- Error Display -->
       <!-- <div id="error-message" class="error-message hidden"></div> -->
 
-      <div id="liked-recipes-container" class="recipes-container"></div>
-      <button id="load-more" class="load-more"><i class="fa-solid fa-plus"></i></button>
+<div id="favorites-container" class="recipes-container"></div>      
+<button id="load-more" class="load-more"><i class="fa-solid fa-plus"></i></button>
       
     </main>
     <!--Footer-->
@@ -264,5 +273,8 @@
     <button id="scrollToTopBtn" class="scroll-to-top-btn" title="Go to top">
       <i class="fa-solid fa-arrow-up"></i>
   </button>
+
+  <div id="favorite-toast" class="favorite-toast hidden"></div>
+
   </body>
 </html>
