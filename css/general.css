@@ -298,10 +298,7 @@ body {
   display: none;
 }
 
-.recipe-card.fade-out {
-  opacity: 0;
-  transition: opacity 0.3s ease-out;
-}
+
 
 
 @media screen and (max-width: 867px) {

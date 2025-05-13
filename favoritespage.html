@@ -100,7 +100,11 @@
             <button class="filter-button" onclick="toggleFilterPopup()">
               <i class="fa-solid fa-sliders"></i>
             </button>
-            <input type="text" id="search" placeholder="Search recipes..." />
+            <input
+              type="text"
+              id="search"
+              placeholder="Search liked recipes..."
+            />
           </div>
 
           <div id="filter-popup" class="filter-popup">
@@ -189,37 +193,34 @@
         </div>
       </section>
 
-
-
-
       <div class="sort-container">
         <div class="favorites-bar">
-  <div id="favorites-counter">❤️ 0 Favorites</div>
-</div>
-    <div class="sort">
-        <label for="sort-select">Sort by:</label>
-        <select id="sort-select">
-          <!-- <option value="default">Default</option> -->
-          <option value="popular">Popular</option>
-          <option value="rating">Rating</option>
-          <option value="time">Time (Ascending)</option>
-          <option value="title">Title (A–Z)</option>
-        </select>
+          <div id="favorites-counter">❤️ 0 Favorites</div>
+        </div>
+        <div class="sort">
+          <label for="sort-select">Sort by:</label>
+          <select id="sort-select">
+            <!-- <option value="default">Default</option> -->
+            <option value="popular">Popular</option>
+            <option value="rating">Rating</option>
+            <option value="time">Time (Ascending)</option>
+            <option value="title">Title (A–Z)</option>
+          </select>
         </div>
       </div>
 
       <hr style="margin-bottom: 10px; margin-top: 10px" />
 
       <!-- Loading Indicator -->
-      <!-- <div id="loading-placeholder" class="loading-placeholder">
-  <div class="spinner"></div>
-  <p>Loading recipes...</p> 
-</div> -->
+      <div id="loading-placeholder" class="loading-placeholder">
+        <div class="spinner"></div>
+        <p>Loading recipes...</p>
+      </div>
 
       <!-- Error Display -->
-      <!-- <div id="error-message" class="error-message hidden"></div> -->
+      <div id="error-message" class="error-message hidden"></div>
 
-      <div id="liked-recipes-container" class="recipes-container"></div>
+      <div id="favorites-container" class="recipes-container"></div>
       <button id="load-more" class="load-more">
         <i class="fa-solid fa-plus"></i>
       </button>
@@ -282,9 +283,8 @@
 
     <button id="scrollToTopBtn" class="scroll-to-top-btn" title="Go to top">
       <i class="fa-solid fa-arrow-up"></i>
-  </button>
+    </button>
 
-  <div id="favorite-toast" class="favorite-toast hidden"></div>
-
+    <div id="favorite-toast" class="favorite-toast hidden"></div>
   </body>
 </html>

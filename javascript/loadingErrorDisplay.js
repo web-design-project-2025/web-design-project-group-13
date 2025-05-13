@@ -10,7 +10,7 @@ export function hideLoadingIndicator() {
   const loadingElement = document.getElementById("loading-placeholder");
   if (loadingElement) {
     loadingElement.classList.add("hidden");
-  }
+  } 
 }
 
 export function showErrorMessage(message) {
