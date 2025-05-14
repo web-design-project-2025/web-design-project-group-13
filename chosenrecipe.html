@@ -12,16 +12,21 @@
       crossorigin="anonymous"
     />
 
-<!--Fonts-->
+    <!--Fonts-->
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="css/chosenrecipe.css" />
     <link rel="stylesheet" href="css/navigation.css" />
@@ -30,8 +35,6 @@
 
     <script type="module" src="/javascript/main.js" defer></script>
     <script type="module" src="/javascript/chosenRecipe.js" defer></script>
-        <!-- <script type="module" src="javascript/favoritespage.js" defer></script> -->
-
   </head>
   <body>
     <!--Navigation-->
@@ -67,7 +70,7 @@
               </li>
               <li>Occasions</li>
               <li>Ingredients</li>
-              <li ><a href="aboutus.html"class="aboutus" >About Us</a></li>
+              <li><a href="aboutus.html" class="aboutus">About Us</a></li>
             </ul>
           </div>
         </section>
@@ -93,7 +96,7 @@
           border-radius: 5px;
           cursor: pointer;
           font-size: 16px;
-          font-style:italic;
+          font-style: italic;
         "
       >
         ← Go Back
@@ -121,22 +124,18 @@
       <h1>Step By Step</h1>
     </div>
 
+    <!-- Ingredients Column -->
     <div class="recipe-columns">
-      <!-- Ingredients Column -->
       <div class="recipe-section">
         <div class="ingredients-box">
-          <table class="ingredients-table" id="ingredients-table">
-            <!-- Will be populated by JavaScript -->
-          </table>
+          <table class="ingredients-table" id="ingredients-table"></table>
         </div>
       </div>
 
       <!-- Method Column -->
       <div class="recipe-section">
         <div class="method-box">
-          <div class="method-steps" id="method-steps">
-            <!-- Will be populated by JavaScript -->
-          </div>
+          <div class="method-steps" id="method-steps"></div>
         </div>
       </div>
     </div>
@@ -145,9 +144,7 @@
       <h2>Similar Recipes</h2>
       <div class="carousel">
         <button class="arrow left"><i class="fas fa-chevron-left"></i></button>
-        <div class="recipe-images" id="similar-recipes">
-          <!-- Will be populated by JavaScript -->
-        </div>
+        <div class="recipe-images" id="similar-recipes"></div>
         <button class="arrow right">
           <i class="fas fa-chevron-right"></i>
         </button>
@@ -155,79 +152,74 @@
     </section>
 
     <section class="reviews">
-      <h2>Reviews</h2>
+      <h2 id="reviews-title">Reviews</h2>
       <div class="rating-overall">
         <span class="stars" id="review-stars"></span>
         <span class="rating" id="review-rating"></span>
       </div>
-      <div id="reviews-container">
-        <!-- Will be populated by JavaScript -->
-      </div>
+      <div id="reviews-container"></div>
     </section>
 
-  <!--Footer-->
-  <footer class="footer">
-    <div class="newspaper">
-      <p>
-        Subscribe for exclusive <strong id="strong">recipes</strong> and
-        <strong id="strong">news!</strong>
-      </p>
-      <div class="emailbox">
-        <input type="email" placeholder="Email" />
-        <button type="submit">&rarr;</button>
-      </div>
-    </div>
-
-    <section class="all-links">
-      <div class="links">
-        <ul>
-          <li>
-            <a href="#" id="meallink">Meals</a>
-          </li>
-          <li>Occasions</li>
-          <li>Ingredients</li>
-          <li ><a href="aboutus.html"class="aboutus" >About Us</a></li>
-        </ul>
-      </div>
-
-      <div class="links2">
-        <ul>
-          <li>Terms Of Service</li>
-          <li>Privacy Policy</li>
-          <li>Contact</li>
-        </ul>
-      </div>
-
-      <div class="follow-us">
-        <h3>Follow Us</h3>
-        <div class="socialmedia">
-          <i class="fab fa-facebook"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-twitter"></i>
-        </div>
-        <div class="socialmedia2">
-          <i class="fab fa-youtube"></i>
-          <i class="fab fa-tiktok"></i>
+    <!--Footer-->
+    <footer class="footer">
+      <div class="newspaper">
+        <p>
+          Subscribe for exclusive <strong id="strong">recipes</strong> and
+          <strong id="strong">news!</strong>
+        </p>
+        <div class="emailbox">
+          <input type="email" placeholder="Email" />
+          <button type="submit">&rarr;</button>
         </div>
       </div>
-    </section>
 
-    <div class="footer-bottom">
-      <ul>
-        <li>@ 2025 Lettuce Cook</li>
-        <li id="underlined">Privacy Policy</li>
-        <li id="underlined">About Cookies</li>
-      </ul>
-    </div>
-  </footer>
+      <section class="all-links">
+        <div class="links">
+          <ul>
+            <li>
+              <a href="#" id="meallink">Meals</a>
+            </li>
+            <li>Occasions</li>
+            <li>Ingredients</li>
+            <li><a href="aboutus.html" class="aboutus">About Us</a></li>
+          </ul>
+        </div>
 
-  <button id="scrollToTopBtn" class="scroll-to-top-btn" title="Go to top">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
+        <div class="links2">
+          <ul>
+            <li>Terms Of Service</li>
+            <li>Privacy Policy</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+
+        <div class="follow-us">
+          <h3>Follow Us</h3>
+          <div class="socialmedia">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+          </div>
+          <div class="socialmedia2">
+            <i class="fab fa-youtube"></i>
+            <i class="fab fa-tiktok"></i>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer-bottom">
+        <ul>
+          <li>@ 2025 Lettuce Cook</li>
+          <li id="underlined">Privacy Policy</li>
+          <li id="underlined">About Cookies</li>
+        </ul>
+      </div>
+    </footer>
+
+    <button id="scrollToTopBtn" class="scroll-to-top-btn" title="Go to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <div id="favorite-toast" class="favorite-toast hidden"></div>
-
   </body>
-
-  
 </html>
