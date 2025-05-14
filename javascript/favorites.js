@@ -1,3 +1,4 @@
+// favorites.js
 const FAVORITES_KEY = "favoriteRecipes";
 
 // Core LocalStorage Functions
@@ -12,8 +13,6 @@ export function saveFavorite(recipe) {
     favorites.push(recipe);
     localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
   }
-  console.log("Saving favorite:", recipe);
-
 }
 
 export function removeFavorite(id) {
@@ -41,7 +40,7 @@ function showFavoriteToast(message) {
 }
 
 // Counter
-function updateFavoritesCounter() {
+export function updateFavoritesCounter() {
   const counter = document.getElementById("favorites-counter");
   if (counter) {
     const count = getFavorites().length;
@@ -49,60 +48,86 @@ function updateFavoritesCounter() {
   }
 }
 
-// Heart Click Handler (called from UI)
-export function handleFavoriteClick(recipeJSON, iconElement) {
-  const recipe = JSON.parse(decodeURIComponent(recipeJSON));
+// Heart Click Handler
+export function handleFavoriteClick(recipe, iconElement) {
   const favorited = isFavorite(recipe.id);
 
-  if (favorited) {
+  // Special case for favorites page - only allow unliking
+  if (window.location.pathname.includes('favoritespage')) {
+    if (!favorited) return; // Shouldn't happen since only favorites should be shown
+    
     removeFavorite(recipe.id);
-    iconElement.classList.remove("active");
+    iconElement?.classList.remove("active");
     showFavoriteToast(`${recipe.title} removed from favorites.`);
-  } else {
-    saveFavorite(recipe);
-    iconElement.classList.add("active");
-    showFavoriteToast(`${recipe.title} added to favorites!`);
+    removeRecipeCardFromDOM(recipe.id);
+  } 
+  // Normal behavior for other pages
+  else {
+    if (favorited) {
+      removeFavorite(recipe.id);
+      iconElement?.classList.remove("active");
+      showFavoriteToast(`${recipe.title} removed from favorites.`);
+    } else {
+      saveFavorite(recipe);
+      iconElement?.classList.add("active");
+      showFavoriteToast(`${recipe.title} added to favorites!`);
+    }
   }
 
   updateFavoritesCounter();
-  console.log("Handling favorite click for:", recipe);
 }
 
-// Initial Counter Update
-document.addEventListener("DOMContentLoaded", () => {
-  updateFavoritesCounter();
-});
+// Global Heart Handler Setup
+export function setupGlobalHeartHandler() {
+  document.addEventListener("click", (e) => {
+    const heart = e.target.closest("[data-heart]");
+    const card = e.target.closest(".recipe-card");
 
-// Global Click Handler (heart icons & card navigation)
-document.addEventListener("click", (e) => {
-  const heart = e.target.closest("[data-heart]");
-  const card = e.target.closest(".recipe-card");
+    if (heart) {
+      e.stopPropagation();
+      const icon = heart.querySelector("i");
+      const recipeData = heart.getAttribute("data-recipe");
+      
+      try {
+        const recipe = JSON.parse(decodeURIComponent(recipeData));
+        handleFavoriteClick(recipe, icon);
+        
+        // Special handling for favorites page
+        if (window.location.pathname.includes('favoritespage')) {
+          const container = document.getElementById("favorites-container");
+          if (container) {
+            const favorites = getFavorites();
+            if (favorites.length === 0) {
+              container.innerHTML = "<p>No favorites yet.</p>";
+            }
+          }
+        }
+      } catch (err) {
+        console.error("Error handling favorite click:", err);
+      }
+      return;
+    }
 
-  if (heart) {
-    e.stopPropagation();
-    const icon = heart.querySelector("i");
-    const recipeData = heart.getAttribute("data-recipe");
-    handleFavoriteClick(recipeData, icon);
-    return;
-  }
+    if (card && card.dataset.id) {
+      window.location.href = `chosenrecipe.html?id=${card.dataset.id}`;
+    }
+  });
+}
 
-  if (card && card.dataset.id) {
-    window.location.href = `chosenrecipe.html?id=${card.dataset.id}`;
-  }
-});
-
-// Remove Recipe Card after clicking "Remove from Favorites" (no refresh)
+// Remove Recipe Card from DOM
 export function removeRecipeCardFromDOM(recipeId) {
   const card = document.querySelector(`.recipe-card[data-id="${recipeId}"]`);
-
   if (card) {
-    // Add fade-out effect before removal
     card.classList.add("fade-out");
-
-    // After fade-out completes, remove the card
     setTimeout(() => {
       card.remove();
-      updateFavoritesCounter(); // Update the counter after the removal
-    }, 1000); // Adjust the delay based on your fade-out duration
+      updateFavoritesCounter();
+    }, 1000);
   }
 }
+
+// Initialize on DOM load
+document.addEventListener("DOMContentLoaded", () => {
+  updateFavoritesCounter();
+  setupGlobalHeartHandler();
+});
