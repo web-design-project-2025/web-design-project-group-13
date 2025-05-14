@@ -26,7 +26,7 @@ export function populateSplitSection(recipesData) {
     splitSection.style.cursor = 'pointer';
     splitSection.addEventListener('click', () => {
       const currentRecipeId = recipesData.featured[currentIndex];
-      window.location.href = `recipe.html?id=${currentRecipeId}`;
+      window.location.href = `chosenrecipe.html?id=${currentRecipeId}`;
     });
 
     let currentIndex = 0;
@@ -44,7 +44,9 @@ export function populateSplitSection(recipesData) {
         const imagePath = recipe.image.startsWith('images/') ? 
                          recipe.image : 
                          `images/${recipe.image}`;
-        imageHalf.innerHTML = `<img src="${imagePath}" alt="${recipe.title}" loading="lazy">`;
+        imageHalf.innerHTML = `<img src="${imagePath}" alt="${recipe.title}" loading="lazy">
+        `
+        ;
 
         colorHalf.innerHTML = `
           <div class="text-content">

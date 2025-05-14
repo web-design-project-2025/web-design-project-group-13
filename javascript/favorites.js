@@ -1,4 +1,3 @@
-// favorites.js
 const FAVORITES_KEY = "favoriteRecipes";
 
 // Core LocalStorage Functions
@@ -52,28 +51,30 @@ export function updateFavoritesCounter() {
 export function handleFavoriteClick(recipe, iconElement) {
   const favorited = isFavorite(recipe.id);
 
-  // Special case for favorites page - only allow unliking
-  if (window.location.pathname.includes('favoritespage')) {
-    if (!favorited) return; // Shouldn't happen since only favorites should be shown
-    
+  // Check current state from DOM rather than localStorage
+  const isCurrentlySolid = iconElement.classList.contains("fas");
+
+  if (window.location.pathname.includes("favoritespage")) {
+    if (!favorited) return;
+
     removeFavorite(recipe.id);
-    iconElement?.classList.remove("active");
+    iconElement.classList.remove("fas");
+    iconElement.classList.add("far");
     showFavoriteToast(`${recipe.title} removed from favorites.`);
     removeRecipeCardFromDOM(recipe.id);
-  } 
-  // Normal behavior for other pages
-  else {
-    if (favorited) {
+  } else {
+    if (isCurrentlySolid) {
       removeFavorite(recipe.id);
-      iconElement?.classList.remove("active");
+      iconElement.classList.remove("fas");
+      iconElement.classList.add("far");
       showFavoriteToast(`${recipe.title} removed from favorites.`);
     } else {
       saveFavorite(recipe);
-      iconElement?.classList.add("active");
+      iconElement.classList.remove("far");
+      iconElement.classList.add("fas");
       showFavoriteToast(`${recipe.title} added to favorites!`);
     }
   }
-
   updateFavoritesCounter();
 }
 
@@ -87,13 +88,13 @@ export function setupGlobalHeartHandler() {
       e.stopPropagation();
       const icon = heart.querySelector("i");
       const recipeData = heart.getAttribute("data-recipe");
-      
+
       try {
         const recipe = JSON.parse(decodeURIComponent(recipeData));
         handleFavoriteClick(recipe, icon);
-        
+
         // Special handling for favorites page
-        if (window.location.pathname.includes('favoritespage')) {
+        if (window.location.pathname.includes("favoritespage")) {
           const container = document.getElementById("favorites-container");
           if (container) {
             const favorites = getFavorites();
@@ -130,4 +131,22 @@ export function removeRecipeCardFromDOM(recipeId) {
 document.addEventListener("DOMContentLoaded", () => {
   updateFavoritesCounter();
   setupGlobalHeartHandler();
+  
+  // Initialize heart icons based on favorites
+  document.querySelectorAll('.heart-icon i').forEach(icon => {
+    const recipeId = icon.closest('[data-recipe-id]')?.getAttribute('data-recipe-id');
+    if (recipeId && isFavorite(recipeId)) {
+      // If favorited, make it solid red
+      icon.classList.add('fas');
+      icon.style.color = 'red';
+      icon.style.webkitTextStroke = '0';
+    } else {
+      // If not favorited, make it outline
+      icon.classList.add('far');
+      icon.style.color = 'transparent';
+      icon.style.webkitTextStroke = '1.5px black';
+    }
+  });
 });
+
+

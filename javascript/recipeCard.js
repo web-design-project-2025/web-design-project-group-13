@@ -21,7 +21,7 @@ export function createRecipeCard(recipe, options = {}) {
     ? "fas fa-heart active"
     : favorited
     ? "fas fa-heart active"
-    : "fas fa-heart";
+    : "far fa-heart";
   const recipeJSON = encodeURIComponent(JSON.stringify(recipe));
 
   return `

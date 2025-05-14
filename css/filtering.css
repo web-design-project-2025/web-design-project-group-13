@@ -7,6 +7,10 @@ span {
   border: none;
   cursor: pointer;
 }
+.filter-button:hover {
+transform: rotate(90deg);
+  transition: transform 0.3s;
+}
 
 .filter-popup-header {
   background: none;

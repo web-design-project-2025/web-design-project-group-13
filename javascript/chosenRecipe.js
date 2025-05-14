@@ -89,7 +89,7 @@ function updateRecipeDetails(recipe) {
     });
   } else {
     ingredientsTable.innerHTML =
-      "<tr><td colspan='2'>No ingredients listed.</td></tr>";
+      "<tr><td colspan='2'>No ingredients listed.</td></tr>"; 
   }
 
   const methodSteps = document.getElementById("method-steps");

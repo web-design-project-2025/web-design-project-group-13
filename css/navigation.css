@@ -18,6 +18,16 @@ li, .dropdownswitch {
   cursor: pointer;
 }
 
+#heart-icon {
+  cursor: pointer;
+}
+
+#heart-icon:hover {
+  color: #f7445f;
+  transform: scale(1.2);
+  transition: transform 0.1s ease;
+}
+
 a {
    font-family: Inter;
    font-weight: lighter;
@@ -44,7 +54,9 @@ nav {
 .logo img {
   max-height: 120px;
   height: auto;
+  cursor: pointer;
 }
+
 
 .logo-menu {
   display: flex;
