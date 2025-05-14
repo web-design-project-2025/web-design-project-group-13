@@ -43,7 +43,7 @@ h4  {
   font-size: 3em;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   z-index: 1;
-}
+} 
 
 /*Explore header 2*/
 .explore-header h4 {
@@ -57,42 +57,7 @@ h4  {
   z-index: 1;
 }
 
-/* Split section */
-.split-section {
-  display: flex;
-  width: 100%;
-  margin-bottom: 10rem;
-}
 
-.image-half {
-  flex: 1;
-}
-
-.image-half img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-  }
-
-.color-half {
-  flex: 1;
-  background-color:  #166940; 
-  padding: 40px;
-}
-
-.text-content {
-  color: rgb(255, 255, 255);
-  font-family: Inter;
-}
-
-.text-content > h3 {
-font-size: 3rem;
-margin-bottom: 2rem;
-}
-
-.logo, i {
-  cursor: pointer;
-}
 
 
 @media screen and (min-width: 320px) and (max-width: 348px) {

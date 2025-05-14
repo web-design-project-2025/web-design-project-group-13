@@ -17,7 +17,7 @@
         { "name": "Lettuce", "measure": "1 cup" },
         { "name": "Salsa", "measure": "1/2 cup" },
         { "name": "Avocado", "measure": "1" },
-        { "name": "Greek yogurt", "measure": "1/4 cup" }, 
+        { "name": "Greek yogurt", "measure": "1/4 cup" },
         { "name": "Lime wedges", "measure": " " }
       ],
       "steps": [
@@ -953,5 +953,6 @@
       ]
     }
   ],
-  "popular": [1, 2, 3, 4, 5, 6, 7, 8]
+  "popular": [1, 2, 3, 4, 5, 6, 7, 8],
+  "featured": [13, 14  ]
 }
