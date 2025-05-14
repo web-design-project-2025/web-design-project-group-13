@@ -5,6 +5,19 @@ li, .dropdownswitch {
   color: #523E1D;
 }
 
+.aboutus {
+  text-decoration: none;
+  font-family: Inter;
+  font-size: large;
+  font-weight: bold;
+  color: #523E1D;
+}
+
+.aboutus:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 a {
    font-family: Inter;
    font-weight: lighter;

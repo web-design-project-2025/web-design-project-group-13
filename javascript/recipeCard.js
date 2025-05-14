@@ -1,3 +1,4 @@
+// recipeCard.js
 import { isFavorite } from "./favorites.js";
 
 export function createRecipeCard(recipe, options = {}) {
@@ -14,25 +15,31 @@ export function createRecipeCard(recipe, options = {}) {
       : `${recipe.time}m`;
 
   const favorited = isFavorite(recipe.id);
-  const heartClass = favorited ? "fas fa-heart active" : "fas fa-heart";
+  const isFavoritesPage =
+    document.querySelector('meta[name="page-type"]')?.content === "favorites";
+  const heartClass = isFavoritesPage
+    ? "fas fa-heart active"
+    : favorited
+    ? "fas fa-heart active"
+    : "fas fa-heart";
   const recipeJSON = encodeURIComponent(JSON.stringify(recipe));
-
 
   return `
     <div class="recipe-card" data-id="${recipe.id}">
       <img src="${recipe.image}" alt="${recipe.title}" 
            class="recipe-image"
            loading="lazy"
-           >
-
+           width="250"
+           height="188">
       <div class="heart-icon" data-heart data-recipe="${recipeJSON}">
         <i class="${heartClass}"></i>
       </div>
-
       <div class="recipe-info">
         <h3 class="recipe-title">
           ${recipe.title}
-          ${showPopularBadge ? '<span class="popular-badge">Popular</span>' : ""}
+          ${
+            showPopularBadge ? '<span class="popular-badge">Popular</span>' : ""
+          }
         </h3>
         <p class="recipe-description">${recipe.description}</p>
         <div class="recipe-meta">

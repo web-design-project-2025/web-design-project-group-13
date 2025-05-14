@@ -161,6 +161,12 @@ body {
   color: white;
 }
 
+#sort-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
 .sort{
       padding: 8px 12px;
     border-radius: 4px;

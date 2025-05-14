@@ -1,7 +1,8 @@
 import {
   getFavorites,
-  removeFavorite,
-  removeRecipeCardFromDOM,
+  setupGlobalHeartHandler,
+  updateFavoritesCounter,
+  isFavorite
 } from "./favorites.js";
 import { createRecipeCard } from "./recipeCard.js";
 import { RecipePaginator } from "./paginator.js";
@@ -17,6 +18,7 @@ function toggleFilterPopup() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+  setupGlobalHeartHandler();
   const container = document.getElementById("favorites-container");
   const loadingPlaceholder = document.getElementById("loading-placeholder");
   const errorMessage = document.getElementById("error-message");
@@ -39,12 +41,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     let favorites = getFavorites();
+
+    // Ensure all displayed recipes are actually favorited
+    favorites = favorites.filter(recipe => isFavorite(recipe.id));
+
     let activeFilters = {
       diet: [],
       ingredients: [],
       searchTerm: "",
     };
-    
+
     // Track how many recipes are currently loaded
     let currentLoadedCount = 8;
 
@@ -89,11 +95,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         8,
         loadMoreButton
       );
-      
+
       // Show all recipes up to current count
       const pagesToShow = Math.ceil(currentLoadedCount / 8);
       let allLoaded = false;
-      
+
       for (let i = 0; i < pagesToShow; i++) {
         const hasMore = paginator.displayPage(i);
         if (!hasMore) {
@@ -101,7 +107,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           break;
         }
       }
-      
+
       // Update load more button visibility
       if (loadMoreButton) {
         loadMoreButton.style.display = allLoaded ? "none" : "block";
@@ -116,18 +122,18 @@ document.addEventListener("DOMContentLoaded", async () => {
         ingredients: [],
         searchTerm: "",
       };
-      
+
       // Clear search input
       if (searchInput) searchInput.value = "";
-      
+
       // Remove active class from all filter buttons
-      filterButtons?.forEach(button => {
+      filterButtons?.forEach((button) => {
         button.classList.remove("active");
       });
-      
+
       // Reset to default sort
       if (sortSelect) sortSelect.value = "popular";
-      
+
       // Reset loaded count and re-render
       currentLoadedCount = 8;
       applyFiltersAndRender(true);
@@ -159,28 +165,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
 
-    // Heart icon handler
-    container.addEventListener("click", (event) => {
-      const heartIcon = event.target.closest(".heart-icon");
-      if (heartIcon) {
-        event.stopPropagation();
-        const card = heartIcon.closest(".recipe-card");
-        const recipeId = card.dataset.recipeId;
-        removeFavorite(recipeId);
-        removeRecipeCardFromDOM(recipeId);
-
-        favorites = getFavorites();
-        applyFiltersAndRender(true); // Reset loaded count when removing favorites
-
-        if (favorites.length === 0) {
-          container.innerHTML = "<p>No favorites yet.</p>";
-        }
-      }
-    });
-
     // Initial render
     applyFiltersAndRender(true);
-
   } catch (error) {
     console.error("Error loading favorites:", error);
     errorMessage.textContent = "Failed to load favorites. Please try again.";
