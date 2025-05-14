@@ -10,10 +10,11 @@
     .recipe-section {
         margin-bottom: 30px;
     }
+
     
     .headers {
         font-size: 15px;
-        background-color: #99CC5F;
+        background-color: #166940;
         box-sizing: border-box; 
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -24,11 +25,11 @@
         font-size: 24px;
         font-weight: 600;
         padding: 12px 17px; 
-        background-color: #ffffff;
+        color: #F6ECD4;
     }
     
     .ingredients-box {
-        background: white;
+        background: #F6ECD4;
         padding: 25px;
         border-radius: 8px;
         box-shadow: 0 1px 3px rgba(0,0,0,0.2);
@@ -42,8 +43,9 @@
     
     .ingredients-table td {
         padding: 10px 0;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid  #523E1D;
         vertical-align: top;
+        color: #523E1D;
     }
     
     
@@ -54,12 +56,12 @@
     
     .ingredient-measure {
         text-align: right;
-        color: #000000;
+        color: #523E1D;
         white-space: nowrap;
     }
     
     .method-box {
-        background: white;
+        background:#F6ECD4;
         padding: 25px;
         border-radius: 8px;
         box-shadow: 0 1px 3px rgba(0,0,0,0.2);
@@ -68,6 +70,7 @@
     
     .method-steps {
         counter-reset: step-counter;
+        color: #523E1D;
     }
     
     .step {
@@ -82,7 +85,7 @@
         position: absolute;
         left: 0;
         font-weight: bold;
-        color: #333;
+        color: #624414;
     }
     
     .step p {
@@ -92,18 +95,16 @@
     /* recommendations + reviews */
     body {
         font-family: system-ui, sans-serif;
-        padding: 20px;
         margin: none;
         background: #fff;
-        color: #333;
       }
       
       .similar-recipes h2,
       .reviews h2 {
         text-align: center;
         font-size: 1.5em;
-        margin-bottom: 1.7rem;
-        margin-top: 1.7rem;
+        margin: 4rem;
+        color: #F6ECD4;
       }
       
       .carousel {
@@ -140,12 +141,13 @@
       .rating-overall {
         font-size: 1.2em;
         margin-bottom: 1rem;
+         color: #F6ECD4;
       }
       
       .review {
         display: flex;
         align-items: flex-start;
-        background: #eeeeee72;
+        background: #166940;
         border-radius: 12px;
         padding: 20px;
         margin: 25px auto;
@@ -162,6 +164,7 @@
       
       .review-content {
         text-align: left;
+        color: #F6ECD4;
       }
       
       .name-rating {
@@ -170,10 +173,11 @@
         gap: 70px;
         font-size: 0.9em;
         margin-bottom: 13px;
+        justify-content: space-between;
       }
       
       .stars {
-        color: #000;
+        color: #F6ECD4;
         letter-spacing: 2px;
       }
       
@@ -182,7 +186,7 @@
       /* Aspargus risotto card */
       .recipe-card {
         display: flex;
-        background-color: #fff;
+        background-color: #F6ECD4;
         border-radius: 16px;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         overflow: hidden;
@@ -210,12 +214,15 @@
         border-radius: 12px;
       }
       
-      
+      #reviews-container {
+        margin-bottom: 8rem;
+      }
       
       .recipe-content h2 {
         font-size: 26px;
         font-weight: 00;
-        margin-bottom: 70px;;
+        margin-bottom: 70px;
+        color: #523E1D;
       }
       
       .recipe-meta {
@@ -234,13 +241,13 @@
       
       .recipe-meta .stars {
         font-size: 18px;
-        color: #000;
+        color: #523E1D;
       }
       
       .recipe-meta .stars a {
         font-size: 14px;
         margin-left: 8px;
-        color: #333;
+        color: #523E1D;
         text-decoration: underline;
       }
     
@@ -248,6 +255,11 @@
         font-size: 16px;
         line-height: 1.7;
         margin-top: 30px;
+        color: #523E1D;
+      }
+
+      .arrow {
+         color: #F6ECD4;
       }
       
       

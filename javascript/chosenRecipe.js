@@ -189,15 +189,18 @@ function displayReviews(recipe) {
     reviewElement.className = "review";
 
     reviewElement.innerHTML = `
-      <img src="images/user-icon.png" alt="Avatar" />
+      <img src="images/ProfilePicture.jpeg" alt="Avatar" />
       
       <div class="review-content">
         <div class="name-rating">
           <span>${review.username || "Anonymous"}</span>
+
+          <div class="stars-rating">
           <span class="stars">${"★".repeat(review.rating)}${"☆".repeat(
       5 - review.rating
     )}</span>
           <span>${review.rating}/5</span>
+          </div>
         </div>
         <p>${review.comment}</p>
         ${

@@ -23,8 +23,7 @@ export function createRecipeCard(recipe, options = {}) {
       <img src="${recipe.image}" alt="${recipe.title}" 
            class="recipe-image"
            loading="lazy"
-           width="250"
-           height="188">
+           >
 
       <div class="heart-icon" data-heart data-recipe="${recipeJSON}">
         <i class="${heartClass}"></i>
