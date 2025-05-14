@@ -52,7 +52,6 @@ transform: rotate(90deg);
   flex-direction: column;
   flex-wrap: wrap;
   gap: 10px;
-  /* margin-top: 10px; */
 }
 
 .all-recipes-btn {
@@ -66,7 +65,6 @@ transform: rotate(90deg);
   font-size: 0.9em;
   width: 100%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
-  /* margin-bottom: 20px; */
 }
 
 .all-recipes-btn:hover {
@@ -80,6 +78,7 @@ transform: rotate(90deg);
   margin-bottom: 10px;
   display: block;
   color: #523e1d;
+  font-family: Inter;
 }
 
 .filter-btn {
@@ -141,47 +140,48 @@ transform: rotate(90deg);
 .filter-popup-header h2 {
   font-size: 1.5rem;
   color: #523e1d;
+  font-family: Inter;
 }
 
 /* Responsive styles for filtering functionality */
 @media screen and (max-width: 375px) {
   .filter-buttons {
     flex-direction: column;
-    gap: 5px; /* Reduce gap for smaller screens */
-    margin: 10px; /* Add some margin for spacing */
+    gap: 5px; 
+    margin: 10px; 
   }
 
   .filter-btn {
-    font-size: 0.8em; /* Scale down font size */
-    padding: 5px 10px; /* Adjust padding */
-    border-radius: 15px; /* Slightly smaller border radius */
+    font-size: 0.8em; 
+    padding: 5px 10px; 
+    border-radius: 15px;
   }
 
   .filter-popup {
-    width: 70%; /* Adjust width to fit smaller screens */
-    height: auto; /* Allow height to adjust dynamically */
-    padding: 15px; /* Reduce padding */
-    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    width: 70%;
+    height: auto; 
+    padding: 15px; 
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1); 
   }
 
   .filter-popup-header {
-    font-size: 1.2rem; /* Scale down header font size */
-    padding-bottom: 5px; /* Adjust padding */
+    font-size: 1.2rem; 
+    padding-bottom: 5px; 
   }
 
   .close-btn {
-    font-size: 1.2rem; /* Scale down close button size */
-    width: 30px; /* Adjust width */
-    height: 30px; /* Adjust height */
+    font-size: 1.2rem; 
+    width: 30px; 
+    height: 30px; 
   }
 
   .apply-filters-btn {
-    font-size: 0.9em; /* Scale down button font size */
-    padding: 8px; /* Adjust padding */
+    font-size: 0.9em; 
+    padding: 8px; 
   }
 
   .selected-filters {
-    font-size: 0.8em; /* Scale down font size */
-    margin-top: 10px; /* Adjust margin */
+    font-size: 0.8em; 
+    margin-top: 10px; 
   }
 }

@@ -78,7 +78,17 @@ function updateRecipeDetails(recipe) {
     "☆".repeat(5 - Math.round(recipe.rating));
   document.getElementById(
     "recipe-rating"
-  ).innerHTML = `${ratingStars} <a href="#">See more</a>`;
+  ).innerHTML = `${ratingStars} <a href="#" id="see-more-btn">See more</a>`;
+
+  // see more - reviews
+  const seeMoreBtn = document.getElementById("see-more-btn");
+  seeMoreBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    const reviewsTitle = document.getElementById("reviews-title");
+    if (reviewsTitle) {
+      reviewsTitle.scrollIntoView({ behavior: "smooth" });
+    }
+  });
 
   const ingredientsTable = document.getElementById("ingredients-table");
   if (recipe.ingredients && Array.isArray(recipe.ingredients)) {
@@ -112,7 +122,7 @@ function updateSimilarRecipes(recipes, currentRecipe) {
     return;
   }
 
-  similarRecipesContainer.innerHTML = ""; // Clear existing content
+  similarRecipesContainer.innerHTML = "";
 
   // Ensure currentRecipe.categories exists and is a string
   const currentCategories = currentRecipe.categories
@@ -166,10 +176,10 @@ function displayReviews(recipe) {
     recipe.reviews.length > 0
       ? recipe.reviews.reduce((sum, review) => sum + review.rating, 0) /
         recipe.reviews.length
-      : recipe.rating; // Fallback to recipe rating if no reviews
+      : recipe.rating;
 
   // Display average rating
-  const roundedRating = Math.round(averageRating * 10) / 10; // Round to 1 decimal
+  const roundedRating = Math.round(averageRating * 10) / 10;
   reviewStars.textContent =
     "★".repeat(Math.round(averageRating)) +
     "☆".repeat(5 - Math.round(averageRating));

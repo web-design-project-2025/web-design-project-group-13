@@ -185,7 +185,7 @@ body {
   z-index: 99;
   border: none;
   outline: none;
-  background-color: #809862;
+  background-color: #6e8255;
   color: white;
   cursor: pointer;
   padding: 12px;
@@ -283,7 +283,8 @@ body {
   align-items: center;
   font-size: 1rem;
   font-weight: bold;
-  color: #d9534f;
+  color: #F6ECD4;
+  font-family: Inter;
 }
 
 #favorites-counter {
