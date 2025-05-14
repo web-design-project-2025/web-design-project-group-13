@@ -2,11 +2,12 @@
 
 import { populateSplitSection } from "./split-section.js";
 
-// Load your recipes data (adjust the path as needed)
 fetch("/json/recipes.json")
   .then((response) => response.json())
   .then((data) => {
-    // Populate other sections first if needed...
+    // const cleanup = populateSplitSection(data);
+    //   cleanup();
+
     populateSplitSection(data);
   })
   .catch((error) => {

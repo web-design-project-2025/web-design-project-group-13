@@ -1,75 +1,78 @@
-// split-section.js
 export function populateSplitSection(recipesData) {
-  console.log("Received data:", recipesData); // Debug log
-
-//   const displayTime =
-//     recipe.time >= 60
-//       ? `${Math.floor(recipe.time / 60)}h ${recipe.time % 60}m`
-//       : `${recipe.time}m`;
-
   try {
-    // 1. Check if split-section array exists
-    if (!recipesData || !recipesData["split-section"]) {
-      console.warn("No split-section data found in recipes", recipesData);
+    if (!recipesData?.featured?.length) {
+      console.warn('No featured recipes data found');
       return;
     }
 
-    // 2. Get the first ID from split-section array
-    const splitRecipeId = recipesData["split-section"][0];
-    console.log("Looking for recipe ID:", splitRecipeId); // Debug log
-
-    if (!splitRecipeId) {
-      console.warn("No recipe ID found in split-section array");
-      return;
-    }
-
-    // 3. Find the matching recipe
-    const splitRecipe = recipesData.recipes.find(
-      (recipe) => recipe.id === splitRecipeId
-    );
-    console.log("Found recipe:", splitRecipe); // Debug log
-
-    if (!splitRecipe) {
-      console.warn(`No recipe found with ID ${splitRecipeId}`);
-      return;
-    }
-
-    // 4. Get DOM elements
     const splitSection = document.querySelector(".split-section");
     if (!splitSection) {
       console.warn("No split-section element found in DOM");
       return;
     }
 
-    // 5. Update image half - ensure image path is correct
     const imageHalf = splitSection.querySelector(".image-half");
-    if (imageHalf) {
-      const imagePath = splitRecipe.image.startsWith("images/")
-        ? splitRecipe.image
-        : `images/${splitRecipe.image}`;
-      imageHalf.innerHTML = `<img src="${imagePath}" alt="${splitRecipe.title}" loading="lazy">`;
-    }
-
-    // 6. Update content half
     const colorHalf = splitSection.querySelector(".color-half");
-    if (colorHalf) {
-      colorHalf.innerHTML = `
-        <div class="text-content">
-          <h3>${splitRecipe.title}</h3>
-          <p>${splitRecipe.description}</p>
-          <span>⏱ ${splitRecipe.displayTime}</span>
-          <span>⭐ ${splitRecipe.rating}</span>
-        </div>
-      `;
+    if (!imageHalf || !colorHalf) return;
 
-      // Add click handler
-      colorHalf
-        .querySelector(".view-recipe-btn")
-        ?.addEventListener("click", () => {
-          window.location.href = `recipe.html?id=${splitRecipe.id}`;
-        });
-    }
+    // Helper function to format time
+    const formatTime = (minutes) => {
+      return minutes >= 60 
+        ? `${Math.floor(minutes / 60)}h ${minutes % 60}m` 
+        : `${minutes}m`;
+    };
+
+    // Make entire section clickable
+    splitSection.style.cursor = 'pointer';
+    splitSection.addEventListener('click', () => {
+      const currentRecipeId = recipesData.featured[currentIndex];
+      window.location.href = `recipe.html?id=${currentRecipeId}`;
+    });
+
+    let currentIndex = 0;
+    const displayDuration = 5000;
+    const transitionDuration = 1000;
+
+    const showRecipe = (index) => {
+      const recipeId = recipesData.featured[index];
+      const recipe = recipesData.recipes.find(r => r.id === recipeId);
+      if (!recipe) return;
+
+      splitSection.style.opacity = '0';
+
+      setTimeout(() => {
+        const imagePath = recipe.image.startsWith('images/') ? 
+                         recipe.image : 
+                         `images/${recipe.image}`;
+        imageHalf.innerHTML = `<img src="${imagePath}" alt="${recipe.title}" loading="lazy">`;
+
+        colorHalf.innerHTML = `
+          <div class="text-content">
+            <h3>${recipe.title}</h3>
+            <p>${recipe.description}</p>
+            <div class="recipe-meta">
+              <span>⏱ ${formatTime(recipe.time)}</span>
+              <span>⭐ ${recipe.rating}</span>
+            </div>
+          </div>
+        `;
+
+        splitSection.style.opacity = '1';
+      }, transitionDuration);
+    };
+
+    showRecipe(currentIndex);
+
+    const rotateRecipes = () => {
+      currentIndex = (currentIndex + 1) % recipesData.featured.length;
+      showRecipe(currentIndex);
+    };
+
+    const rotationInterval = setInterval(rotateRecipes, displayDuration);
+
+    return () => clearInterval(rotationInterval);
+
   } catch (error) {
-    console.error("Error populating split section:", error);
+    console.error("Error in recipe rotation:", error);
   }
 }
