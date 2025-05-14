@@ -1,0 +1,44 @@
+body {
+  font-family: Inter;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #523e1d;
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  line-height: 1.8;
+}
+
+h2 {
+  color: #166940;
+  margin-top: 2rem;
+}
+
+p {
+  margin-bottom: 1.2rem;
+}
+
+.highlight {
+  color: #66bb6a;
+  font-weight: bold;
+}
+
+.logo-two {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  transform: translateY(100%);
+}
+
+.logo-two img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+}
