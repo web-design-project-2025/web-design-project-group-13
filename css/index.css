@@ -58,6 +58,11 @@ h4  {
   z-index: 1;
 }
 
+.fancy-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10rem;
+}
 
 
 
