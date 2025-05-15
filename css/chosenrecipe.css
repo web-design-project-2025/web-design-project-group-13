@@ -2,19 +2,6 @@
   font-family: Inter;
 }
 
-.recipe-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin-left: 60px;
-  margin-right: 60px;
-  margin-top: 20px;
-}
-
-.recipe-section {
-  margin-bottom: 30px;
-}
-
 .headers {
   font-size: 15px;
   background-color: #166940;
@@ -31,97 +18,23 @@ h1 {
   color: #f6ecd4;
 }
 
-.ingredients-box {
-  background: #f6ecd4;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  height: 90%;
-}
+/* toggle buttons */
 
-.ingredients-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.ingredients-table td {
-  padding: 10px 0;
-  border-bottom: 1px solid #523e1d;
-  vertical-align: top;
-  color: #523e1d;
-}
-
-.ingredient-name {
-  font-weight: 500;
-  padding-right: 15px;
-}
-
-.ingredient-measure {
-  text-align: right;
-  color: #523e1d;
-  white-space: nowrap;
-}
-
-.method-box {
-  background: #f6ecd4;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  height: 90%;
-}
-
-.method-steps {
-  counter-reset: step-counter;
-  color: #523e1d;
-}
-
-.step {
-  margin-bottom: 20px;
-  padding-left: 30px;
-  position: relative;
-}
-
-.step::before {
-  content: counter(step-counter) ".";
-  counter-increment: step-counter;
-  position: absolute;
-  left: 0;
-  font-weight: bold;
-  color: #624414;
-}
-
-.step p {
-  margin: 0;
-}
-
-/* recommendations + reviews */
-body {
-  margin: none;
-  background: #fff;
-}
-
-.similar-recipes h2,
-.reviews h2 {
-  text-align: center;
-  font-size: 1.5em;
-  margin: 4rem;
-  color: #f6ecd4;
-}
-
-.carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 60px;
-  margin-bottom: 3rem;
-}
-
-.carousel .arrow {
+#ingredients-toggle,
+#steps-toggle {
   background: none;
   border: none;
-  font-size: 1.5em;
-  cursor: pointer;
 }
+
+/* recipe */
+
+.recipe-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 20px 60px;
+}
+
 
 .recipe-images {
   display: flex;
@@ -135,65 +48,6 @@ body {
   object-fit: cover;
 }
 
-.reviews {
-  text-align: center;
-}
-
-.rating-overall {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  font-size: 1.2em;
-  margin-bottom: 1rem;
-  color: #f6ecd4;
-}
-
-.review {
-  display: flex;
-  align-items: flex-start;
-  background: #166940;
-  border-radius: 12px;
-  padding: 20px;
-  margin: 25px auto;
-  max-width: 400px;
-  gap: 17px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.review img {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-}
-
-.review-content {
-  text-align: left;
-  color: #f6ecd4;
-}
-
-.name-rating {
-  display: flex;
-  align-items: center;
-  gap: 70px;
-  font-size: 0.9em;
-  margin-bottom: 13px;
-  justify-content: space-between;
-}
-
-.stars {
-  color: #f6ecd4;
-  letter-spacing: 2px;
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  padding-right: 1rem;
-}
-
-.stars > a {
-  font-weight: 400;
-}
-
-/* Aspargus risotto card */
 .recipe-card {
   display: flex;
   background-color: #f6ecd4;
@@ -221,10 +75,6 @@ body {
   height: auto;
   display: block;
   border-radius: 12px;
-}
-
-#reviews-container {
-  margin-bottom: 8rem;
 }
 
 .recipe-content h2 {
@@ -267,12 +117,207 @@ body {
   color: #523e1d;
 }
 
-.arrow {
+/* reviews */
+#reviews-container {
+  margin-bottom: 8rem;
+}
+
+.reviews {
+  text-align: center;
+}
+
+.review {
+  display: flex;
+  align-items: flex-start;
+  background: #166940;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 25px auto;
+  max-width: 400px;
+  gap: 17px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.review img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.review-content {
+  text-align: left;
   color: #f6ecd4;
+}
+
+/* overall rating */
+
+.rating-overall {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 1.2em;
+  margin-bottom: 1rem;
+  color: #f6ecd4;
+}
+
+/* review name */
+
+.name-rating {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  font-size: 0.9em;
+  margin-bottom: 13px;
+  justify-content: space-between;
+}
+
+/* review stars */
+.stars {
+  color: #f6ecd4;
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  padding-right: 1rem;
+}
+
+.stars > a {
+  font-weight: 400;
 }
 
 .time {
   color: #523e1d;
 }
 
+/* ingredients */
 
+.ingredients-box {
+  background: #f6ecd4;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  height: 100%;
+}
+
+.ingredients-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ingredients-table td {
+  padding: 10px 0;
+  border-bottom: 1px solid #523e1d;
+  vertical-align: top;
+  color: #523e1d;
+}
+
+.ingredient-name {
+  font-weight: 500;
+  padding-right: 15px;
+}
+
+.ingredient-measure {
+  text-align: right;
+  color: #523e1d;
+  white-space: nowrap;
+}
+
+/* steps */
+
+.method-box {
+  background: #f6ecd4;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  height: 100%;
+}
+
+.method-steps {
+  counter-reset: step-counter;
+  color: #523e1d;
+}
+
+.step {
+  margin-bottom: 20px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.step::before {
+  content: counter(step-counter) ".";
+  counter-increment: step-counter;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: #624414;
+}
+
+.step p {
+  margin: 0;
+}
+
+body {
+  margin: none;
+  background: #fff;
+}
+
+/* similar recipes */
+.similar-recipes h2,
+.reviews h2 {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 4rem;
+  color: #f6ecd4;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 3rem;
+}
+
+.carousel .arrow {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.arrow {
+  color: #f6ecd4;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .recipe-columns {
+    grid-template-columns: 1fr;
+    margin: 20px;
+  }
+
+  .recipe-card {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .recipe-image {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .recipe-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .recipe-images {
+    gap: 20px;
+    overflow-x: scroll;
+  }
+
+  .recipe-images img {
+    width: 140px;
+    height: 140px;
+  }
+}

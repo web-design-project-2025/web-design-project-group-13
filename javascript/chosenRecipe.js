@@ -113,6 +113,8 @@ function updateRecipeDetails(recipe) {
   } else {
     methodSteps.innerHTML = "<p>No steps provided.</p>";
   }
+
+  document.dispatchEvent(new Event("recipeContentLoaded"));
 }
 
 function updateSimilarRecipes(recipes, currentRecipe) {
