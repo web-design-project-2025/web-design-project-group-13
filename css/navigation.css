@@ -114,7 +114,7 @@ nav {
 .dropdownmenu a {
   display: block;
   padding: 10px;
-  color: #523E1D;
+  color: #523e1d;
   text-decoration: none;
   font-size: small;
 }
@@ -199,8 +199,6 @@ nav {
     font-size: small;
   }
 
-
-
   /* nav */
 
   nav {
@@ -246,5 +244,20 @@ nav {
     font-size: smaller;
     list-style: none;
     font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 810px) {
+  .menu > ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .icons > ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
   }
 }

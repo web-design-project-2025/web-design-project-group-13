@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
   font-size: 16px;
   background-color:  #6e8255;
   color: #F6ECD4;
-  border: none;
+  border: none; 
   border-radius: 30px;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

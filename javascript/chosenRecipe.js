@@ -113,6 +113,8 @@ function updateRecipeDetails(recipe) {
   } else {
     methodSteps.innerHTML = "<p>No steps provided.</p>";
   }
+
+  document.dispatchEvent(new Event("recipeContentLoaded"));
 }
 
 function updateSimilarRecipes(recipes, currentRecipe) {
@@ -174,7 +176,7 @@ function displayReviews(recipe) {
   // Calculate average rating from reviews if available
   const averageRating =
     recipe.reviews.length > 0
-      ? recipe.reviews.reduce((sum, review) => sum + review.rating, 0) /
+      ? recipe.reviews.reduce((sum, review) => sum + review.rating, 0) / 
         recipe.reviews.length
       : recipe.rating;
 
@@ -223,7 +225,7 @@ function displayReviews(recipe) {
   });
 }
 
-function formatTime(minutes) {
+function formatTime(minutes) { 
   if (minutes < 60) {
     return `${minutes} min`;
   } else {
