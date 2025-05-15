@@ -160,6 +160,10 @@ input,
     gap: 5px;
     margin: 10px;
   }
+  .filter-popup-body {
+    flex: 1; /* Take remaining space */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
 
   .filter-btn {
     color: #523e1d;
@@ -170,8 +174,8 @@ input,
 
   .filter-popup {
     width: 70%;
-    height: auto;
-    padding: 15px;
+     height: 100vh; /* Changed from auto to 100vh */
+    padding: 0; /* Changed from 15px to 0 */
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
   }
 
