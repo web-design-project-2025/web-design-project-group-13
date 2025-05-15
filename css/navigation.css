@@ -1,8 +1,9 @@
-li, .dropdownswitch {
+li,
+.dropdownswitch {
   font-family: Inter;
   font-size: large;
   font-weight: bold;
-  color: #523E1D;
+  color: #523e1d;
 }
 
 .aboutus {
@@ -10,7 +11,7 @@ li, .dropdownswitch {
   font-family: Inter;
   font-size: large;
   font-weight: bold;
-  color: #523E1D;
+  color: #523e1d;
 }
 
 .aboutus:hover {
@@ -29,8 +30,8 @@ li, .dropdownswitch {
 }
 
 a {
-   font-family: Inter;
-   font-weight: lighter;
+  font-family: Inter;
+  font-weight: lighter;
 }
 
 header {
@@ -38,7 +39,7 @@ header {
   top: 0;
   z-index: 1000;
   height: fit-content;
-  background-color: #F6ECD4;
+  background-color: #f6ecd4;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
@@ -48,7 +49,6 @@ nav {
   align-items: center;
   padding: 0;
   font-size: 20px;
-  
 }
 
 .logo img {
@@ -56,7 +56,6 @@ nav {
   height: auto;
   cursor: pointer;
 }
-
 
 .logo-menu {
   display: flex;
@@ -91,7 +90,7 @@ nav {
 }
 
 .dropdownswitch {
-  background-color: #F6ECD4;
+  background-color: #f6ecd4;
   border: none;
   cursor: pointer;
 }
@@ -104,8 +103,8 @@ nav {
   position: absolute;
   top: 100%;
   left: 0;
-  background:  #F6ECD4;
-  border: 1px solid  #F6ECD4;
+  background: #f6ecd4;
+  border: 1px solid #f6ecd4;
   min-width: 160px;
   z-index: 1;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -131,7 +130,7 @@ nav {
 .hamburger {
   display: none;
   background: none;
-  color: black;
+  color: #523e1d;
   border: none;
   font-size: 28px;
   cursor: pointer;
@@ -150,7 +149,7 @@ nav {
     display: none;
     flex-direction: column;
     gap: 1rem;
-    background-color: white;
+    background-color: #f6ecd4;
     position: absolute;
     top: 100%;
     left: 0; /* ⬅ Ensures it opens from the left side */
@@ -158,6 +157,7 @@ nav {
     padding: 1rem;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     z-index: 100;
+    border: none;
   }
 
   .menu.open > ul {
@@ -170,14 +170,19 @@ nav {
     font-size: 16px;
   }
 
+  .menu.open > ul > li,
+  .menu.open > ul > li > a {
+    font-size: small;
+  }
+
   /* dropdown */
 
   .dropdownmenu {
     position: absolute;
-    top: -84%;
-    left: 136%;
-    background: white;
-    border: 1px solid #ffffff;
+    top: -100%;
+    left: 230%;
+    background-color: #f6ecd4;
+    border: none;
     min-width: 160px;
     z-index: 1;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -185,7 +190,7 @@ nav {
   }
 
   .dropdownswitch {
-    font-size: 16px;
+    font-size: small;
   }
 
   /* nav */
@@ -207,7 +212,8 @@ nav {
     margin: 0;
   }
 
-  .logo img , .logo source{
+  .logo img,
+  .logo source {
     max-height: 80px;
     height: auto;
   }

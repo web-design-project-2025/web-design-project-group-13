@@ -145,6 +145,14 @@
 }
 
 /*Responsive*/
+
+@media screen and (max-width:320px) {
+  .newspaper > p {
+    font-size: 15px;
+  }
+}
+
+
 @media screen and (min-width: 320px) and (max-width: 890px) {
   .footer {
     display: grid;
@@ -156,7 +164,7 @@
 
   .links > ul,
   .links2 > ul {
-    align-items: center;
+    align-items: center; 
   }
 
   .all-links {

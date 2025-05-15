@@ -30,7 +30,7 @@ export function populateSplitSection(recipesData) {
     });
 
     let currentIndex = 0;
-    const displayDuration = 5000;
+    const displayDuration = 10000;
     const transitionDuration = 1000;
 
     const showRecipe = (index) => {
@@ -52,7 +52,7 @@ export function populateSplitSection(recipesData) {
           <div class="text-content">
             <h3>${recipe.title}</h3>
             <p>${recipe.description}</p>
-            <div class="recipe-meta">
+            <div class="recipe-meta" id="split-recipe-meta">
               <span>⏱ ${formatTime(recipe.time)}</span>
               <span>⭐ ${recipe.rating}</span>
             </div>
