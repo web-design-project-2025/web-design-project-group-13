@@ -1,5 +1,11 @@
 span {
   color: #523e1d;
+  font-family: Inter;
+}
+
+h2 {
+  font-family: Inter;
+  font-size: 2rem;
 }
 
 .filter-button {
@@ -56,7 +62,7 @@ transform: rotate(90deg);
 
 .all-recipes-btn {
   background: #166940;
-  color: white;
+  color: #f6ecd4;
   border: 1px solid #ddd;
   border-radius: 20px;
   padding: 6px 12px;
@@ -136,12 +142,13 @@ transform: rotate(90deg);
 .filter-popup.show {
   display: flex;
 }
-
-.filter-popup-header h2 {
-  font-size: 1.5rem;
+.search-container > .filter-button > i, input, ::placeholder {
   color: #523e1d;
-  font-family: Inter;
 }
+
+.search-container > input, ::placeholder
+font-family: Inter;
+
 
 /* Responsive styles for filtering functionality */
 @media screen and (max-width: 375px) {
@@ -152,6 +159,7 @@ transform: rotate(90deg);
   }
 
   .filter-btn {
+    color: #523e1d;
     font-size: 0.8em; 
     padding: 5px 10px; 
     border-radius: 15px;

@@ -1,7 +1,7 @@
 h1,
 .text-content > h3 {
   font-family: Inter;
-  color: white;
+  color: #F6ECD4
 }
 
 h4 {
@@ -39,7 +39,7 @@ h4 {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: rgb(255, 255, 255);
+  color: #F6ECD4;
   font-size: 3em;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   z-index: 1;
@@ -51,7 +51,7 @@ h4 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: #F6ECD4;
   font-size: 1.5em;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   z-index: 1;

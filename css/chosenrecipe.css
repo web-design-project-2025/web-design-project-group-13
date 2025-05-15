@@ -1,3 +1,7 @@
+    * {
+      font-family: Inter;
+    }
+    
     .recipe-columns {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -94,7 +98,6 @@
 
     /* recommendations + reviews */
     body {
-        font-family: system-ui, sans-serif;
         margin: none;
         background: #fff;
       }
@@ -139,6 +142,9 @@
       }
       
       .rating-overall {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
         font-size: 1.2em;
         margin-bottom: 1rem;
          color: #F6ECD4;
@@ -179,8 +185,15 @@
       .stars {
         color: #F6ECD4;
         letter-spacing: 2px;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        padding-right: 1rem;
       }
       
+      .stars > a {
+        font-weight: 400;
+      }
      
 
       /* Aspargus risotto card */
@@ -262,5 +275,8 @@
          color: #F6ECD4;
       }
       
+      .time {
+      color: #523E1D;
+      }
       
 
