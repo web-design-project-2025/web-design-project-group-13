@@ -14,7 +14,7 @@ h2 {
   cursor: pointer;
 }
 .filter-button:hover {
-transform: rotate(90deg);
+  transform: rotate(90deg);
   transition: transform 0.3s;
 }
 
@@ -142,54 +142,57 @@ transform: rotate(90deg);
 .filter-popup.show {
   display: flex;
 }
-.search-container > .filter-button > i, input, ::placeholder {
+.search-container > .filter-button > i,
+input,
+::placeholder {
   color: #523e1d;
 }
 
-.search-container > input, ::placeholder
-font-family: Inter;
-
+.search-container > input,
+::placeholder {
+  font-family: Inter;
+}
 
 /* Responsive styles for filtering functionality */
 @media screen and (max-width: 375px) {
   .filter-buttons {
     flex-direction: column;
-    gap: 5px; 
-    margin: 10px; 
+    gap: 5px;
+    margin: 10px;
   }
 
   .filter-btn {
     color: #523e1d;
-    font-size: 0.8em; 
-    padding: 5px 10px; 
+    font-size: 0.8em;
+    padding: 5px 10px;
     border-radius: 15px;
   }
 
   .filter-popup {
     width: 70%;
-    height: auto; 
-    padding: 15px; 
-    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1); 
+    height: auto;
+    padding: 15px;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
   }
 
   .filter-popup-header {
-    font-size: 1.2rem; 
-    padding-bottom: 5px; 
+    font-size: 1.2rem;
+    padding-bottom: 5px;
   }
 
   .close-btn {
-    font-size: 1.2rem; 
-    width: 30px; 
-    height: 30px; 
+    font-size: 1.2rem;
+    width: 30px;
+    height: 30px;
   }
 
   .apply-filters-btn {
-    font-size: 0.9em; 
-    padding: 8px; 
+    font-size: 0.9em;
+    padding: 8px;
   }
 
   .selected-filters {
-    font-size: 0.8em; 
-    margin-top: 10px; 
+    font-size: 0.8em;
+    margin-top: 10px;
   }
 }

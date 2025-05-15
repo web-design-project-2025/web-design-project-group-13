@@ -7,8 +7,10 @@ export function populateSplitSection(recipesData) {
 
     const splitSection = document.querySelector(".split-section");
     if (!splitSection) {
-      console.warn("No split-section element found in DOM");
+      console.log("No split-section element found in DOM");
       return;
+    } else if (splitSection) {
+        console.log("Split-section element found in DOM");
     }
 
     const imageHalf = splitSection.querySelector(".image-half");
