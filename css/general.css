@@ -296,16 +296,33 @@ body {
 .favorite-toast {
   position: fixed;
   top: 0;
-  right: 0%;
-  /* transform: translateX(-50%); */
-  background-color:  #809862;
-  color: #fff;
+  right: 0;
+  background-color: #809862;
+  color: #F6ECD4;
   padding: 12px 20px;
   border-radius: 8px;
   font-size: 1rem;
   z-index: 9999;
   opacity: 0;
   transition: opacity 0.3s ease;
+  font-family: Inter;
+  height: auto; 
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.favorite-toast img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.favorite-toast-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .favorite-toast.show {
@@ -314,6 +331,33 @@ body {
 
 .favorite-toast.hidden {
   display: none;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.favorite-toast.show {
+  opacity: 1;
+  animation: slideIn 0.5s ease forwards;
+}
+
+.favorite-toast.hiding {
+  animation: slideOut 0.7s ease backwards;
 }
 
 @media screen and (max-width: 867px) {

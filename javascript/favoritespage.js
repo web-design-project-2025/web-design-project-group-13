@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         8,
         loadMoreButton
       );
-
+ 
       // Show all recipes up to current count
       const pagesToShow = Math.ceil(currentLoadedCount / 8);
       let allLoaded = false;
