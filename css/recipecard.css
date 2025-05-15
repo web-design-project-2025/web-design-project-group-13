@@ -26,6 +26,7 @@
 
 .recipe-info {
   padding: 15px;
+  color: #2e250e;
 }
 
 .recipe-title {
@@ -50,8 +51,8 @@
 }
 
 .popular-badge {
-  background-color: #ff9800;
-  color: white;
+  background-color: #166940;
+  color: #F6ECD4;
   padding: 3px 8px;
   border-radius: 4px;
   font-size: 0.7rem;
