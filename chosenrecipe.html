@@ -38,6 +38,7 @@
     <script type="module" src="/javascript/main.js" defer></script>
     <script type="module" src="/javascript/chosenRecipe.js" defer></script>
     <script type="module" src="/javascript/favorites.js" defer></script>
+    <script type="module" src="/javascript/showLoadingError.js" defer></script>
     <script src="/javascript/recipeToggle.js"></script>
   </head>
   <body>
@@ -124,6 +125,15 @@
       </div>
     </div>
 
+    <!-- Loading Indicator -->
+    <div id="loading-placeholder" class="loading-placeholder">
+      <div class="spinner"></div>
+      <p>Loading recipes...</p>
+    </div>
+
+    <!-- Error Display -->
+    <div id="error-message" class="error-message hidden"></div>
+
     <!-- toggle ingredients & step by step on mobile-laptop -->
     <div class="recipe-toggle-buttons">
       <div class="headers">
@@ -151,12 +161,13 @@
     <section class="similar-recipes">
       <h2>Similar Recipes</h2>
       <div class="carousel">
-        <button class="arrow left"><i class="fas fa-chevron-left"></i></button>
+        <!-- <button class="arrow left"><i class="fas fa-chevron-left"></i></button> -->
         <div class="recipe-images" id="similar-recipes"></div>
-        <button class="arrow right">
+        <!-- <button class="arrow right">
           <i class="fas fa-chevron-right"></i>
-        </button>
+        </button> -->
       </div>
+      <div class="carousel-indicators"></div>
     </section>
 
     <section class="reviews">
