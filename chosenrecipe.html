@@ -38,6 +38,7 @@
     <script type="module" src="/javascript/main.js" defer></script>
     <script type="module" src="/javascript/chosenRecipe.js" defer></script>
     <script type="module" src="/javascript/favorites.js" defer></script>
+    <script src="/javascript/recipeToggle.js"></script>
   </head>
   <body>
     <!--Navigation-->
@@ -111,7 +112,6 @@
     <div class="recipe-card">
       <div class="recipe-image">
         <img id="recipe-main-image" src="" alt="" />
-       
       </div>
       <div class="recipe-content">
         <h2 id="recipe-title" class="recipe-title"></h2>
@@ -125,9 +125,12 @@
       </div>
     </div>
 
-    <div class="headers">
-      <h1>Ingredients</h1>
-      <h1>Step By Step</h1>
+    <!-- toggle ingredients & step by step on mobile-laptop -->
+    <div class="recipe-toggle-buttons">
+      <div class="headers">
+        <button id="ingredients-toggle"><h1>Ingredients</h1></button>
+        <button id="steps-toggle"><h1>Step By Step</h1></button>
+      </div>
     </div>
 
     <!-- Ingredients Column -->

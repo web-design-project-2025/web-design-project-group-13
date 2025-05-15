@@ -223,7 +223,7 @@ function displayReviews(recipe) {
   });
 }
 
-function formatTime(minutes) {
+function formatTime(minutes) { 
   if (minutes < 60) {
     return `${minutes} min`;
   } else {
