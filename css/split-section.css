@@ -56,7 +56,7 @@
 }
 
 .text-content {
-  color: white;
+  color: #F6ECD4;
   font-family: Inter;
   max-width: 80%;
   position: relative;
@@ -93,7 +93,7 @@
 }
 
 .view-recipe-btn {
-  background-color: white;
+  background-color: #F6ECD4;
   color: #166940;
   border: none;
   padding: 0.8rem 1.5rem;
