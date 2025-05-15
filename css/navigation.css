@@ -116,6 +116,7 @@ nav {
   padding: 10px;
   color: #523E1D;
   text-decoration: none;
+  font-size: small;
 }
 
 .dropdownmenu a:last-child {
