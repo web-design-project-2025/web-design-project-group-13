@@ -114,8 +114,12 @@ nav {
 .dropdownmenu a {
   display: block;
   padding: 10px;
-  color: black;
+  color: #523e1d;
   text-decoration: none;
+}
+
+.dropdownmenu a:last-child {
+  font-weight: bold;
 }
 
 .dropdownmenu a:hover {
