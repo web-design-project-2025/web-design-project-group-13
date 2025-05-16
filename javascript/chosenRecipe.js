@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (!recipeId) {
     console.error("Recipe ID is missing in the URL.");
-    window.location.href = "/";
+    window.location.href = "index.html";
     return;
   }
 

@@ -11,7 +11,7 @@ export function createRecipeCard(recipe, options = {}) {
 
   const displayTime =
     recipe.time >= 60
-      ? `${Math.floor(recipe.time / 60)}h ${recipe.time % 60}m`
+      ? `${Math.floor(recipe.time / 60)}h ${recipe.time % 60}m` 
       : `${recipe.time}m`;
 
   const favorited = isFavorite(recipe.id);
