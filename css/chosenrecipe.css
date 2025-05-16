@@ -193,6 +193,11 @@ h1 {
   padding-right: 1rem;
 }
 
+
+.stars-rating {
+  display: flex;
+  align-items: center;
+}
 .stars > a {
   font-weight: 400;
 }
@@ -273,33 +278,22 @@ body {
   background: #fff;
 }
 
-/* similar recipes */
-
-/* .carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 60px;
-  margin-bottom: 3rem;
+.Chosen-back-button {
+          padding: 30px 20px;
+          background-color: #809862;
+          color: #f6ecd4;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+          font-style: italic;
 }
 
-.carousel .arrow {
-  background: none;
-  border: none;
-  font-size: 1.5em;
-  cursor: pointer;
+.Chosen-back-button:hover {
+    transform: scale(1.1);
+  transition: ease 1s;
 }
 
-.arrow {
-  color: #f6ecd4;
-}
-
-.arrow:hover {
-  transform: scale(1.15 );
-} */
-
-/* Similar Recipes - Image Only Carousel */
-/* Similar Recipes - Compact & Responsive */
 .similar-recipes {
   background-color: #166940;
   padding: 2rem 0;

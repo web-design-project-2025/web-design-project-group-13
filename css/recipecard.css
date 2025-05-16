@@ -10,6 +10,7 @@
   transition: transform 0.3s ease;
   will-change: transform;
   margin-bottom: 2rem;
+  cursor: pointer;
 }
 
 .recipe-card:hover {
@@ -30,14 +31,13 @@
 }
 
 .recipe-title {
-  margin: 0 0 10px;
   font-size: 1.2rem;
 }
 
 .recipe-description {
   font-size: 0.9rem;
   color: #2e250e;
-  margin-bottom: 10px;
+  margin: 10px;
   overflow: hidden;
 }
 
