@@ -161,8 +161,8 @@ input,
     margin: 10px;
   }
   .filter-popup-body {
-    flex: 1; /* Take remaining space */
-    overflow-y: auto; /* Enable vertical scrolling */
+    flex: 1; 
+    overflow-y: auto; 
   }
 
   .filter-btn {
@@ -174,8 +174,8 @@ input,
 
   .filter-popup {
     width: 70%;
-     height: 100vh; /* Changed from auto to 100vh */
-    padding: 0; /* Changed from 15px to 0 */
+     height: 100vh; 
+    padding: 0; 
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
   }
 

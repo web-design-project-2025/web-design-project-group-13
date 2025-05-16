@@ -345,8 +345,8 @@ body {
 
 .recipe-images a {
   scroll-snap-align: start;
-  flex: 0 0 150px; /* Fixed smaller width */
-  height: 150px; /* Fixed square aspect ratio */
+  flex: 0 0 150px; 
+  height: 150px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);

@@ -142,17 +142,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Event listeners
     searchInput?.addEventListener("input", (e) => {
       activeFilters.searchTerm = e.target.value.toLowerCase();
-      applyFiltersAndRender(true); // Reset loaded count on search
+      applyFiltersAndRender(true); 
     });
 
     sortSelect?.addEventListener("change", () => {
-      applyFiltersAndRender(true); // Reset loaded count on sort change
+      applyFiltersAndRender(true); 
     });
 
     filterButtons?.forEach((button) => {
       button.addEventListener("click", () => {
         button.classList.toggle("active");
-        applyFiltersAndRender(); // Maintain loaded count when toggling filters
+        applyFiltersAndRender(); 
       });
     });
 

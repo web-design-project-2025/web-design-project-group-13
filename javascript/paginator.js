@@ -6,7 +6,7 @@ export class RecipePaginator {
     this.container = document.getElementById(containerId);
     this.itemsPerPage = itemsPerPage;
     this.currentPage = 0;
-    this.loadMoreButton = loadMoreButton; // Store the load more button reference
+    this.loadMoreButton = loadMoreButton; 
   }
 
   displayPage(pageNumber) {
@@ -25,7 +25,7 @@ export class RecipePaginator {
 
     // Clear the container only when starting from page 0
     if (pageNumber === 0) {
-      this.container.innerHTML = ''; // Clear the container before adding new items
+      this.container.innerHTML = ''; 
     }
 
     this.container.appendChild(fragment);
@@ -34,21 +34,21 @@ export class RecipePaginator {
     // Check if there are more recipes to load, and hide the "Load More" button if not
     if (end >= this.recipes.length) {
       this.hideLoadMoreButton();
-      return false; // No more recipes to load
+      return false; 
     } else {
-      return true; // More recipes to load
+      return true; 
     }
   }
 
   hideLoadMoreButton() {
     if (this.loadMoreButton) {
-      this.loadMoreButton.style.display = "none"; // Hide the load more button
+      this.loadMoreButton.style.display = "none"; 
     }
   }
 
   showLoadMoreButton() {
     if (this.loadMoreButton) {
-      this.loadMoreButton.style.display = "block"; // Show the load more button
+      this.loadMoreButton.style.display = "block"; 
     }
   }
 }

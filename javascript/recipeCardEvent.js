@@ -7,7 +7,7 @@ document.addEventListener("click", (e) => {
   const card = e.target.closest(".recipe-card");
 
   if (heart) {
-    e.stopPropagation(); // Prevent redirect
+    e.stopPropagation(); 
     const icon = heart.querySelector("i");
     const recipeData = heart.getAttribute("data-recipe");
     try {

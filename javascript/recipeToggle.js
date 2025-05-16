@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   function updateIndicators() {
     const scrollPosition = carousel.scrollLeft;
-    const imageWidth = images[0].offsetWidth + 20; // width + gap
+    const imageWidth = images[0].offsetWidth + 20; 
     const activeIndex = Math.round(scrollPosition / imageWidth);
     
     indicators.forEach((indicator, index) => {

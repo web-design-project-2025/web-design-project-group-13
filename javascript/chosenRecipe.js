@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (!recipeId) {
     console.error("Recipe ID is missing in the URL.");
-    window.location.href = "/"; // Redirect to homepage or fallback
+    window.location.href = "/";
     return;
   }
 
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     displayReviews(recipe);
   } catch (error) {
     console.error("Error:", error);
-    window.location.href = "/"; // Redirect to homepage or fallback
+    window.location.href = "/"; 
   }
 });
 
@@ -126,13 +126,11 @@ function updateSimilarRecipes(recipes, currentRecipe) {
 
   similarRecipesContainer.innerHTML = "";
 
-  // Ensure currentRecipe.categories exists and is a string
   const currentCategories = currentRecipe.categories
     ? currentRecipe.categories.split(", ")
     : [];
 
   const similarRecipes = recipes.filter((recipe) => {
-    // Ensure recipe.categories exists and is a string
     const recipeCategories = recipe.categories
       ? recipe.categories.split(", ")
       : [];

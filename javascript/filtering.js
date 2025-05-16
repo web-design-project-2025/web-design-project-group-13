@@ -33,18 +33,18 @@ const elements = {
 let paginator;
 
 document.addEventListener("DOMContentLoaded", async () => {
-  showLoadingIndicator(); // Show the loading indicator
+  showLoadingIndicator(); 
 
   try {
     const { recipes } = await fetchRecipes();
     allRecipes = recipes;
     setupEventListeners();
-    applyFiltersAndRender(true); // Initial render
+    applyFiltersAndRender(true); 
   } catch (error) {
     console.error("Error loading recipes:", error);
-    showErrorMessage("Failed to load recipes. Please try again later."); // Show error message
+    showErrorMessage("Failed to load recipes. Please try again later.");
   } finally {
-    hideLoadingIndicator(); // Hide the loading indicator when done
+    hideLoadingIndicator(); 
   }
 });
 
@@ -73,9 +73,9 @@ function setupEventListeners() {
   // Attach click event listener to the "Load More" button
   elements.loadMoreBtn?.addEventListener("click", () => {
     if (paginator) {
-      const moreAvailable = paginator.displayPage(paginator.currentPage + 1); // Increment page number and display next page
+      const moreAvailable = paginator.displayPage(paginator.currentPage + 1); 
       if (!moreAvailable) {
-        paginator.hideLoadMoreButton(); // Hide the button if no more pages
+        paginator.hideLoadMoreButton(); 
       }
     }
   });
@@ -139,7 +139,7 @@ function applyFiltersAndRender(resetPage = false) {
     itemsPerPage,
     elements.loadMoreBtn
   );
-  paginator.displayPage(0); // Always display the first page initially
+  paginator.displayPage(0); 
 
   const sorted = elements.sortSelect
     ? RecipeSorter.sortRecipes(filtered, elements.sortSelect.value)
