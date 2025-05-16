@@ -7,10 +7,12 @@ body {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 2rem auto;
   padding: 1rem;
   line-height: 1.8;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 h2 {
@@ -39,85 +41,190 @@ p {
   height: auto;
 }
 
+.Peppers {
+  width: 25rem;
+  height: 25rem;
+}
+
+.Lettuce {
+  width: 25rem;
+  height: 25rem;
+  position: relative;
+  top: 200px;
+}
+
 @media screen and (max-width: 768px) {
   .fancy-logo {
     display: none;
   }
+
+  .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .Peppers,
+  .Lettuce {
+    width: 200px;
+    height: auto;
+    top: 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .Lettuce {
+    display: none;
+  }
+
+  .AboutUs > p {
+    font-size: smaller;
+  }
+
+  .AboutUs > h2 {
+    font-size: medium;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width:1024px){
+  .Peppers {
+    width: 20rem;
+    height: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .Lettuce {
+    width: 20rem;
+    height: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .container {
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (min-width:1025px) {
+  .Peppers {
+   
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .Lettuce {
+   
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .container {
+    overflow-x: hidden;
+  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 348px) {
-.main-background > img{
+  .main-background > img {
     object-fit: cover;
     height: auto;
-}
-.logo-two img   {
-display: none;
-    }
-    .container > p {
-     font-size: small;
-    }
+  }
+  .logo-two img {
+    display: none;
+  }
+  .container > p {
+    font-size: small;
   }
 
+  .container > h2 {
+    font-size: small;
+  }
+}
+
+.Info-back-button {
+  padding: 40px 20px;
+  position: absolute;
+  left: 0;
+  color: #523e1d;
+  border: none;
+  border-radius: 5px;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.Info-back-button:hover {
+  transform: scale(1.1);
+  transition: ease 1s;
+}
 
 @media screen and (min-width: 349px) and (max-width: 448px) {
-.main-background > img{
+  .main-background > img {
     object-fit: cover;
     height: auto;
   }
-  .logo-two img   {
-display: none;
-    }
+  .logo-two img {
+    display: none;
+  }
 
-    .container > p {
-     font-size: smaller;
-    }
+  .container > p {
+    font-size: smaller;
+  }
+
+  .container > h2 {
+    font-size: small;
+  }
 }
 
 @media screen and (min-width: 448px) and (max-width: 578px) {
-.main-background > img{
+  .main-background > img {
     object-fit: cover;
     height: auto;
-} 
-.logo-two img   {
-display: none;
-    }
-    .container > p {
-     font-size: smaller;
-    }
-    .container > p {
-     font-size: small;
-    }
+  }
+  .logo-two img {
+    display: none;
+  }
+  .container > p {
+    font-size: smaller;
+  }
+  .container > h2 {
+    font-size: small;
+  }
 }
 
 @media screen and (min-width: 579px) and (max-width: 774px) {
-.main-background > img{
+  .main-background > img {
     object-fit: cover;
     height: auto;
-}
-.logo-two img   {
-width: 50%;
-max-width: 100%;
-height: auto;
-padding-left: 5rem;
-    }
+  }
+  .logo-two img {
+    width: 50%;
+    max-width: 100%;
+    height: auto;
+    padding-left: 5rem;
+  }
 }
 @media screen and (min-width: 775px) and (max-width: 837px) {
-.main-background > img{
+  .main-background > img {
     object-fit: cover;
     height: auto;
-}
-.logo-two img   {
-width: 60%;
-max-width: 100%;
-    }
+  }
+  .logo-two img {
+    width: 60%;
+    max-width: 100%;
+  }
 }
 
-@media screen and (min-width: 838px)  {
-.main-background > img{
+@media screen and (min-width: 838px) {
+  .main-background > img {
     object-fit: cover;
-}
-.logo-two img   {
-max-width: 100%;
-height: auto;
-    }
+  }
+  .logo-two img {
+    max-width: 100%;
+    height: auto;
+  }
 }
