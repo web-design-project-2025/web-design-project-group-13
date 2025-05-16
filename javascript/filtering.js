@@ -1,15 +1,15 @@
 // filtering.js
-import { fetchRecipes } from "/recipeAPI.js";
-import { createRecipeCard } from "/recipeCard.js";
-import { filterRecipes } from "/recipeUtils.js";
-import { RecipeSorter } from "/recipeSorter.js";
-import { RecipePaginator } from "/paginator.js";
+import { fetchRecipes } from "./recipeAPI.js";
+import { createRecipeCard } from "./recipeCard.js";
+import { filterRecipes } from "./recipeUtils.js";
+import { RecipeSorter } from "./recipeSorter.js";
+import { RecipePaginator } from "./paginator.js";
 import {
   showLoadingIndicator,
   hideLoadingIndicator,
   showErrorMessage,
   hideErrorMessage,
-} from "/loadingErrorDisplay.js";
+} from "./loadingErrorDisplay.js";
 
 let allRecipes = [];
 let activeFilters = {
