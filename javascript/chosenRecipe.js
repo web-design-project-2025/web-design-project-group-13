@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const response = await fetch("/json/recipes.json");
+    const response = await fetch("./json/recipes.json");
     if (!response.ok) throw new Error("Failed to load recipes");
     const data = await response.json();
     console.log("Fetched recipe data:", data);
