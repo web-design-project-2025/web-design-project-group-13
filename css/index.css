@@ -61,7 +61,37 @@ h4 {
   display: flex;
   justify-content: center;
   margin-bottom: 10rem;
-}
+} 
+
+  .fancy-logo img:hover {
+    animation: float 3s ease-in-out infinite;
+    transform-origin: center bottom;
+  }
+ @keyframes wave {
+    0% {
+      transform: rotate(-10deg);
+    }
+    100% {
+      transform: rotate(10deg);
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+      transform: rotate(-5deg);
+    }
+    50% {
+      transform: translateY(-10px);
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: translateY(0);
+      transform: rotate(-5deg);
+    }
+  }
+
+  
 
 @media screen and (max-width: 768px) {
   .fancy-logo {

@@ -11,9 +11,9 @@ body {
 .load-more-btn {
   padding: 12px 24px;
   font-size: 16px;
-  background-color:  #6e8255;
-  color: #F6ECD4;
-  border: none; 
+  background-color: #6e8255;
+  color: #f6ecd4;
+  border: none;
   border-radius: 30px;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -25,7 +25,7 @@ body {
 }
 
 .load-more-btn:hover {
-  background-color:  #6e8255;
+  background-color: #6e8255;
 }
 
 .search-container {
@@ -37,7 +37,7 @@ body {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  background:  #F6ECD4;
+  background: #f6ecd4;
   border-radius: 100px;
   padding: 1rem 1rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -78,7 +78,7 @@ body {
   width: 50px;
   height: 50px;
   border: 5px solid #f3f3f3;
-  border-top: 5px solid  #6e8255;
+  border-top: 5px solid #6e8255;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 20px;
@@ -99,7 +99,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   background: #f44336;
-  color:  #F6ECD4;
+  color: #f6ecd4;
   padding: 20px;
   border-radius: 5px;
   font-size: 16px;
@@ -122,7 +122,7 @@ body {
 .load-more {
   background-color: #6e8255;
   font-size: medium;
-  color:  #F6ECD4;
+  color: #f6ecd4;
   border: none;
   border-radius: 100px;
   padding: 15px 25px;
@@ -159,9 +159,8 @@ body {
   border: 1px solid #6e8255;
   background-color: #6e8255;
   cursor: pointer;
-  color: #F6ECD4;
+  color: #f6ecd4;
 }
- 
 
 #sort-container {
   display: flex;
@@ -173,7 +172,7 @@ body {
   border-radius: 4px;
   border: 1px solid #6e8255;
   background-color: #6e8255;
-  color: #F6ECD4;
+  color: #f6ecd4;
   font-family: Inter;
   font-size: 13px;
 }
@@ -188,7 +187,7 @@ body {
   border: none;
   outline: none;
   background-color: #6e8255;
-  color: #F6ECD4;
+  color: #f6ecd4;
   cursor: pointer;
   padding: 12px;
   border-radius: 10%;
@@ -216,7 +215,7 @@ body {
   cursor: pointer;
   z-index: 2;
   transition: all 0.3s ease;
-  background-color: #F6ECD4;
+  background-color: #f6ecd4;
   border-radius: 50%;
 }
 
@@ -259,6 +258,7 @@ body {
     transform: scale(1);
   }
 }
+
 /*go back btn*/
 .go-back-btn {
   position: fixed;
@@ -267,7 +267,7 @@ body {
   left: 0;
   z-index: 1;
   margin: 20px 20px;
-  color: #F6ECD4;
+  color: #f6ecd4;
   border: none;
   background: none;
   cursor: pointer;
@@ -285,7 +285,7 @@ body {
   align-items: center;
   font-size: 1rem;
   font-weight: bold;
-  color: #F6ECD4;
+  color: #f6ecd4;
   font-family: Inter;
 }
 
@@ -298,7 +298,7 @@ body {
   top: 0;
   right: 0;
   background-color: #809862;
-  color: #F6ECD4;
+  color: #f6ecd4;
   padding: 12px 20px;
   border-radius: 8px;
   font-size: 1rem;
@@ -306,7 +306,7 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease;
   font-family: Inter;
-  height: auto; 
+  height: auto;
   max-width: 300px;
   display: flex;
   align-items: center;
@@ -371,7 +371,7 @@ body {
     border: none;
     outline: none;
     background-color: #809862;
-    color: #F6ECD4;
+    color: #f6ecd4;
     cursor: pointer;
     padding: 15px;
     border-radius: 10%;
@@ -391,7 +391,7 @@ body {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    background: #F6ECD4;
+    background: #f6ecd4;
     border-radius: 100px;
     padding: 0.5rem 1rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -408,7 +408,6 @@ body {
   }
 
   /* sort by function */
-
 }
 
 @media screen and (max-width: 460px) {
@@ -434,5 +433,4 @@ body {
   .sort-container select:hover {
     background-color: #6e8255;
   }
-  
 }

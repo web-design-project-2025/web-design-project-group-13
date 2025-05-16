@@ -15,7 +15,7 @@ h2 {
 }
 .filter-button:hover {
   transform: rotate(90deg);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease-in-out; 
 }
 
 .filter-popup-header {
