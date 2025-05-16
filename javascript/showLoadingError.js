@@ -5,7 +5,7 @@ import {
   hideLoadingIndicator,
   showErrorMessage,
   hideErrorMessage,
-} from "javascript/loadingErrorDisplay.js";
+} from "./loadingErrorDisplay.js";
 
 showLoadingIndicator();
 

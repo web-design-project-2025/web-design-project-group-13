@@ -1,6 +1,6 @@
 // javascript/main.js
 
-import { populateSplitSection } from "javascript/split-section.js";
+import { populateSplitSection } from "./split-section.js";
 
 fetch("json/recipes.json")
   .then((response) => response.json())

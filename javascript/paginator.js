@@ -1,4 +1,4 @@
-import { createRecipeCard } from "javascript/recipeCard.js";
+import { createRecipeCard } from "./recipeCard.js";
 
 export class RecipePaginator {
   constructor(recipes, containerId, itemsPerPage = 8, loadMoreButton) {

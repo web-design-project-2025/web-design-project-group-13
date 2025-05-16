@@ -1,6 +1,6 @@
 //recipeCardEvent.js
 
-import { handleFavoriteClick } from "javascript/recipeCard.js";
+import { handleFavoriteClick } from "./recipeCard.js";
 
 document.addEventListener("click", (e) => {
   const heart = e.target.closest("[data-heart]");

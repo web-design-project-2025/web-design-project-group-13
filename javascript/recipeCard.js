@@ -1,5 +1,5 @@
 // recipeCard.js
-import { isFavorite } from "javascript/favorites.js";
+import { isFavorite } from "./favorites.js";
 
 export function createRecipeCard(recipe, options = {}) {
   const { showPopularBadge = false } = options;
