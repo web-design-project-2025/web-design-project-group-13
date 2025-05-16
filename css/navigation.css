@@ -51,6 +51,14 @@ nav {
   font-size: 20px;
 }
 
+#mobileLogo {
+  display: none;
+}
+
+#desktopLogo {
+  display: inline;
+}
+
 .logo img {
   max-height: 120px;
   height: auto;
@@ -224,11 +232,21 @@ nav {
     height: auto;
   }
 
-  /* .logo {
+  /* logo switch  */
+
+  .logo {
     position: relative;
     left: 50%;
-    transform: translate(-50%, 0%);
-  } */
+    transform: translateX(-50%);
+  }
+
+  #mobileLogo {
+    display: inline;
+  }
+
+  #desktopLogo {
+    display: none;
+  }
 
   /* icons */
 
