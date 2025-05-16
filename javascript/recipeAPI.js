@@ -1,4 +1,4 @@
-const API_URL = '/json/recipes.json';
+const API_URL = 'json/recipes.json';
 
 export async function fetchRecipes() {
     console.log('Starting fetch...');

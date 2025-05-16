@@ -3,11 +3,11 @@ import {
   setupGlobalHeartHandler,
   updateFavoritesCounter,
   isFavorite
-} from "./favorites.js";
-import { createRecipeCard } from "./recipeCard.js";
-import { RecipePaginator } from "./paginator.js";
-import { filterRecipes } from "./recipeUtils.js";
-import { RecipeSorter } from "./recipeSorter.js";
+} from "javascript/favorites.js";
+import { createRecipeCard } from "javascript/recipeCard.js";
+import { RecipePaginator } from "javascript/paginator.js";
+import { filterRecipes } from "javascript/recipeUtils.js";
+import { RecipeSorter } from "javascript/recipeSorter.js";
 
 // Filter popup toggle
 function toggleFilterPopup() {

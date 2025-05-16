@@ -1,8 +1,8 @@
 // javascript/main.js
 
-import { populateSplitSection } from "./split-section.js";
+import { populateSplitSection } from "javascript/split-section.js";
 
-fetch("/json/recipes.json")
+fetch("json/recipes.json")
   .then((response) => response.json())
   .then((data) => {
     // const cleanup = populateSplitSection(data);
@@ -10,7 +10,7 @@ fetch("/json/recipes.json")
 
     populateSplitSection(data);
   })
-  .catch((error) => {
+  .catch((error) => { 
     console.error("Error loading recipes:", error);
     document.getElementById("error-message").textContent =
       "Failed to load recipes.";

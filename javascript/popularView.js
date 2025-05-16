@@ -1,4 +1,4 @@
-import { createRecipeCard } from "/javascript/recipeCard.js";
+import { createRecipeCard } from "javascript/recipeCard.js";
 
 export class PopularRecipesView {
     constructor(containerId) {
