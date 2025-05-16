@@ -337,7 +337,7 @@
       "title": "Asparagus Risotto",
       "description": "Creamy risotto infused with delicate asparagus, Parmesan, and a splash of white wine. A velvety, spring-inspired dish that’s elegant, earthy, and full of rich, comforting flavor in every bite!",
       "rating": 5.0,
-      "image": "images/AsparagusRisotto.jpeg",
+      "image": "images/Asparagusrisotto.jpeg",
       "time": 60,
       "categories": "dinner, lunch, vegetarian, glutenFree, cheese",
       "ingredients": [
@@ -824,7 +824,7 @@
       "title": "Sushi",
       "description": "Artfully rolled rice and seaweed encase fresh fish or veggies in every bite. Sushi is delicate, elegant, and packed with flavor, making it a beloved Japanese culinary masterpiece!",
       "rating": 4.0,
-      "image": "images/Sushi.jpeg",
+      "image": "images/sushi.jpeg",
       "time": 60,
       "categories": "dinner, lunch, glutenFree, seafood, fish, lactoseFree",
       "ingredients": [
