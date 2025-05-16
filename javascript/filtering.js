@@ -9,7 +9,7 @@ import {
   hideLoadingIndicator,
   showErrorMessage,
   hideErrorMessage,
-} from "./loadingErrorDisplay.js";
+} from "/javascript/loadingErrorDisplay.js";
 
 let allRecipes = [];
 let activeFilters = {
@@ -33,18 +33,18 @@ const elements = {
 let paginator;
 
 document.addEventListener("DOMContentLoaded", async () => {
-  showLoadingIndicator(); 
+  showLoadingIndicator();
 
   try {
     const { recipes } = await fetchRecipes();
     allRecipes = recipes;
     setupEventListeners();
-    applyFiltersAndRender(true); 
+    applyFiltersAndRender(true);
   } catch (error) {
     console.error("Error loading recipes:", error);
     showErrorMessage("Failed to load recipes. Please try again later.");
   } finally {
-    hideLoadingIndicator(); 
+    hideLoadingIndicator();
   }
 });
 
@@ -73,9 +73,9 @@ function setupEventListeners() {
   // Attach click event listener to the "Load More" button
   elements.loadMoreBtn?.addEventListener("click", () => {
     if (paginator) {
-      const moreAvailable = paginator.displayPage(paginator.currentPage + 1); 
+      const moreAvailable = paginator.displayPage(paginator.currentPage + 1);
       if (!moreAvailable) {
-        paginator.hideLoadMoreButton(); 
+        paginator.hideLoadMoreButton();
       }
     }
   });
@@ -139,7 +139,7 @@ function applyFiltersAndRender(resetPage = false) {
     itemsPerPage,
     elements.loadMoreBtn
   );
-  paginator.displayPage(0); 
+  paginator.displayPage(0);
 
   const sorted = elements.sortSelect
     ? RecipeSorter.sortRecipes(filtered, elements.sortSelect.value)
